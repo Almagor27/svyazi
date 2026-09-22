@@ -1,0 +1,3528 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Алхимия перехода — Новая психология отношений | Алексей Матвеев</title>
+    <meta name="description" content="Авторский исследовательский проект. Инженерный подход к психологии отношений. Наблюдение, гипотеза, проверка.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Алхимия перехода — Новая психология отношений">
+    <meta property="og:description" content="Авторский исследовательский проект. Не верить. Наблюдать. Сравнивать. Проверять.">
+    <meta property="og:type" content="website">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <style>
+        /* ═══════════════════════════════════════════ */
+        /* БАЗОВЫЕ ПЕРЕМЕННЫЕ — МЯГКАЯ ТЁПЛАЯ ПАЛИТРА */
+        /* ═══════════════════════════════════════════ */
+        :root {
+            /* Фоны — мягкие, тёплые, не режут глаз */
+            --bg: #f0eeea;
+            --bg-alt: #e5e2dc;
+            --bg-card: #faf8f4;
+
+            /* Текст */
+            --text: #2b2825;
+            --text-muted: #78716c;
+            --text-light: #a8a29e;
+
+            /* Акцент — оранжевый */
+            --accent: #ea580c;
+            --accent-dark: #c2410c;
+            --accent-light: #fed7aa;
+            --accent-bg: #fef3e8;
+
+            /* Границы */
+            --border: #d6d1c7;
+            --border-light: #e2ddd3;
+
+            /* Семантические */
+            --success: #16a34a;
+            --warning: #ca8a04;
+            --danger: #dc2626;
+            --whatsapp: #25D366;
+
+            /* Типографика */
+            --font: 'Inter', system-ui, -apple-system, sans-serif;
+            --font-mono: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
+
+            /* Размеры */
+            --max-width: 1100px;
+            --content-width: 680px;
+            --radius: 8px;
+            --radius-lg: 12px;
+
+            /* Тени */
+            --shadow-sm: 0 1px 2px rgba(43, 40, 37, 0.04);
+            --shadow: 0 2px 8px rgba(43, 40, 37, 0.06);
+        }
+
+        /* ═══════════════════════════════════════════ */
+        /* RESET */
+        /* ═══════════════════════════════════════════ */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--font);
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* ═══════════════════════════════════════════ */
+        /* ТИПОГРАФИКА */
+        /* ═══════════════════════════════════════════ */
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            color: var(--text);
+        }
+
+        h1 { font-size: clamp(1.75rem, 4vw, 2.5rem); margin-bottom: 1rem; }
+        h2 { font-size: clamp(1.5rem, 3vw, 1.875rem); margin-bottom: 0.875rem; }
+        h3 { font-size: 1.25rem; margin-bottom: 0.75rem; font-weight: 600; }
+        h4 { font-size: 1.0625rem; margin-bottom: 0.5rem; font-weight: 600; }
+
+        p { margin-bottom: 1rem; }
+        p:last-child { margin-bottom: 0; }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.15s ease;
+        }
+        a:hover { color: var(--accent-dark); text-decoration: underline; }
+
+        strong { font-weight: 600; color: var(--text); }
+
+        code, .mono {
+            font-family: var(--font-mono);
+            font-size: 0.9em;
+            background: var(--bg-alt);
+            padding: 0.125em 0.375em;
+            border-radius: 4px;
+        }
+
+        /* ═══════════════════════════════════════════ */
+        /* НАВИГАЦИЯ */
+        /* ═══════════════════════════════════════════ */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(240, 238, 234, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .header-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+        }
+
+        .brand {
+            font-weight: 700;
+            font-size: 1.0625rem;
+            color: var(--text);
+            letter-spacing: -0.01em;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+        .brand:hover { color: var(--accent); text-decoration: none; }
+
+        .nav-desktop {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            flex: 1;
+            justify-content: flex-end;
+        }
+
+        .nav-link {
+            padding: 0.5rem 0.75rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            border-radius: var(--radius);
+            text-decoration: none;
+            transition: all 0.15s ease;
+            white-space: nowrap;
+        }
+        .nav-link:hover {
+            color: var(--text);
+            background: var(--bg-alt);
+            text-decoration: none;
+        }
+        .nav-link.active {
+            color: var(--accent);
+            background: var(--accent-bg);
+        }
+
+        /* Выпадающее меню */
+        .dropdown { position: relative; }
+        .dropdown-toggle {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+        }
+        .dropdown-toggle svg {
+            width: 14px;
+            height: 14px;
+            transition: transform 0.15s ease;
+        }
+        .dropdown.open .dropdown-toggle svg { transform: rotate(180deg); }
+
+        .dropdown-menu {
+            position: absolute;
+            top: calc(100% + 0.5rem);
+            right: 0;
+            min-width: 240px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow);
+            padding: 0.5rem;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-4px);
+            transition: all 0.15s ease;
+        }
+        .dropdown.open .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        .dropdown-menu a {
+            display: block;
+            padding: 0.5rem 0.75rem;
+            font-size: 0.9rem;
+            color: var(--text);
+            border-radius: var(--radius);
+            text-decoration: none;
+        }
+        .dropdown-menu a:hover {
+            background: var(--bg-alt);
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .dropdown-menu a.new::after {
+            content: "★";
+            color: var(--accent);
+            margin-left: 0.5rem;
+            font-size: 0.85em;
+        }
+
+        /* Гамбургер */
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            color: var(--text);
+        }
+        .hamburger svg { width: 24px; height: 24px; }
+
+        /* Мобильное меню */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 64px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--bg);
+            overflow-y: auto;
+            padding: 1rem 1.5rem 3rem;
+            z-index: 99;
+        }
+        .mobile-menu.open { display: block; }
+        .mobile-menu a {
+            display: block;
+            padding: 0.875rem 0;
+            font-size: 1.0625rem;
+            font-weight: 500;
+            color: var(--text);
+            border-bottom: 1px solid var(--border-light);
+            text-decoration: none;
+        }
+        .mobile-menu a:hover, .mobile-menu a.active {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .mobile-menu .mobile-section-title {
+            padding: 1.25rem 0 0.5rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-light);
+        }
+
+        /* ═══════════════════════════════════════════ */
+        /* LAYOUT */
+        /* ═══════════════════════════════════════════ */
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        .container-narrow {
+            max-width: var(--content-width);
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .page { display: none; padding: 3rem 0 5rem; }
+        .page.active { display: block; }
+
+        .section { padding: 3rem 0; }
+        .section-alt { background: var(--bg-alt); }
+
+        /* ═══════════════════════════════════════════ */
+        /* КОМПОНЕНТЫ */
+        /* ═══════════════════════════════════════════ */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            font-family: inherit;
+            font-size: 0.9375rem;
+            font-weight: 600;
+            line-height: 1;
+            border: none;
+            border-radius: var(--radius);
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.15s ease;
+        }
+        .btn-primary {
+            background: var(--accent);
+            color: #fff;
+        }
+        .btn-primary:hover {
+            background: var(--accent-dark);
+            color: #fff;
+            text-decoration: none;
+        }
+        .btn-secondary {
+            background: transparent;
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+        .btn-secondary:hover {
+            background: var(--bg-alt);
+            border-color: var(--text-muted);
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-lg);
+            padding: 1.5rem;
+            transition: border-color 0.15s ease, box-shadow 0.15s ease;
+        }
+        .card:hover {
+            border-color: var(--border);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .game-card {
+            display: block;
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-lg);
+            padding: 1.5rem;
+            text-decoration: none;
+            color: var(--text);
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+        .game-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 4px 16px rgba(234, 88, 12, 0.08);
+            transform: translateY(-2px);
+            text-decoration: none;
+            color: var(--text);
+        }
+        .game-card-icon {
+            font-size: 1.75rem;
+            margin-bottom: 0.75rem;
+            display: block;
+            line-height: 1;
+        }
+        .game-card-title {
+            font-weight: 600;
+            font-size: 1.0625rem;
+            margin-bottom: 0.375rem;
+            color: var(--text);
+        }
+        .game-card-desc {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .grid { display: grid; gap: 1rem; }
+        .grid-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+        .grid-3 { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+
+        .flow {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem 0;
+        }
+        .flow-item {
+            padding: 0.5rem 1rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            font-size: 0.875rem;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+        .flow-arrow {
+            color: var(--text-light);
+            font-weight: 400;
+        }
+
+        .notice {
+            background: var(--accent-bg);
+            border-left: 3px solid var(--accent);
+            padding: 1.25rem 1.5rem;
+            border-radius: var(--radius);
+            margin: 1.5rem 0;
+        }
+        .notice-title {
+            font-weight: 600;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--accent-dark);
+            margin-bottom: 0.5rem;
+        }
+        .notice p {
+            font-size: 0.9375rem;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+        .notice p:last-child { margin-bottom: 0; }
+
+        .rules-list {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+        .rules-list li {
+            padding: 0.75rem 0 0.75rem 1.75rem;
+            position: relative;
+            border-bottom: 1px solid var(--border-light);
+            font-size: 0.9375rem;
+        }
+        .rules-list li:last-child { border-bottom: none; }
+        .rules-list li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 1rem;
+            width: 8px;
+            height: 8px;
+            background: var(--accent);
+            border-radius: 50%;
+        }
+
+        .numbered-list {
+            list-style: none;
+            padding: 0;
+            counter-reset: item;
+            margin: 1.5rem 0;
+        }
+        .numbered-list li {
+            counter-increment: item;
+            padding: 1rem 0 1rem 3rem;
+            position: relative;
+            border-bottom: 1px solid var(--border-light);
+        }
+        .numbered-list li:last-child { border-bottom: none; }
+        .numbered-list li::before {
+            content: counter(item, decimal-leading-zero);
+            position: absolute;
+            left: 0;
+            top: 1rem;
+            font-family: var(--font-mono);
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--accent);
+        }
+        .numbered-list li strong {
+            display: block;
+            margin-bottom: 0.25rem;
+            font-size: 1rem;
+        }
+        .numbered-list li span {
+            color: var(--text-muted);
+            font-size: 0.9375rem;
+        }
+
+        .glossary-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            font-size: 0.9375rem;
+        }
+        .glossary-table tr {
+            border-bottom: 1px solid var(--border-light);
+        }
+        .glossary-table tr:last-child { border-bottom: none; }
+        .glossary-table td {
+            padding: 0.875rem 0.5rem;
+            vertical-align: top;
+        }
+        .glossary-table td:first-child {
+            font-weight: 600;
+            color: var(--accent-dark);
+            width: 32%;
+            min-width: 140px;
+        }
+
+        .breadcrumbs {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+        .breadcrumbs a { color: var(--text-muted); }
+        .breadcrumbs a:hover { color: var(--accent); text-decoration: none; }
+        .breadcrumbs span { margin: 0 0.5rem; color: var(--text-light); }
+
+        .form-group { margin-bottom: 1.25rem; }
+        .form-label {
+            display: block;
+            font-size: 0.9375rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+        .form-input, .form-textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            font-family: inherit;
+            font-size: 0.9375rem;
+            color: var(--text);
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            transition: border-color 0.15s ease, box-shadow 0.15s ease;
+        }
+        .form-input:focus, .form-textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.1);
+        }
+        .form-textarea { resize: vertical; min-height: 120px; }
+
+        .tool-list { display: grid; gap: 0.75rem; margin: 1.5rem 0; }
+        .tool-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.25rem 1.5rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-lg);
+            text-decoration: none;
+            color: var(--text);
+            transition: all 0.15s ease;
+        }
+        .tool-item:hover {
+            border-color: var(--accent);
+            text-decoration: none;
+            color: var(--text);
+        }
+        .tool-item-left {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .tool-item-icon {
+            font-size: 1.5rem;
+            line-height: 1;
+            width: 40px;
+            text-align: center;
+        }
+        .tool-item-title {
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 0.125rem;
+        }
+        .tool-item-desc {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+        .tool-item-badge {
+            font-size: 0.75rem;
+            font-weight: 500;
+            padding: 0.25rem 0.625rem;
+            border-radius: 20px;
+            background: var(--bg-alt);
+            color: var(--text-muted);
+            white-space: nowrap;
+        }
+        .tool-item-badge.new {
+            background: var(--accent-light);
+            color: var(--accent-dark);
+        }
+
+        .placeholder {
+            text-align: center;
+            padding: 4rem 1.5rem;
+            background: var(--bg-card);
+            border: 1px dashed var(--border);
+            border-radius: var(--radius-lg);
+            margin: 2rem 0;
+        }
+        .placeholder-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            opacity: 0.5;
+        }
+        .placeholder h3 {
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+        .placeholder p {
+            color: var(--text-muted);
+            font-size: 0.9375rem;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        /* Контакты */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1rem;
+        }
+        .contact-card {
+            display: block;
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-lg);
+            padding: 1.75rem 1.5rem;
+            text-align: center;
+            text-decoration: none;
+            color: var(--text);
+            transition: all 0.2s ease;
+        }
+        .contact-card:hover {
+            text-decoration: none;
+            color: var(--text);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(43, 40, 37, 0.08);
+        }
+        .contact-icon {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            transition: transform 0.2s ease;
+            flex-shrink: 0;
+        }
+        .contact-icon svg { width: 24px; height: 24px; display: block; flex-shrink: 0; }
+        .contact-card:hover .contact-icon { transform: scale(1.06); }
+        .contact-card-wa { border-color: rgba(37, 211, 102, 0.2); }
+        .contact-card-wa:hover { border-color: var(--whatsapp); }
+        .contact-card-wa .contact-icon { background: rgba(37, 211, 102, 0.12); color: var(--whatsapp); }
+        .contact-card-email:hover { border-color: var(--accent); }
+        .contact-card-email .contact-icon { background: var(--bg-alt); color: var(--accent); }
+        .contact-title {
+            font-size: 1.0625rem;
+            font-weight: 600;
+            margin-bottom: 0.375rem;
+            color: var(--text);
+        }
+        .contact-desc {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+        .contact-action {
+            display: inline-block;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--accent);
+            transition: transform 0.15s ease;
+        }
+        .contact-card:hover .contact-action { transform: translateX(3px); }
+
+        /* ═══════════════════════════════════════════ */
+        /* ПРАВИЛО ТРЁХ ПОДТВЕРЖДЕНИЙ */
+        /* ═══════════════════════════════════════════ */
+        .checks-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.75rem;
+            margin: 1.5rem 0;
+            padding: 1.25rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-lg);
+        }
+        .checks-stat { text-align: center; }
+        .checks-stat-value {
+            font-family: var(--font-mono);
+            font-size: 1.75rem;
+            font-weight: 500;
+            line-height: 1;
+            margin-bottom: 0.375rem;
+            color: var(--text);
+        }
+        .checks-stat-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .checks-form-wrapper { margin-bottom: 2rem; }
+        .checks-form-wrapper.hidden { display: none; }
+        .checks-form {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 1.75rem;
+        }
+        .checks-check {
+            padding: 1.25rem;
+            margin: 1rem 0;
+            background: var(--bg-alt);
+            border-radius: var(--radius);
+            border-left: 3px solid var(--border);
+            transition: border-color 0.2s ease, background 0.2s ease;
+        }
+        .checks-check.selected-yes {
+            border-left-color: var(--success);
+            background: rgba(22, 163, 74, 0.04);
+        }
+        .checks-check.selected-no {
+            border-left-color: var(--text-light);
+            background: rgba(168, 162, 158, 0.06);
+        }
+        .checks-check-header {
+            display: flex;
+            align-items: baseline;
+            gap: 0.75rem;
+            margin-bottom: 0.25rem;
+        }
+        .checks-check-num {
+            font-family: var(--font-mono);
+            font-size: 0.8125rem;
+            font-weight: 500;
+            color: var(--accent);
+        }
+        .checks-check-title { font-weight: 600; font-size: 1rem; color: var(--text); }
+        .checks-check-desc { font-size: 0.875rem; color: var(--text-muted); margin-bottom: 0.875rem; }
+        .checks-check-toggles {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+            flex-wrap: wrap;
+        }
+        .checks-toggle {
+            padding: 0.5rem 1rem;
+            font-family: inherit;
+            font-size: 0.875rem;
+            font-weight: 500;
+            border: 1px solid var(--border);
+            background: var(--bg-card);
+            color: var(--text-muted);
+            border-radius: var(--radius);
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+        .checks-toggle:hover { border-color: var(--text-muted); color: var(--text); }
+        .checks-toggle.active[data-value="true"] {
+            background: var(--success);
+            border-color: var(--success);
+            color: #fff;
+        }
+        .checks-toggle.active[data-value="false"] {
+            background: var(--text-muted);
+            border-color: var(--text-muted);
+            color: #fff;
+        }
+        .checks-check-note { font-size: 0.875rem; padding: 0.5rem 0.875rem; }
+
+        .checks-status-preview {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 1rem 1.25rem;
+            margin: 1.5rem 0 1rem;
+            background: var(--bg-alt);
+            border-radius: var(--radius);
+            flex-wrap: wrap;
+        }
+        .checks-status-label {
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+        .checks-status-value {
+            font-family: var(--font-mono);
+            font-size: 0.9375rem;
+            font-weight: 500;
+            color: var(--text);
+        }
+        .checks-form-actions { display: flex; gap: 0.75rem; margin-top: 1rem; flex-wrap: wrap; }
+        .checks-form-error {
+            margin-top: 0.75rem;
+            font-size: 0.875rem;
+            color: var(--danger);
+        }
+        .checks-form-error.hidden { display: none; }
+
+        .checks-list-wrapper { margin-bottom: 2rem; }
+        .checks-list-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+        .checks-list-header h3 { margin: 0; }
+        .checks-list-filters {
+            display: flex;
+            gap: 0.25rem;
+            padding: 0.25rem;
+            background: var(--bg-alt);
+            border-radius: var(--radius);
+        }
+        .checks-filter {
+            padding: 0.375rem 0.75rem;
+            font-family: inherit;
+            font-size: 0.875rem;
+            font-weight: 500;
+            border: none;
+            background: transparent;
+            color: var(--text-muted);
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+        .checks-filter:hover { color: var(--text); }
+        .checks-filter.active {
+            background: var(--bg-card);
+            color: var(--text);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .checks-list { display: grid; gap: 0.75rem; }
+        .checks-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.25rem 1.5rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-lg);
+            transition: all 0.15s ease;
+        }
+        .checks-item:hover { border-color: var(--border); }
+        .checks-item-status {
+            flex-shrink: 0;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-top: 0.375rem;
+            align-self: flex-start;
+        }
+        .checks-item-status.confirmed { background: var(--success); }
+        .checks-item-status.pending { background: var(--warning); }
+        .checks-item-status.empty { background: var(--text-light); }
+        .checks-item-body { flex: 1; min-width: 0; }
+        .checks-item-hypothesis {
+            font-size: 0.9375rem;
+            font-weight: 500;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+            word-wrap: break-word;
+        }
+        .checks-item-meta {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            font-size: 0.8125rem;
+            color: var(--text-muted);
+        }
+        .checks-item-indicators { display: inline-flex; gap: 0.25rem; }
+        .checks-item-indicator {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.6875rem;
+            font-weight: 700;
+            color: #fff;
+            background: var(--border);
+        }
+        .checks-item-indicator.yes { background: var(--success); }
+        .checks-item-indicator.no { background: var(--text-light); }
+        .checks-item-indicator.none { background: var(--border); color: var(--text-muted); }
+        .checks-item-actions { display: flex; gap: 0.375rem; flex-shrink: 0; }
+        .checks-item-btn {
+            padding: 0.375rem 0.625rem;
+            font-family: inherit;
+            font-size: 0.8125rem;
+            font-weight: 500;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text-muted);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+        .checks-item-btn:hover { border-color: var(--text-muted); color: var(--text); }
+        .checks-item-btn.danger:hover { border-color: var(--danger); color: var(--danger); }
+        .checks-empty.hidden { display: none; }
+        .checks-actions-footer {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-light);
+        }
+
+        /* ═══════════════════════════════════════════ */
+        /* ЛАБОРАТОРИЯ СОСТОЯНИЯ */
+        /* ═══════════════════════════════════════════ */
+        .lab-progress {
+            display: flex;
+            justify-content: space-between;
+            gap: 0.5rem;
+            margin: 2rem 0;
+            padding: 1rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-lg);
+            overflow-x: auto;
+        }
+        .lab-progress-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.375rem;
+            flex: 1;
+            min-width: 60px;
+            opacity: 0.4;
+            transition: opacity 0.2s ease;
+        }
+        .lab-progress-step.active,
+        .lab-progress-step.done { opacity: 1; }
+        .lab-progress-num {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: var(--bg-alt);
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.875rem;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+        .lab-progress-step.active .lab-progress-num {
+            background: var(--accent);
+            color: #fff;
+        }
+        .lab-progress-step.done .lab-progress-num {
+            background: var(--success);
+            color: #fff;
+        }
+        .lab-progress-label {
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            text-align: center;
+        }
+        .lab-progress-step.active .lab-progress-label {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .lab-step {
+            margin: 2rem 0;
+            padding: 2rem 1.75rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-lg);
+        }
+        .lab-step.hidden { display: none; }
+        .lab-step-title { font-size: 1.5rem; margin-bottom: 0.5rem; }
+        .lab-step-desc {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            font-size: 0.9375rem;
+        }
+
+        .lab-scales { display: grid; gap: 1.25rem; margin-bottom: 2rem; }
+        .lab-scale {
+            padding: 1rem 1.25rem;
+            background: var(--bg-alt);
+            border-radius: var(--radius);
+        }
+        .lab-scale-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+        }
+        .lab-scale-label { font-weight: 600; font-size: 0.9375rem; color: var(--text); }
+        .lab-scale-value {
+            font-family: var(--font-mono);
+            font-size: 1.125rem;
+            font-weight: 500;
+            color: var(--accent);
+            min-width: 2ch;
+            text-align: right;
+        }
+        .lab-scale-slider {
+            width: 100%;
+            height: 6px;
+            -webkit-appearance: none;
+            appearance: none;
+            background: var(--border);
+            border-radius: 3px;
+            outline: none;
+            cursor: pointer;
+        }
+        .lab-scale-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background: var(--accent);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: transform 0.15s ease;
+        }
+        .lab-scale-slider::-webkit-slider-thumb:hover { transform: scale(1.15); }
+        .lab-scale-slider::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            background: var(--accent);
+            border-radius: 50%;
+            cursor: pointer;
+            border: none;
+        }
+        .lab-scale-hints {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 0.375rem;
+            font-size: 0.75rem;
+            color: var(--text-light);
+        }
+
+        .lab-body-section { margin: 1.5rem 0 2rem; }
+        .lab-body-title { font-size: 1.0625rem; margin-bottom: 0.375rem; }
+        .lab-body-desc { font-size: 0.875rem; color: var(--text-muted); margin-bottom: 0.875rem; }
+        .lab-body-checks { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+        .lab-body-check {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 0.875rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            font-size: 0.875rem;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            user-select: none;
+        }
+        .lab-body-check:hover { border-color: var(--text-muted); }
+        .lab-body-check input[type="checkbox"] { cursor: pointer; accent-color: var(--accent); }
+        .lab-body-check:has(input:checked) {
+            background: var(--accent-bg);
+            border-color: var(--accent);
+            color: var(--accent-dark);
+            font-weight: 500;
+        }
+
+        .lab-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1.5rem; }
+
+        .lab-channels {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 0.75rem;
+            margin: 1.5rem 0;
+        }
+        .lab-channel {
+            display: block;
+            padding: 1.25rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-lg);
+            text-decoration: none;
+            color: var(--text);
+            transition: all 0.15s ease;
+            cursor: pointer;
+            text-align: left;
+            font-family: inherit;
+            font-size: inherit;
+        }
+        .lab-channel:hover {
+            border-color: var(--accent);
+            box-shadow: 0 4px 12px rgba(234, 88, 12, 0.08);
+            transform: translateY(-2px);
+        }
+        .lab-channel-icon {
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+            display: block;
+            line-height: 1;
+        }
+        .lab-channel-title { font-weight: 600; font-size: 1rem; margin-bottom: 0.25rem; color: var(--text); }
+        .lab-channel-desc { font-size: 0.8125rem; color: var(--text-muted); line-height: 1.4; }
+
+        .lab-experiment {
+            padding: 1.5rem;
+            background: var(--bg-alt);
+            border-radius: var(--radius-lg);
+            margin: 1.5rem 0;
+        }
+        .lab-experiment h3 { margin-top: 0; margin-bottom: 0.75rem; }
+        .lab-experiment-steps {
+            list-style: none;
+            padding: 0;
+            counter-reset: exp-step;
+            margin: 1rem 0;
+        }
+        .lab-experiment-steps li {
+            counter-increment: exp-step;
+            padding: 0.625rem 0 0.625rem 2.25rem;
+            position: relative;
+            font-size: 0.9375rem;
+            color: var(--text);
+            border-bottom: 1px solid var(--border);
+        }
+        .lab-experiment-steps li:last-child { border-bottom: none; }
+        .lab-experiment-steps li::before {
+            content: counter(exp-step);
+            position: absolute;
+            left: 0;
+            top: 0.625rem;
+            width: 1.5rem;
+            height: 1.5rem;
+            background: var(--accent);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .lab-experiment-note {
+            font-size: 0.8125rem;
+            color: var(--text-muted);
+            padding: 0.75rem 1rem;
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            border-left: 3px solid var(--accent);
+            margin-top: 1rem;
+        }
+
+        .lab-timer {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 1.25rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+        .lab-timer-display {
+            font-family: var(--font-mono);
+            font-size: 1.75rem;
+            font-weight: 500;
+            color: var(--accent);
+            min-width: 5ch;
+        }
+        .lab-timer-display.running { color: var(--accent-dark); }
+        .lab-timer-display.done { color: var(--success); }
+
+        .lab-result { display: grid; gap: 0.75rem; margin: 1.5rem 0; }
+        .lab-result-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 1.25rem;
+            background: var(--bg-alt);
+            border-radius: var(--radius);
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .lab-result-label {
+            font-weight: 600;
+            font-size: 0.9375rem;
+            color: var(--text);
+            flex: 1;
+            min-width: 140px;
+        }
+        .lab-result-values {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-family: var(--font-mono);
+            font-size: 0.9375rem;
+        }
+        .lab-result-before { color: var(--text-muted); }
+        .lab-result-arrow { color: var(--text-light); }
+        .lab-result-after { color: var(--text); font-weight: 500; }
+        .lab-result-delta { font-weight: 600; min-width: 4ch; text-align: right; }
+        .lab-result-delta.good { color: var(--success); }
+        .lab-result-delta.bad { color: var(--danger); }
+        .lab-result-delta.neutral { color: var(--text-muted); }
+
+        .lab-result-summary {
+            text-align: center;
+            padding: 1.25rem;
+            background: var(--accent-bg);
+            border-radius: var(--radius-lg);
+            margin-top: 1rem;
+        }
+        .lab-result-summary-label {
+            font-size: 0.8125rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--accent-dark);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .lab-result-summary-value {
+            font-family: var(--font-mono);
+            font-size: 1.75rem;
+            font-weight: 500;
+            color: var(--accent-dark);
+        }
+
+        .lab-worked-question {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: var(--bg-alt);
+            border-radius: var(--radius-lg);
+            text-align: center;
+        }
+        .lab-worked-actions { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
+        .lab-not-worked { text-align: center; }
+        .lab-not-worked-icon { font-size: 3rem; margin-bottom: 1rem; }
+
+        .lab-bank {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-light);
+        }
+        .lab-bank-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.25rem;
+        }
+        .lab-bank-filters {
+            display: flex;
+            gap: 0.25rem;
+            padding: 0.25rem;
+            background: var(--bg-alt);
+            border-radius: var(--radius);
+        }
+        .lab-bank-table-wrapper {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+        }
+        .lab-bank-table { width: 100%; border-collapse: collapse; font-size: 0.9375rem; }
+        .lab-bank-table th {
+            text-align: left;
+            padding: 0.875rem 1rem;
+            background: var(--bg-alt);
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            border-bottom: 1px solid var(--border);
+        }
+        .lab-bank-table th:nth-child(2),
+        .lab-bank-table th:nth-child(3),
+        .lab-bank-table th:nth-child(4) { width: 80px; text-align: center; }
+        .lab-bank-table td {
+            padding: 0.875rem 1rem;
+            border-bottom: 1px solid var(--border-light);
+            vertical-align: middle;
+        }
+        .lab-bank-table tr:last-child td { border-bottom: none; }
+        .lab-bank-table td:nth-child(2),
+        .lab-bank-table td:nth-child(3),
+        .lab-bank-table td:nth-child(4) {
+            text-align: center;
+            font-family: var(--font-mono);
+            color: var(--text-muted);
+        }
+        .lab-bank-table td.delta { font-weight: 600; }
+        .lab-bank-table td.delta.good { color: var(--success); }
+        .lab-bank-table td.delta.bad { color: var(--danger); }
+        .lab-bank-row-actions { display: flex; gap: 0.375rem; justify-content: flex-end; }
+        .lab-bank-empty {
+            padding: 2rem 1rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9375rem;
+        }
+        .lab-bank-empty.hidden { display: none; }
+        .lab-bank-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1.25rem; }
+
+        /* ═══════════════════════════════════════════ */
+        /* FOOTER */
+        /* ═══════════════════════════════════════════ */
+        .site-footer {
+            background: var(--bg-alt);
+            border-top: 1px solid var(--border-light);
+            padding: 2.5rem 0 2rem;
+            margin-top: 4rem;
+        }
+        .footer-inner { max-width: var(--max-width); margin: 0 auto; padding: 0 1.5rem; }
+        .footer-disclaimer {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            max-width: 720px;
+            margin-bottom: 1.5rem;
+        }
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            font-size: 0.875rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+        }
+        .footer-links a { color: var(--text-muted); }
+        .footer-links a:hover { color: var(--accent); text-decoration: none; }
+        .footer-copy { margin-top: 1.5rem; font-size: 0.8125rem; color: var(--text-light); }
+
+        /* ═══════════════════════════════════════════ */
+        /* FOCUS (доступность) */
+        /* ═══════════════════════════════════════════ */
+        :focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+            border-radius: 2px;
+        }
+
+        /* ═══════════════════════════════════════════ */
+        /* МОБИЛЬНАЯ ВЕРСИЯ */
+        /* ═══════════════════════════════════════════ */
+        @media (max-width: 900px) {
+            .nav-desktop { display: none; }
+            .hamburger { display: block; }
+        }
+
+        @media (max-width: 640px) {
+            .header-inner { padding: 0 1rem; height: 60px; }
+            .mobile-menu { top: 60px; padding: 1rem 1rem 3rem; }
+            .container, .container-narrow { padding: 0 1rem; }
+            .page { padding: 2rem 0 3rem; }
+            .section { padding: 2rem 0; }
+            .card, .game-card, .tool-item { padding: 1.25rem; }
+            .contact-card { padding: 1.5rem 1.25rem; }
+            .footer-inner { padding: 0 1rem; }
+            .flow { gap: 0.375rem; }
+            .flow-item { font-size: 0.8125rem; padding: 0.375rem 0.75rem; }
+            .glossary-table td:first-child { width: 40%; }
+            .numbered-list li { padding-left: 2.5rem; }
+            .checks-stats { grid-template-columns: repeat(2, 1fr); }
+            .checks-stat-value { font-size: 1.5rem; }
+            .checks-item { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+            .checks-item-actions { width: 100%; justify-content: flex-end; }
+            .checks-list-header { flex-direction: column; align-items: flex-start; }
+            .checks-form { padding: 1.25rem; }
+            .checks-actions-footer { flex-direction: column; }
+            .checks-actions-footer .btn { width: 100%; justify-content: center; }
+            .lab-step { padding: 1.5rem 1.25rem; }
+            .lab-progress-label { font-size: 0.6875rem; }
+            .lab-result-row { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+            .lab-result-values { width: 100%; justify-content: space-between; }
+            .lab-channels { grid-template-columns: 1fr; }
+            .lab-bank-table th:nth-child(2),
+            .lab-bank-table th:nth-child(3),
+            .lab-bank-table th:nth-child(4) { width: auto; }
+            .lab-bank-table th, .lab-bank-table td { padding: 0.625rem 0.5rem; font-size: 0.8125rem; }
+            .lab-bank-table th:first-child, .lab-bank-table td:first-child { min-width: 120px; }
+            .lab-bank-actions { flex-direction: column; }
+            .lab-bank-actions .btn { width: 100%; justify-content: center; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- HEADER -->
+    <!-- ═══════════════════════════════════════════ -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="#" class="brand" data-page="home">Алхимия перехода</a>
+
+            <nav class="nav-desktop" aria-label="Основная навигация">
+                <a href="#" class="nav-link active" data-page="home">Главная</a>
+                <a href="#" class="nav-link" data-page="method">О методе</a>
+                <a href="#" class="nav-link" data-page="relationships">Карта отношений</a>
+                <a href="#" class="nav-link" data-page="wuxing">У-Син</a>
+
+                <div class="dropdown" id="dropdown">
+                    <button class="nav-link dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+                        Инструменты
+                        <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M2 4l4 4 4-4"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu" role="menu">
+                        <a href="#" data-page="tools" role="menuitem">Все инструменты</a>
+                        <a href="#" data-page="three-checks" role="menuitem">Правило трёх подтверждений</a>
+                        <a href="#" data-page="tool-budget" role="menuitem">Бюджет ресурса</a>
+                        <a href="#" data-page="tool-female" role="menuitem">Исходный код — Женский</a>
+                        <a href="#" data-page="tool-male" role="menuitem">Исходный код — Мужской</a>
+                        <a href="#" data-page="tool-observer" role="menuitem">Наблюдатель</a>
+                        <a href="#" data-page="tool-state-lab" class="new" role="menuitem">Лаборатория состояния</a>
+                    </div>
+                </div>
+
+                <a href="#" class="nav-link" data-page="research">Исследования</a>
+                <a href="#" class="nav-link" data-page="author">Об авторе</a>
+                <a href="#" class="nav-link" data-page="contacts">Контакты</a>
+            </nav>
+
+            <button class="hamburger" id="hamburger" aria-label="Открыть меню" aria-expanded="false">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <line x1="3" y1="12" x2="21" y2="12"/>
+                    <line x1="3" y1="18" x2="21" y2="18"/>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Мобильное меню -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#" data-page="home">Главная</a>
+        <a href="#" data-page="how-to-read">Как читать этот сайт</a>
+        <a href="#" data-page="method">О методе</a>
+        <a href="#" data-page="relationships">Карта отношений</a>
+        <a href="#" data-page="wuxing">У-Син</a>
+
+        <div class="mobile-section-title">Инструменты</div>
+        <a href="#" data-page="tools">Все инструменты</a>
+        <a href="#" data-page="three-checks">Правило трёх подтверждений</a>
+        <a href="#" data-page="tool-budget">Бюджет ресурса</a>
+        <a href="#" data-page="tool-female">Исходный код — Женский</a>
+        <a href="#" data-page="tool-male">Исходный код — Мужской</a>
+        <a href="#" data-page="tool-observer">Наблюдатель</a>
+        <a href="#" data-page="tool-state-lab">Лаборатория состояния</a>
+
+        <div class="mobile-section-title">Ещё</div>
+        <a href="#" data-page="research">Исследования</a>
+        <a href="#" data-page="glossary">Глоссарий</a>
+        <a href="#" data-page="author">Об авторе</a>
+        <a href="#" data-page="contacts">Контакты</a>
+    </div>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- MAIN (SPA-контейнер) -->
+    <!-- ═══════════════════════════════════════════ -->
+    <main id="app">
+
+        <!-- ═══════════════════════════════════════ -->
+        <!-- ГЛАВНАЯ -->
+        <!-- ═══════════════════════════════════════ -->
+        <div class="page active" id="page-home">
+            <section class="section">
+                <div class="container-narrow">
+                    <p style="font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem;">
+                        Авторский исследовательский проект
+                    </p>
+                    <h1 style="font-size: clamp(1.875rem, 5vw, 3rem); margin-bottom: 1.5rem;">
+                        А что, если отношения можно не только чувствовать, но и&nbsp;наблюдать?
+                    </h1>
+                    <p style="font-size: 1.125rem; color: var(--text-muted); max-width: 620px; margin-bottom: 2rem;">
+                        Этот сайт — интеллектуальная игра о людях, отношениях и закономерностях, которые мы обычно замечаем слишком поздно.
+                    </p>
+                    <p style="font-size: 1.0625rem; color: var(--text); font-style: italic; margin-bottom: 2.5rem;">
+                        Не надо мне верить. Лучше проверьте.
+                    </p>
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <a href="#" class="btn btn-primary" data-page="how-to-read">Начать игру</a>
+                        <a href="#" class="btn btn-secondary" data-page="how-to-read">Как читать этот сайт</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section section-alt">
+                <div class="container">
+                    <h2 style="margin-bottom: 0.5rem;">Что вам сейчас интереснее?</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 2rem; max-width: 620px;">
+                        Выберите точку входа — и посмотрите, что за ней.
+                    </p>
+
+                    <div class="grid grid-3">
+                        <a href="#" class="game-card" data-page="relationships">
+                            <span class="game-card-icon">🎭</span>
+                            <div class="game-card-title">Отношения</div>
+                            <div class="game-card-desc">Почему между людьми возникает напряжение?</div>
+                        </a>
+                        <a href="#" class="game-card" data-page="tool-observer">
+                            <span class="game-card-icon">🧭</span>
+                            <div class="game-card-title">Я сам</div>
+                            <div class="game-card-desc">Почему я снова оказываюсь в одной и той же ситуации?</div>
+                        </a>
+                        <a href="#" class="game-card" data-page="tool-state-lab">
+                            <span class="game-card-icon">⚡</span>
+                            <div class="game-card-title">Моё состояние</div>
+                            <div class="game-card-desc">Почему я знаю, что надо делать, но не могу переключиться?</div>
+                        </a>
+                        <a href="#" class="game-card" data-page="method">
+                            <span class="game-card-icon">👁</span>
+                            <div class="game-card-title">Наблюдение</div>
+                            <div class="game-card-desc">А что на самом деле происходит?</div>
+                        </a>
+                        <a href="#" class="game-card" data-page="wuxing">
+                            <span class="game-card-icon">🔄</span>
+                            <div class="game-card-title">У-Син</div>
+                            <div class="game-card-desc">Хочу посмотреть на отношения через пять элементов.</div>
+                        </a>
+                        <a href="#" class="game-card" data-page="three-checks">
+                            <span class="game-card-icon">🎲</span>
+                            <div class="game-card-title">Просто развлечься</div>
+                            <div class="game-card-desc">Хочу проверить несколько гипотез.</div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container-narrow" style="text-align: center;">
+                    <p style="font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem;">
+                        Принцип
+                    </p>
+                    <h2 style="margin-bottom: 1.5rem;">От переживания — к наблюдению</h2>
+
+                    <div class="flow">
+                        <span class="flow-item">Ситуация</span>
+                        <span class="flow-arrow">→</span>
+                        <span class="flow-item">Наблюдение</span>
+                        <span class="flow-arrow">→</span>
+                        <span class="flow-item">Связь</span>
+                        <span class="flow-arrow">→</span>
+                        <span class="flow-item">Закономерность</span>
+                        <span class="flow-arrow">→</span>
+                        <span class="flow-item">Гипотеза</span>
+                        <span class="flow-arrow">→</span>
+                        <span class="flow-item">Проверка</span>
+                    </div>
+
+                    <p style="font-size: 1.0625rem; color: var(--text); max-width: 560px; margin: 1.5rem auto 0; font-style: italic;">
+                        Мы не предлагаем Вам поверить в модель. Мы предлагаем проверить её на реальности.
+                    </p>
+                </div>
+            </section>
+
+            <section class="section section-alt">
+                <div class="container-narrow">
+                    <p style="font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem;">
+                        Кто автор
+                    </p>
+                    <h2 style="margin-bottom: 1.5rem;">Почему инженер занимается отношениями?</h2>
+                    <p style="font-size: 1.0625rem; color: var(--text); margin-bottom: 1rem;">
+                        Я привык искать закономерности там, где на первый взгляд виден хаос. В инженерии система должна быть описана настолько точно, чтобы её можно было проверить.
+                    </p>
+                    <p style="font-size: 1.0625rem; color: var(--text); margin-bottom: 2rem;">
+                        Со временем я начал задавать тот же вопрос человеческим отношениям:
+                        <em>а какие закономерности мы не замечаем только потому, что привыкли воспринимать их эмоционально?</em>
+                    </p>
+                    <a href="#" class="btn btn-secondary" data-page="author">История исследования</a>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container-narrow">
+                    <div class="notice">
+                        <div class="notice-title">Перед началом</div>
+                        <p>
+                            Это авторское исследование, а не готовая истина. Материалы сайта представляют личную систему наблюдений, гипотез и интерпретаций Алексея Матвеева.
+                        </p>
+                        <p>
+                            Они не являются научной, медицинской, психотерапевтической, юридической или иной профессиональной диагностикой и не заменяют консультацию соответствующего специалиста.
+                        </p>
+                        <p style="font-weight: 600; color: var(--accent-dark); margin-top: 1rem;">
+                            Я предлагаю не верить — я предлагаю наблюдать.
+                        </p>
+                    </div>
+
+                    <p style="font-size: 0.9375rem; color: var(--text-muted); margin-top: 1.5rem;">
+                        Если какое-либо описание кажется Вам узнаваемым, проверьте его на собственной жизни: понаблюдайте за собой и окружающими, вспомните реальные ситуации, поговорите с близкими и сравните разные точки зрения.
+                    </p>
+                    <p style="font-size: 0.9375rem; color: var(--text-muted);">
+                        Совпадение с описанием не доказывает истинность модели. Несовпадение не означает её ошибочность. Это повод исследовать дальше.
+                    </p>
+                </div>
+            </section>
+        </div>
+
+        <!-- ═══════════════════════════════════════ -->
+        <!-- КАК ЧИТАТЬ ЭТОТ САЙТ -->
+        <!-- ═══════════════════════════════════════ -->
+        <div class="page" id="page-how-to-read">
+            <div class="container-narrow">
+                <div class="breadcrumbs">
+                    <a href="#" data-page="home">Главная</a>
+                    <span>/</span>
+                    Как читать этот сайт
+                </div>
+
+                <h1>Как читать этот сайт</h1>
+                <p style="font-size: 1.125rem; color: var(--text-muted); margin-bottom: 2rem;">
+                    Этот сайт — лаборатория. Здесь нет правильных ответов.
+                </p>
+
+                <p style="font-size: 1.0625rem; margin-bottom: 1.5rem;">
+                    Есть наблюдение. Есть гипотеза. Есть эксперимент. Есть ваш результат.
+                </p>
+
+                <h2 style="margin-top: 2.5rem;">Что важно помнить</h2>
+                <ul class="rules-list">
+                    <li><strong>Гипотеза</strong> ≠ факт</li>
+                    <li><strong>Наблюдение</strong> ≠ доказательство</li>
+                    <li><strong>Совпадение</strong> ≠ причинность</li>
+                    <li><strong>Модель</strong> ≠ истина</li>
+                </ul>
+
+                <h2 style="margin-top: 2.5rem;">Правило трёх подтверждений</h2>
+                <p>
+                    Увидели закономерность? Не спешите делать вывод.
+                    Проверьте её минимум в трёх независимых наблюдениях:
+                </p>
+
+                <ol class="numbered-list">
+                    <li>
+                        <strong>Собственный опыт</strong>
+                        <span>Происходит ли это со мной?</span>
+                    </li>
+                    <li>
+                        <strong>Наблюдение за другими</strong>
+                        <span>Повторяется ли это у людей вокруг?</span>
+                    </li>
+                    <li>
+                        <strong>Обратная связь</strong>
+                        <span>Узнают ли себя в описании сами участники ситуации?</span>
+                    </li>
+                </ol>
+
+                <p style="margin-top: 1.5rem; padding: 1.25rem; background: var(--bg-alt); border-radius: var(--radius); font-size: 0.9375rem;">
+                    Если закономерность повторяется — запишите наблюдение.<br>
+                    Если не повторяется — тоже запишите.<br>
+                    <em style="color: var(--text-muted);">Именно так гипотеза превращается в исследование.</em>
+                </p>
+
+                <div style="margin-top: 2.5rem; text-align: center;">
+                    <a href="#" class="btn btn-primary" data-page="three-checks">Открыть инструмент →</a>
+                </div>
+            </div>
+        </div>
+
+               <!-- ═══════════════════════════════════════ -->
+        <!-- О МЕТОДЕ -->
+        <!-- ═══════════════════════════════════════ -->
+        <div class="page" id="page-method">
+            <div class="container-narrow">
+                <div class="breadcrumbs">
+                    <a href="#" data-page="home">Главная</a>
+                    <span>/</span>
+                    О методе
+                </div>
+
+                <h1>О методе</h1>
+                <p style="font-size: 1.125rem; color: var(--text-muted); margin-bottom: 2rem;">
+                    Инженерный подход к психологии отношений.
+                </p>
+
+                <h2>Основная идея</h2>
+                <p>
+                    Сайт представляет авторскую исследовательскую систему наблюдения и интерпретации человеческих отношений. Система объединяет: наблюдение, анализ повторяющихся закономерностей, модель У-Син, анализ типов связей, распределение ресурсов, личностные сценарии, практические упражнения и интерактивные инструменты.
+                </p>
+
+                <h2>Ключевой принцип</h2>
+                <p style="font-size: 1.25rem; font-weight: 600; color: var(--accent-dark); padding: 1rem 0;">
+                    Не верить. Наблюдать. Сравнивать. Проверять. Делать собственные выводы.
+                </p>
+
+                <h2>Что этот сайт НЕ обещает</h2>
+                <p>Мы намеренно избегаем формулировок:</p>
+                <ul class="rules-list">
+                    <li>«истина»</li>
+                    <li>«точная диагностика личности»</li>
+                    <li>«научно доказанный метод» — если для конкретного утверждения нет доказательной базы</li>
+                    <li>«определяет вашу судьбу»</li>
+                    <li>«лечит»</li>
+                    <li>«гарантированно изменяет отношения»</li>
+                </ul>
+
+                <p style="margin-top: 1.5rem;">Вместо этого мы используем:</p>
+                <ul class="rules-list">
+                    <li>Авторская модель</li>
+                    <li>Инструмент наблюдения</li>
+                    <li>Гипотеза для самостоятельной проверки</li>
+                    <li>Интерпретационная система</li>
+                    <li>Интерактивный эксперимент</li>
+                    <li>Способ посмотреть на привычные отношения под другим углом</li>
+                </ul>
+
+                <div style="margin-top: 2.5rem;">
+                    <a href="#" class="btn btn-secondary" data-page="home">На главную</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ═══════════════════════════════════════ -->
+        <!-- КАРТА ОТНОШЕНИЙ -->
+        <!-- ═══════════════════════════════════════ -->
+        <div class="page" id="page-relationships">
+            <div class="container-narrow">
+                <div class="breadcrumbs">
+                    <a href="#" data-page="home">Главная</a>
+                    <span>/</span>
+                    Карта отношений
+                </div>
+
+                <h1>Карта отношений</h1>
+                <p style="font-size: 1.125rem; color: var(--text-muted); margin-bottom: 2rem;">
+                    Как люди соединяются?
+                </p>
+
+                <h2>Типы связей</h2>
+                <ul class="rules-list">
+                    <li><strong>Питание</strong> — один ресурс поддерживает другой</li>
+                    <li><strong>Синтез</strong> — два элемента создают третье (общее дело, семью, проект)</li>
+                    <li><strong>Равенство</strong> — два однотипных элемента усиливают или конкурируют</li>
+                    <li><strong>Поток</strong> — один задаёт направление, другой реализует</li>
+                    <li><strong>Напряжение</strong> — несогласованность элементов создаёт конфликт</li>
+                </ul>
+
+                <h2 style="margin-top: 2.5rem;">Ведущий → Ведомый</h2>
+                <p>Не как «кто главнее», а как <strong>функция внутри системы</strong>.</p>
+
+                <div class="placeholder">
+                    <div class="placeholder-icon">🎭</div>
+                    <h3>Раздел в разработке</h3>
+                    <p>Здесь появятся: интерактивная карта типов связей, примеры, архитектура отношений.</p>
+                </div>
+
+                <div style="margin-top: 2.5rem;">
+                    <a href="#" class="btn btn-secondary" data-page="home">На главную</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ═══════════════════════════════════════ -->
+        <!-- У-СИН -->
+        <!-- ═══════════════════════════════════════ -->
+        <div class="page" id="page-wuxing">
+            <div class="container-narrow">
+                <div class="breadcrumbs">
+                    <a href="#" data-page="home">Главная</a>
+                    <span>/</span>
+                    У-Син
+                </div>
+
+                <h1>У-Син</h1>
+                <p style="font-size: 1.125rem; color: var(--text-muted); margin-bottom: 2rem;">
+                    Пять элементов как язык описания взаимодействий.
+                </p>
+
+                <p>
+                    В этой системе пять элементов используются как способ описать взаимодействия между людьми. Мы не рассказываем сначала историю китайской философии — мы сразу переходим к делу.
+                </p>
+
+                <div class="placeholder">
+                    <div class="placeholder-icon">🔄</div>
+                    <h3>Раздел в разработке</h3>
+                    <p>Здесь появится интерактивная схема пяти элементов с карточками: Дерево, Огонь, Земля, Металл, Вода.</p>
+                </div>
+
+                <div style="margin-top: 2.5rem;">
+                    <a href="#" class="btn btn-secondary" data-page="home">На главную</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ═══════════════════════════════════════ -->
+        <!-- ИНСТРУМЕНТЫ -->
+        <!-- ═══════════════════════════════════════ -->
+        <div class="page" id="page-tools">
+            <div class="container-narrow">
+                <div class="breadcrumbs">
+                    <a href="#" data-page="home">Главная</a>
+                    <span>/</span>
+                    Инструменты
+                </div>
+
+                <h1>Инструменты</h1>
+                <p style="font-size: 1.125rem; color: var(--text-muted); margin-bottom: 2rem;">
+                    Интерактивные способы посмотреть на привычные вещи под другим углом.
+                </p>
+
+                <div class="tool-list">
+                    <a href="#" class="tool-item" data-page="three-checks">
+                        <div class="tool-item-left">
+                            <div class="tool-item-icon">📐</div>
+                            <div>
+                                <div class="tool-item-title">Правило трёх подтверждений</div>
+                                <div class="tool-item-desc">Проверьте закономерность в трёх независимых наблюдениях</div>
+                            </div>
+                        </div>
+                        <span class="tool-item-badge new">Новое</span>
+                    </a>
+
+                    <a href="#" class="tool-item" data-page="tool-budget">
+                        <div class="tool-item-left">
+                            <div class="tool-item-icon">⚖️</div>
+                            <div>
+                                <div class="tool-item-title">Бюджет ресурса</div>
+                                <div class="tool-item-desc">Модель, которую мы условно называем Бюджетом счастья</div>
+                            </div>
+                        </div>
+                        <span class="tool-item-badge">Скоро</span>
+                    </a>
+
+                    <a href="#" class="tool-item" data-page="tool-female">
+                        <div class="tool-item-left">
+                            <div class="tool-item-icon">♀</div>
+                            <div>
+                                <div class="tool-item-title">Исходный код — Женский</div>
+                                <div class="tool-item-desc">Авторская типология. Не диагностика личности</div>
+                            </div>
+                        </div>
+                        <span class="tool-item-badge">Скоро</span>
+                    </a>
+
+                    <a href="#" class="tool-item" data-page="tool-male">
+                        <div class="tool-item-left">
+                            <div class="tool-item-icon">♂</div>
+                            <div>
+                                <div class="tool-item-title">Исходный код — Мужской</div>
+                                <div class="tool-item-desc">Авторская типология. Не диагностика личности</div>
+                            </div>
+                        </div>
+                        <span class="tool-item-badge">Скоро</span>
+                    </a>
+
+                    <a href="#" class="tool-item" data-page="tool-observer">
+                        <div class="tool-item-left">
+                            <div class="tool-item-icon">👁</div>
+                            <div>
+                                <div class="tool-item-title">Наблюдатель</div>
+                                <div class="tool-item-desc">Попробуйте описать ситуацию без оценочных слов</div>
+                            </div>
+                        </div>
+                        <span class="tool-item-badge">Скоро</span>
+                    </a>
+
+                    <a href="#" class="tool-item" data-page="tool-state-lab">
+                        <div class="tool-item-left">
+                            <div class="tool-item-icon">⚡</div>
+                            <div>
+                                <div class="tool-item-title">Лаборатория состояния</div>
+                                <div class="tool-item-desc">Пульт управления состоянием: измерь → выбери → сделай → сравни</div>
+                            </div>
+                        </div>
+                        <span class="tool-item-badge new">В разработке</span>
+                    </a>
+                </div>
+
+                <div style="margin-top: 2.5rem;">
+                    <a href="#" class="btn btn-secondary" data-page="home">На главную</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ═══════════════════════════════════════ -->
+        <!-- ПРАВИЛО ТРЁХ ПОДТВЕРЖДЕНИЙ -->
+        <!-- ═══════════════════════════════════════ -->
+        <div class="page" id="page-three-checks">
+            <div class="container-narrow">
+                <div class="breadcrumbs">
+                    <a href="#" data-page="home">Главная</a>
+                    <span>/</span>
+                    <a href="#" data-page="tools">Инструменты</a>
+                    <span>/</span>
+                    Правило трёх подтверждений
+                </div>
+
+                <h1>Правило трёх подтверждений</h1>
+                <p style="font-size: 1.125rem; color: var(--text-muted); margin-bottom: 1rem;">
+                    Инструмент наблюдения.
+                </p>
+                <p style="margin-bottom: 2rem;">
+                    Увидели закономерность? Не спешите делать вывод.
+                    Проверьте её минимум в трёх независимых наблюдениях.
+                </p>
+
+                <div class="notice" style="margin-bottom: 2rem;">
+                    <div class="notice-title">Локальное хранение</div>
+                    <p>
+                        Все ваши наблюдения сохраняются <strong>только в этом браузере</strong>.
+                        Ничего не отправляется на сервер. Вы можете удалить данные в любой момент.
+                    </p>
+                </div>
+
+                <div class="checks-stats" id="checksStats">
+                    <div class="checks-stat">
+                        <div class="checks-stat-value" id="statTotal">0</div>
+                        <div class="checks-stat-label">Всего</div>
+                    </div>
+                    <div class="checks-stat">
+                        <div class="checks-stat-value" id="statConfirmed" style="color: var(--success);">0</div>
+                        <div class="checks-stat-label">Подтверждено</div>
+                    </div>
+                    <div class="checks-stat">
+                        <div class="checks-stat-value" id="statPending" style="color: var(--warning);">0</div>
+                        <div class="checks-stat-label">Требует проверки</div>
+                    </div>
+                    <div class="checks-stat">
+                        <div class="checks-stat-value" id="statEmpty" style="color: var(--text-muted);">0</div>
+                        <div class="checks-stat-label">Не подтверждено</div>
+                    </div>
+                </div>
+
+                <div style="margin: 2rem 0 1.5rem;">
+                    <button class="btn btn-primary" id="checksAddBtn">+ Новое наблюдение</button>
+                </div>
+
+                <div class="checks-form-wrapper hidden" id="checksFormWrapper">
+                    <div class="checks-form" id="checksForm">
+                        <h3 style="margin-bottom: 1.25rem;" id="checksFormTitle">Новое наблюдение</h3>
+
+                        <div class="form-group">
+                            <label class="form-label" for="checksHypothesis">
+                                Гипотеза — что вы заметили?
+                            </label>
+                            <textarea
+                                class="form-textarea"
+                                id="checksHypothesis"
+                                placeholder="Например: Когда я устаю, я срываюсь на близких"
+                                rows="2"
+                            ></textarea>
+                        </div>
+
+                        <div class="checks-check" data-check="0">
+                            <div class="checks-check-header">
+                                <span class="checks-check-num">01</span>
+                                <span class="checks-check-title">Собственный опыт</span>
+                            </div>
+                            <p class="checks-check-desc">Происходит ли это со мной?</p>
+                            <div class="checks-check-toggles">
+                                <button type="button" class="checks-toggle" data-value="true">✓ Подтверждаю</button>
+                                <button type="button" class="checks-toggle" data-value="false">✗ Не наблюдал</button>
+                            </div>
+                            <input type="text" class="form-input checks-check-note" placeholder="Пример (необязательно)">
+                        </div>
+
+                        <div class="checks-check" data-check="1">
+                            <div class="checks-check-header">
+                                <span class="checks-check-num">02</span>
+                                <span class="checks-check-title">Наблюдение за другими</span>
+                            </div>
+                            <p class="checks-check-desc">Повторяется ли это у людей вокруг?</p>
+                            <div class="checks-check-toggles">
+                                <button type="button" class="checks-toggle" data-value="true">✓ Подтверждаю</button>
+                                <button type="button" class="checks-toggle" data-value="false">✗ Не наблюдал</button>
+                            </div>
+                            <input type="text" class="form-input checks-check-note" placeholder="Пример (необязательно)">
+                        </div>
+
+                        <div class="checks-check" data-check="2">
+                            <div class="checks-check-header">
+                                <span class="checks-check-num">03</span>
+                                <span class="checks-check-title">Обратная связь</span>
+                            </div>
+                            <p class="checks-check-desc">Узнают ли себя в описании участники ситуации?</p>
+                            <div class="checks-check-toggles">
+                                <button type="button" class="checks-toggle" data-value="true">✓ Подтверждаю</button>
+                                <button type="button" class="checks-toggle" data-value="false">✗ Не наблюдал</button>
+                            </div>
+                            <input type="text" class="form-input checks-check-note" placeholder="Пример (необязательно)">
+                        </div>
+
+                        <div class="checks-status-preview" id="checksStatusPreview">
+                            <div class="checks-status-label">Статус:</div>
+                            <div class="checks-status-value" id="checksStatusValue">
+                                ⚪ Не подтверждена (0 из 3)
+                            </div>
+                        </div>
+
+                        <div class="checks-form-actions">
+                            <button class="btn btn-primary" id="checksSaveBtn">Сохранить</button>
+                            <button class="btn btn-secondary" id="checksCancelBtn">Отмена</button>
+                        </div>
+
+                        <p class="checks-form-error hidden" id="checksFormError"></p>
+                    </div>
+                </div>
+
+                <div class="checks-list-wrapper" id="checksListWrapper">
+                    <div class="checks-list-header">
+                        <h3>Мои наблюдения</h3>
+                        <div class="checks-list-filters" id="checksFilters">
+                            <button class="checks-filter active" data-filter="all">Все</button>
+                            <button class="checks-filter" data-filter="confirmed">🟢</button>
+                            <button class="checks-filter" data-filter="pending">🟡</button>
+                            <button class="checks-filter" data-filter="empty">⚪</button>
+                        </div>
+                    </div>
+
+                    <div class="checks-list" id="checksList"></div>
+
+                    <div class="checks-empty hidden" id="checksEmpty">
+                        <p style="color: var(--text-muted); text-align: center; padding: 2rem 0;">
+                            Пока нет сохранённых наблюдений.<br>
+                            Начните с первого — нажмите «Новое наблюдение».
+                        </p>
+                    </div>
+                </div>
+
+                <div class="checks-actions-footer" id="checksActionsFooter">
+                    <button class="btn btn-secondary" id="checksExportJsonBtn">📥 Скачать JSON</button>
+                    <button class="btn btn-secondary" id="checksExportWaBtn">💬 Отправить автору</button>
+                    <button class="btn btn-secondary" id="checksClearAllBtn" style="color: var(--danger);">🗑 Удалить все</button>
+                </div>
+
+                <div style="margin-top: 3rem; padding: 1.5rem; background: var(--bg-alt); border-radius: var(--radius-lg);">
+                    <p style="font-size: 0.9375rem; color: var(--text-muted); margin: 0;">
+                        <strong>Помните:</strong> если закономерность повторяется — запишите наблюдение.
+                        Если не повторяется — тоже запишите. Именно так гипотеза превращается в исследование.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ═══════════════════════════════════════ -->
+        <!-- ЛАБОРАТОРИЯ СОСТОЯНИЯ -->
+        <!-- ═══════════════════════════════════════ -->
+        <div class="page" id="page-tool-state-lab">
+            <div class="container-narrow">
+                <div class="breadcrumbs">
+                    <a href="#" data-page="home">Главная</a>
+                    <span>/</span>
+                    <a href="#" data-page="tools">Инструменты</a>
+                    <span>/</span>
+                    Лаборатория состояния
+                </div>
+
+                <h1>Лаборатория состояния</h1>
+                <p style="font-size: 1.125rem; color: var(--text-muted); margin-bottom: 1rem;">
+                    Пульт управления состоянием.
+                </p>
+                <p style="margin-bottom: 2rem;">
+                    Измерьте состояние → выберите способ → сделайте → измерьте снова → сравните.
+                </p>
+
+                <div class="notice" style="margin-bottom: 2rem;">
+                    <div class="notice-title">Как это работает</div>
+                    <p>
+                        Это не медицинская диагностика и не способ определить истину.
+                        Это простой эксперимент: <strong>какие способы переключения работают именно для вас</strong>.
+                    </p>
+                    <p>Все результаты сохраняются <strong>только в вашем браузере</strong>.</p>
+                </div>
+
+                <div class="lab-progress" id="labProgress">
+                    <div class="lab-progress-step active" data-step="1">
+                        <span class="lab-progress-num">1</span>
+                        <span class="lab-progress-label">Измерь</span>
+                    </div>
+                    <div class="lab-progress-step" data-step="2">
+                        <span class="lab-progress-num">2</span>
+                        <span class="lab-progress-label">Выбери</span>
+                    </div>
+                    <div class="lab-progress-step" data-step="3">
+                        <span class="lab-progress-num">3</span>
+                        <span class="lab-progress-label">Сделай</span>
+                    </div>
+                    <div class="lab-progress-step" data-step="4">
+                        <span class="lab-progress-num">4</span>
+                        <span class="lab-progress-label">Измерь</span>
+                    </div>
+                    <div class="lab-progress-step" data-step="5">
+                        <span class="lab-progress-num">5</span>
+                        <span class="lab-progress-label">Сравни</span>
+                    </div>
+                </div>
+
+                <div class="lab-step" id="labStep1">
+                    <h2 class="lab-step-title">Шаг 1. Измерьте состояние</h2>
+                    <p class="lab-step-desc">Оцените каждый параметр по шкале от 0 до 10 — как вы чувствуете себя <strong>сейчас</strong>.</p>
+
+                    <div class="lab-scales" id="labScalesBefore"></div>
+
+                    <div class="lab-body-section">
+                        <h3 class="lab-body-title">Где это ощущается в теле?</h3>
+                        <p class="lab-body-desc">Можно выбрать несколько вариантов или не выбирать ни одного.</p>
+                        <div class="lab-body-checks" id="labBodyBefore">
+                            <label class="lab-body-check"><input type="checkbox" value="chest"><span>Грудь</span></label>
+                            <label class="lab-body-check"><input type="checkbox" value="belly"><span>Живот</span></label>
+                            <label class="lab-body-check"><input type="checkbox" value="throat"><span>Горло</span></label>
+                            <label class="lab-body-check"><input type="checkbox" value="shoulders"><span>Плечи</span></label>
+                            <label class="lab-body-check"><input type="checkbox" value="head"><span>Голова</span></label>
+                            <label class="lab-body-check"><input type="checkbox" value="all"><span>Всё тело</span></label>
+                        </div>
+                    </div>
+
+                    <div class="lab-actions">
+                        <button class="btn btn-primary" id="labBtnStep1Next">Далее — выбрать способ →</button>
+                    </div>
+                </div>
+
+                <div class="lab-step hidden" id="labStep2">
+                    <h2 class="lab-step-title">Шаг 2. Выберите способ</h2>
+                    <p class="lab-step-desc">Не думайте, что «правильно» — выберите то, что <strong>откликается сейчас</strong>.</p>
+
+                    <div class="lab-channels" id="labChannels"></div>
+
+                    <div class="lab-actions">
+                        <button class="btn btn-secondary" id="labBtnStep2Back">← Назад</button>
+                    </div>
+                </div>
+
+                <div class="lab-step hidden" id="labStep3">
+                    <h2 class="lab-step-title" id="labStep3Title">Шаг 3. Эксперимент</h2>
+                    <div id="labStep3Content"></div>
+
+                    <div class="lab-actions">
+                        <button class="btn btn-secondary" id="labBtnStep3Back">← Назад</button>
+                        <button class="btn btn-primary" id="labBtnStep3Next">Я сделал → Измерить снова</button>
+                    </div>
+                </div>
+
+                <div class="lab-step hidden" id="labStep4">
+                    <h2 class="lab-step-title">Шаг 4. Измерьте снова</h2>
+                    <p class="lab-step-desc">То же состояние — но <strong>после</strong> эксперимента.</p>
+
+                    <div class="lab-scales" id="labScalesAfter"></div>
+
+                    <div class="lab-body-section">
+                        <h3 class="lab-body-title">Где это ощущается в теле теперь?</h3>
+                        <div class="lab-body-checks" id="labBodyAfter">
+                            <label class="lab-body-check"><input type="checkbox" value="chest"><span>Грудь</span></label>
+                            <label class="lab-body-check"><input type="checkbox" value="belly"><span>Живот</span></label>
+                            <label class="lab-body-check"><input type="checkbox" value="throat"><span>Горло</span></label>
+                            <label class="lab-body-check"><input type="checkbox" value="shoulders"><span>Плечи</span></label>
+                            <label class="lab-body-check"><input type="checkbox" value="head"><span>Голова</span></label>
+                            <label class="lab-body-check"><input type="checkbox" value="all"><span>Всё тело</span></label>
+                        </div>
+                    </div>
+
+                    <div class="lab-actions">
+                        <button class="btn btn-primary" id="labBtnStep4Next">Сравнить →</button>
+                    </div>
+                </div>
+
+                <div class="lab-step hidden" id="labStep5">
+                    <h2 class="lab-step-title">Шаг 5. Результат</h2>
+                    <p class="lab-step-desc">Что изменилось?</p>
+
+                    <div class="lab-result" id="labResult"></div>
+
+                    <div class="lab-worked-question">
+                        <p style="font-weight: 600; margin-bottom: 0.75rem;">Что-то изменилось для вас?</p>
+                        <div class="lab-worked-actions">
+                            <button class="btn btn-primary" id="labBtnWorkedYes">✓ Да, работает</button>
+                            <button class="btn btn-secondary" id="labBtnWorkedNo">Нет, не сработало</button>
+                        </div>
+                    </div>
+
+                    <div class="lab-actions" style="margin-top: 1.5rem;">
+                        <button class="btn btn-secondary" id="labBtnRestart">↻ Пройти заново</button>
+                    </div>
+                </div>
+
+                <div class="lab-step hidden" id="labStepNotWorked">
+                    <div class="lab-not-worked">
+                        <div class="lab-not-worked-icon">🔬</div>
+                        <h2 class="lab-step-title">Отлично. Это тоже результат.</h2>
+                        <p style="text-align: center; color: var(--text-muted); margin-bottom: 2rem;">
+                            Попробуйте другой канал переключения — возможно, ваш способ работает иначе.
+                        </p>
+
+                        <div class="lab-channels" id="labChannelsAlternatives"></div>
+
+                        <div class="lab-actions" style="justify-content: center; margin-top: 2rem;">
+                            <button class="btn btn-secondary" id="labBtnNotWorkedSkip">Завершить</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lab-bank" id="labBank">
+                    <div class="lab-bank-header">
+                        <h2 style="margin: 0;">Банк работающих переключателей</h2>
+                        <div class="lab-bank-filters" id="labBankFilters">
+                            <button class="checks-filter active" data-filter="all">Все</button>
+                            <button class="checks-filter" data-filter="worked">✓ Работают</button>
+                            <button class="checks-filter" data-filter="failed">✗ Не сработали</button>
+                        </div>
+                    </div>
+
+                    <div class="lab-bank-table-wrapper">
+                        <table class="lab-bank-table" id="labBankTable">
+                            <thead>
+                                <tr>
+                                    <th>Способ</th>
+                                    <th>Было</th>
+                                    <th>Стало</th>
+                                    <th>Δ</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody id="labBankBody"></tbody>
+                        </table>
+                        <p class="lab-bank-empty hidden" id="labBankEmpty">
+                            Пока нет сохранённых экспериментов.<br>
+                            Пройдите первый — и он появится здесь.
+                        </p>
+                    </div>
+
+                    <div class="lab-bank-actions" id="labBankActions">
+                        <button class="btn btn-secondary" id="labBtnExportJson">📥 Скачать JSON</button>
+                        <button class="btn btn-secondary" id="labBtnExportWa">💬 Отправить автору</button>
+                        <button class="btn btn-secondary" id="labBtnClearAll" style="color: var(--danger);">🗑 Удалить все</button>
+                    </div>
+                </div>
+
+                <div style="margin-top: 3rem; padding: 1.5rem; background: var(--bg-alt); border-radius: var(--radius-lg);">
+                    <p style="font-size: 0.9375rem; color: var(--text-muted); margin: 0; text-align: center;">
+                        <em>«У каждого человека свой механизм переключения. Наша задача — не угадать его, а помочь вам его обнаружить».</em>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ═══════════════════════════════════════ -->
+        <!-- ЗАГЛУШКИ ИНСТРУМЕНТОВ -->
+        <!-- ═══════════════════════════════════════ -->
+        <div class="page" id="page-tool-budget">
+            <div class="container-narrow">
+                <div class="breadcrumbs">
+                    <a href="#" data-page="home">Главная</a>
+                    <span>/</span>
+                    <a href="#" data-page="tools">Инструменты</a>
+                    <span>/</span>
+                    Бюджет ресурса
+                </div>
+                <h1>Бюджет ресурса</h1>
+                <p style="font-size: 1.125rem; color: var(--text-muted); margin-bottom: 2rem;">
+                    Модель, которую мы условно называем Бюджетом счастья.
+                </p>
+                <p>Это не измерение счастья. Это интерактивная модель распределения внимания и ресурсов.</p>
+                <div class="placeholder">
+                    <div class="placeholder-icon">⚖️</div>
+                    <h3>Инструмент в разработке</h3>
+                    <p>Три направления: Энергия | Отношения | Материя. Без анимации — только наблюдение.</p>
+                </div>
+                <div style="margin-top: 2.5rem;">
+                    <a href="#" class="btn btn-secondary" data-page="tools">← К инструментам</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="page" id="page-tool-female">
+            <div class="container-narrow">
+                <div class="breadcrumbs">
+                    <a href="#" data-page="home">Главная</a>
+                    <span>/</span>
+                    <a href="#" data-page="tools">Инструменты</a>
+                    <span>/</span>
+                    Исходный код — Женский
+                </div>
+                <h1>Исходный код — Женский</h1>
+                <p style="font-size: 0.9375rem; color: var(--accent-dark); font-weight: 500; margin-bottom: 1rem;">
+                    Авторская типология. Не диагностика личности.
+                </p>
+                <div class="placeholder">
+                    <div class="placeholder-icon">♀</div>
+                    <h3>Инструмент в разработке</h3>
+                    <p>Здесь появятся: код наблюдения, «Как сделать так, чтобы он меня понял», практики.</p>
+                </div>
+                <div style="margin-top: 2.5rem;">
+                    <a href="#" class="btn btn-secondary" data-page="tools">← К инструментам</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="page" id="page-tool-male">
+            <div class="container-narrow">
+                <div class="breadcrumbs">
+                    <a href="#" data-page="home">Главная</a>
+                    <span>/</span>
+                    <a href="#" data-page="tools">Инструменты</a>
+                    <span>/</span>
+                    Исходный код — Мужской
+                </div>
+                <h1>Исходный код — Мужской</h1>
+                <p style="font-size: 0.9375rem; color: var(--accent-dark); font-weight: 500; margin-bottom: 1rem;">
+                    Авторская типология. Не диагностика личности.
+                </p>
+                <div class="placeholder">
+                    <div class="placeholder-icon">♂</div>
+                    <h3>Инструмент в разработке</h3>
+                    <p>Здесь появятся: мужские архетипы, «Как просить у неё», практики.</p>
+                </div>
+                <div style="margin-top: 2.5rem;">
+                    <a href="#" class="btn btn-secondary" data-page="tools">← К инструментам</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="page" id="page-tool-observer">
+            <div class="container-narrow">
+                <div class="breadcrumbs">
+                    <a href="#" data-page="home">Главная</a>
+                    <span>/</span>
+                    <a href="#" data-page="tools">Инструменты</a>
+                    <span>/</span>
+                    Наблюдатель
+                </div>
+                <h1>Наблюдатель</h1>
+                <p style="font-size: 1.125rem; color: var(--text-muted); margin-bottom: 2rem;">
+                    Главный инструмент исследования.
+                </p>
+
+                <p>Наблюдатель не вмешивается сразу. Сначала он фиксирует:</p>
+                <ul class="rules-list">
+                    <li>Что происходит?</li>
+                    <li>Кто что делает?</li>
+                    <li>Что повторяется?</li>
+                    <li>После какого события возникает реакция?</li>
+                    <li>Как меняется система после вмешательства?</li>
+                </ul>
+
+                <h3 style="margin-top: 2rem;">Попробуйте описать ситуацию без оценочных слов</h3>
+                <div style="display: grid; gap: 1rem; margin-top: 1rem;">
+                    <div class="card" style="border-left: 3px solid var(--danger);">
+                        <div style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; color: var(--danger); margin-bottom: 0.5rem;">Оценка</div>
+                        «Он безответственный»
+                    </div>
+                    <div class="card" style="border-left: 3px solid var(--success);">
+                        <div style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; color: var(--success); margin-bottom: 0.5rem;">Наблюдение</div>
+                        «Трижды обещал сделать Х и не сделал»
+                    </div>
+                </div>
+
+                <div class="placeholder" style="margin-top: 2rem;">
+                    <div class="placeholder-icon">👁</div>
+                    <h3>Инструмент в разработке</h3>
+                    <p>Здесь появится интерактивная форма для тренировки наблюдения.</p>
+                </div>
+
+                <div style="margin-top: 2.5rem;">
+                    <a href="#" class="btn btn-secondary" data-page="tools">← К инструментам</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ═══════════════════════════════════════ -->
+        <!-- ИССЛЕДОВАНИЯ -->
+        <!-- ═══════════════════════════════════════ -->
+        <div class="page" id="page-research">
+            <div class="container-narrow">
+                <div class="breadcrumbs">
+                    <a href="#" data-page="home">Главная</a>
+                    <span>/</span>
+                    Исследования
+                </div>
+
+                <h1>Исследования</h1>
+                <p style="font-size: 1.125rem; color: var(--text-muted); margin-bottom: 2rem;">
+                    Наблюдения, гипотезы, примеры и контрпримеры.
+                </p>
+
+                <p>Каждая публикация следует формату:</p>
+                <ul class="rules-list">
+                    <li>Наблюдение</li>
+                    <li>Гипотеза</li>
+                    <li>Примеры</li>
+                    <li>Возможное объяснение</li>
+                    <li>Контрпример</li>
+                    <li>Что проверить самостоятельно</li>
+                </ul>
+
+                <div class="notice">
+                    <div class="notice-title">Я не согласен</div>
+                    <p>
+                        Под каждым материалом можно будет сказать:
+                        <em>«У меня работает иначе»</em>, <em>«Не работает»</em>, <em>«Хочу привести пример»</em>.
+                    </p>
+                    <p>Контрпример — не ошибка. Контрпример — добыча.</p>
+                </div>
+
+                <div class="placeholder">
+                    <div class="placeholder-icon">🔬</div>
+                    <h3>Раздел в разработке</h3>
+                    <p>Здесь появятся: корпус наблюдений, гипотезы, контрпримеры, обратная связь от читателей.</p>
+                </div>
+
+                <div style="margin-top: 2.5rem;">
+                    <a href="#" class="btn btn-secondary" data-page="home">На главную</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ═══════════════════════════════════════ -->
+        <!-- ГЛОССАРИЙ -->
+        <!-- ═══════════════════════════════════════ -->
+        <div class="page" id="page-glossary">
+            <div class="container-narrow">
+                <div class="breadcrumbs">
+                    <a href="#" data-page="home">Главная</a>
+                    <span>/</span>
+                    Глоссарий
+                </div>
+
+                <h1>Глоссарий системы</h1>
+                <p style="font-size: 1.125rem; color: var(--text-muted); margin-bottom: 2rem;">
+                    Краткие определения ключевых понятий.
+                </p>
+
+                <table class="glossary-table">
+                    <tbody>
+                        <tr><td>Наблюдатель</td><td>Позиция, из которой человек фиксирует происходящее без немедленной оценки и вмешательства</td></tr>
+                        <tr><td>Гипотеза</td><td>Предположение, которое можно проверить наблюдением</td></tr>
+                        <tr><td>Связь</td><td>Устойчивое взаимодействие между двумя элементами системы</td></tr>
+                        <tr><td>Поток</td><td>Тип связи, при котором один задаёт направление, другой реализует</td></tr>
+                        <tr><td>Синтез</td><td>Тип связи, при котором два элемента создают третье (общее дело, семью, проект)</td></tr>
+                        <tr><td>Питание</td><td>Тип связи, при котором один ресурс поддерживает другой</td></tr>
+                        <tr><td>Напряжение</td><td>Несогласованность элементов, создающая конфликт</td></tr>
+                        <tr><td>Ведущий</td><td>Функция внутри системы — задаёт направление (не «главный»)</td></tr>
+                        <tr><td>Ведомый</td><td>Функция внутри системы — реализует направление (не «подчинённый»)</td></tr>
+                        <tr><td>Элемент</td><td>Один из пяти типов взаимодействия (У-Син): Дерево, Огонь, Земля, Металл, Вода</td></tr>
+                        <tr><td>Ресурс</td><td>Внимание, время, энергия, которые человек распределяет между сферами жизни</td></tr>
+                        <tr><td>Мера</td><td>Степень присутствия элемента в конкретной ситуации</td></tr>
+                        <tr><td>Потенциал</td><td>Возможность изменения системы при определённых условиях</td></tr>
+                        <tr><td>Оператор</td><td>Способ воздействия на состояние (дыхание, движение, слово, образ)</td></tr>
+                        <tr><td>Контрпример</td><td>Наблюдение, которое не вписывается в гипотезу</td></tr>
+                    </tbody>
+                </table>
+
+                <div style="margin-top: 2.5rem;">
+                    <a href="#" class="btn btn-secondary" data-page="home">На главную</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ═══════════════════════════════════════ -->
+        <!-- ОБ АВТОРЕ -->
+        <!-- ═══════════════════════════════════════ -->
+        <div class="page" id="page-author">
+            <div class="container-narrow">
+                <div class="breadcrumbs">
+                    <a href="#" data-page="home">Главная</a>
+                    <span>/</span>
+                    Об авторе
+                </div>
+
+                <h1>Об авторе</h1>
+                <p style="font-size: 1.125rem; color: var(--text-muted); margin-bottom: 2rem;">
+                    Алексей Матвеев — инженер-исследователь закономерностей отношений.
+                </p>
+
+                <h2>История исследования</h2>
+                <p>
+                    Много лет назад начинал так же, как и многие из моего поколения X, с «чистого листа». Редкие книги, публикации в немногочисленных рукописях самиздата — ну и, конечно, кино (благо Голливуд 90-х и нулевых изобиловал глубокими психологическими сюжетами и превосходной игрой актёров).
+                </p>
+                <p>
+                    Дальше — курсы, семинары, круглые столы, знакомство с академической психологией и изучение религий. Комплексный подход к изучению природы человеческих отношений в сочетании с многолетней профессиональной электротехнической практикой привёл к мысли о синергии научных и околонаучных (эзотерических) знаний и практического опыта — и к систематическим наблюдениям за своим поведением в социуме.
+                </p>
+                <p>
+                    Этот сайт — формализованный продукт опыта, который может быть полезен как для начинающих искателей закономерностей в природе человеческих отношений, так и для профессионалов — для заполнения белых пятен в практике работы с клиентами.
+                </p>
+
+                <h2 style="margin-top: 2.5rem;">Принцип работы</h2>
+                <p>Я не обещаю дать вам правильные ответы. Я предлагаю вместе научиться задавать более точные вопросы.</p>
+
+                <div style="margin-top: 2.5rem;">
+                    <a href="#" class="btn btn-secondary" data-page="contacts">Связаться со мной</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ═══════════════════════════════════════ -->
+        <!-- КОНТАКТЫ -->
+        <!-- ═══════════════════════════════════════ -->
+        <div class="page" id="page-contacts">
+            <div class="container-narrow">
+                <div class="breadcrumbs">
+                    <a href="#" data-page="home">Главная</a>
+                    <span>/</span>
+                    Контакты
+                </div>
+
+                <h1>Контакты</h1>
+                <p style="font-size: 1.125rem; color: var(--text-muted); margin-bottom: 2.5rem;">
+                    Открыт для диалога — по вопросам метода, наблюдений и сотрудничества.
+                </p>
+
+                <div class="contact-grid">
+                    <a href="https://wa.me/77078161239?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9F%D0%B8%D1%88%D1%83%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20%C2%AB%D0%90%D0%BB%D1%85%D0%B8%D0%BC%D0%B8%D1%8F%20%D0%BF%D0%B5%D1%80%D0%B5%D1%85%D0%BE%D0%B4%D0%B0%C2%BB."
+                       target="_blank"
+                       rel="noopener"
+                       class="contact-card contact-card-wa">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                            </svg>
+                        </div>
+                        <h3 class="contact-title">Написать в WhatsApp</h3>
+                        <p class="contact-desc">Откроется чат — ваш номер не публикуется</p>
+                        <span class="contact-action">Открыть →</span>
+                    </a>
+
+                    <a href="mailto:almagor27@gmail.com?subject=%D0%A1%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20%C2%AB%D0%90%D0%BB%D1%85%D0%B8%D0%BC%D0%B8%D1%8F%20%D0%BF%D0%B5%D1%80%D0%B5%D1%85%D0%BE%D0%B4%D0%B0%C2%BB"
+                       class="contact-card contact-card-email">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <rect x="3" y="5" width="18" height="14" rx="2"/>
+                                <path d="M3 7l9 6 9-6"/>
+                            </svg>
+                        </div>
+                        <h3 class="contact-title">Написать на Email</h3>
+                        <p class="contact-desc">almagor27@gmail.com</p>
+                        <span class="contact-action">Открыть →</span>
+                    </a>
+                </div>
+
+                <h2 style="margin-top: 3rem;">Напишите мне</h2>
+                <form onsubmit="event.preventDefault(); alert('Спасибо! Я свяжусь с вами в ближайшее время.');">
+                    <div class="form-group">
+                        <label class="form-label" for="contact-name">Ваше имя</label>
+                        <input class="form-input" type="text" id="contact-name" name="name" autocomplete="name">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="contact-email">Email</label>
+                        <input class="form-input" type="email" id="contact-email" name="email" autocomplete="email">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="contact-message">Сообщение</label>
+                        <textarea class="form-textarea" id="contact-message" name="message" placeholder="Чем могу помочь?"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Отправить</button>
+                </form>
+
+                <p style="margin-top: 1.5rem; font-size: 0.875rem; color: var(--text-muted);">
+                    Форма пока работает в демо-режиме. Позже будет подключена к реальной отправке сообщений.
+                </p>
+            </div>
+        </div>
+
+        <!-- ═══════════════════════════════════════ -->
+        <!-- ДИСКЛЕЙМЕР -->
+        <!-- ═══════════════════════════════════════ -->
+        <div class="page" id="page-disclaimer">
+            <div class="container-narrow">
+                <div class="breadcrumbs">
+                    <a href="#" data-page="home">Главная</a>
+                    <span>/</span>
+                    Дисклеймер
+                </div>
+
+                <h1>Важное замечание</h1>
+
+                <p>
+                    «Алхимия перехода» — авторский исследовательский и образовательный проект. Представленные модели являются способом интерпретации наблюдений и предназначены прежде всего для самоисследования, размышления и развлечения.
+                </p>
+
+                <p>
+                    Проект не претендует на установление истины в последней инстанции. Не следует принимать результаты интерактивных тестов, типологий и моделей как диагноз, медицинское заключение или окончательную характеристику личности.
+                </p>
+
+                <p style="font-size: 1.125rem; font-weight: 600; color: var(--accent-dark); margin: 2rem 0; padding: 1.25rem; background: var(--accent-bg); border-radius: var(--radius);">
+                    Главный эксперимент находится не на экране, а в реальной жизни.
+                </p>
+
+                <p style="font-weight: 600;">Наблюдайте. Сравнивайте. Спрашивайте. Проверяйте.</p>
+
+                <div style="margin-top: 2.5rem;">
+                    <a href="#" class="btn btn-secondary" data-page="home">На главную</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ═══════════════════════════════════════ -->
+        <!-- PRIVACY -->
+        <!-- ═══════════════════════════════════════ -->
+        <div class="page" id="page-privacy">
+            <div class="container-narrow">
+                <div class="breadcrumbs">
+                    <a href="#" data-page="home">Главная</a>
+                    <span>/</span>
+                    Privacy
+                </div>
+
+                <h1>О данных</h1>
+
+                <h2>Что мы делаем</h2>
+                <ul class="rules-list">
+                    <li>Мы <strong>не собираем</strong> результаты ваших тестов на сервере</li>
+                    <li>Все наблюдения сохраняются <strong>только локально</strong> в вашем браузере (<code>localStorage</code>)</li>
+                    <li>Вы можете <strong>удалить</strong> свои данные в любой момент</li>
+                </ul>
+
+                <h2 style="margin-top: 2rem;">Что регулируется внешними сервисами</h2>
+                <ul class="rules-list">
+                    <li>Обращения через WhatsApp регулируются политикой WhatsApp</li>
+                    <li>Обращения через Telegram регулируются политикой Telegram</li>
+                    <li>Сайт использует cookies только для базовой аналитики (если подключена)</li>
+                </ul>
+
+                <div class="notice" style="margin-top: 2rem;">
+                    <div class="notice-title">Принцип</div>
+                    <p>Всё, что можно не собирать — не собираем. Всё, что можно хранить локально — храним локально.</p>
+                </div>
+
+                <div style="margin-top: 2.5rem;">
+                    <a href="#" class="btn btn-secondary" data-page="home">На главную</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ═══════════════════════════════════════ -->
+        <!-- ДОСТУПНОСТЬ -->
+        <!-- ═══════════════════════════════════════ -->
+        <div class="page" id="page-accessibility">
+            <div class="container-narrow">
+                <div class="breadcrumbs">
+                    <a href="#" data-page="home">Главная</a>
+                    <span>/</span>
+                    Доступность
+                </div>
+
+                <h1>Доступность</h1>
+                <p style="font-size: 1.125rem; color: var(--text-muted); margin-bottom: 2rem;">
+                    Сайт должен быть удобен для всех.
+                </p>
+
+                <h2>Что реализовано</h2>
+                <ul class="rules-list">
+                    <li>Нормальный контраст текста и фона</li>
+                    <li>Клавиатурная навигация</li>
+                    <li>Видимый focus у интерактивных элементов</li>
+                    <li>Корректная структура заголовков (h1 → h2 → h3)</li>
+                    <li>Кнопки вместо кликабельных декоративных <code>&lt;div&gt;</code></li>
+                    <li>Уважение к настройке <code>prefers-reduced-motion</code> — анимации отключаются</li>
+                    <li>Адаптация под телефон, планшет, десктоп</li>
+                </ul>
+
+                <h2 style="margin-top: 2rem;">Что можно улучшить</h2>
+                <p>Если вы столкнулись с проблемой доступности — напишите мне. Я постараюсь исправить.</p>
+
+                <div style="margin-top: 2.5rem;">
+                    <a href="#" class="btn btn-secondary" data-page="contacts">Написать мне</a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- FOOTER -->
+    <!-- ═══════════════════════════════════════════ -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <p class="footer-disclaimer">
+                «Алхимия перехода» — авторский исследовательский и образовательный проект. Представленные модели являются способом интерпретации наблюдений и предназначены прежде всего для самоисследования, размышления и развлечения. Проект не претендует на установление истины в последней инстанции. Не следует принимать результаты интерактивных тестов, типологий и моделей как диагноз, медицинское заключение или окончательную характеристику личности.
+            </p>
+            <p class="footer-disclaimer" style="color: var(--text); font-weight: 500;">
+                Наблюдайте. Сравнивайте. Спрашивайте. Проверяйте.
+            </p>
+
+            <div class="footer-links">
+                <a href="#" data-page="disclaimer">Дисклеймер</a>
+                <a href="#" data-page="privacy">Privacy</a>
+                <a href="#" data-page="accessibility">Доступность</a>
+                <a href="#" data-page="glossary">Глоссарий</a>
+                <a href="#" data-page="contacts">Контакты</a>
+            </div>
+
+            <p class="footer-copy">
+                © 2026 Алексей Матвеев · Версия 0.2 · Последняя редакция: сентябрь 2026
+            </p>
+        </div>
+    </footer>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- SCRIPT -->
+    <!-- ═══════════════════════════════════════════ -->
+    <script>
+        (function() {
+            'use strict';
+
+            // ─── РОУТИНГ ───
+            const pages = document.querySelectorAll('.page');
+            const navLinks = document.querySelectorAll('[data-page]');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const hamburger = document.getElementById('hamburger');
+
+            function showPage(pageId) {
+                pages.forEach(page => page.classList.remove('active'));
+
+                const target = document.getElementById('page-' + pageId);
+                if (target) {
+                    target.classList.add('active');
+                    window.scrollTo({ top: 0, behavior: 'instant' });
+                }
+
+                document.querySelectorAll('.nav-link[data-page]').forEach(link => {
+                    link.classList.toggle('active', link.dataset.page === pageId);
+                });
+
+                document.querySelectorAll('.mobile-menu a[data-page]').forEach(link => {
+                    link.classList.toggle('active', link.dataset.page === pageId);
+                });
+
+                mobileMenu.classList.remove('open');
+                hamburger.setAttribute('aria-expanded', 'false');
+
+                // Инициализация инструментов при переходе
+                if (pageId === 'three-checks' && typeof threeChecks !== 'undefined') {
+                    threeChecks.init();
+                }
+                if (pageId === 'tool-state-lab' && typeof stateLab !== 'undefined') {
+                    stateLab.init();
+                }
+
+                if (history.replaceState) {
+                    history.replaceState(null, '', '#' + pageId);
+                }
+            }
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const pageId = this.dataset.page;
+                    if (pageId) {
+                        e.preventDefault();
+                        showPage(pageId);
+                    }
+                });
+            });
+
+            // Выпадающее меню
+            const dropdown = document.getElementById('dropdown');
+            const dropdownToggle = dropdown.querySelector('.dropdown-toggle');
+
+            dropdownToggle.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const isOpen = dropdown.classList.toggle('open');
+                this.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            });
+
+            document.addEventListener('click', function(e) {
+                if (!dropdown.contains(e.target)) {
+                    dropdown.classList.remove('open');
+                    dropdownToggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    dropdown.classList.remove('open');
+                    dropdownToggle.setAttribute('aria-expanded', 'false');
+                    mobileMenu.classList.remove('open');
+                    hamburger.setAttribute('aria-expanded', 'false');
+                }
+            });
+
+            // Мобильное меню
+            hamburger.addEventListener('click', function() {
+                const isOpen = mobileMenu.classList.toggle('open');
+                this.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            });
+
+            // Инициализация по hash
+            function initFromHash() {
+                const hash = window.location.hash.replace('#', '');
+                if (hash && document.getElementById('page-' + hash)) {
+                    showPage(hash);
+                }
+            }
+
+           
+            // ═══════════════════════════════════════════
+            // МОДУЛЬ «ПРАВИЛО ТРЁХ ПОДТВЕРЖДЕНИЙ»
+            // ═══════════════════════════════════════════
+            const threeChecks = (function() {
+                const STORAGE_KEY = 'at_observations';
+                const WHATSAPP_NUMBER = '77078161239';
+
+                let state = { observations: [], editingId: null, filter: 'all' };
+
+                function generateId() {
+                    return 'obs_' + Date.now() + '_' + Math.random().toString(36).slice(2, 8);
+                }
+                function formatDate(iso) {
+                    const d = new Date(iso);
+                    const months = ['янв','фев','мар','апр','мая','июн','июл','авг','сен','окт','ноя','дек'];
+                    return d.getDate() + ' ' + months[d.getMonth()] + ' ' + d.getFullYear();
+                }
+                function calcStatus(checks) {
+                    const confirmed = checks.filter(c => c.confirmed === true).length;
+                    if (confirmed === 3) return { key: 'confirmed', label: 'Подтверждена', icon: '🟢' };
+                    if (confirmed >= 1) return { key: 'pending', label: 'Требует проверки', icon: '🟡' };
+                    return { key: 'empty', label: 'Не подтверждена', icon: '⚪' };
+                }
+                function escapeHtml(str) {
+                    const div = document.createElement('div');
+                    div.textContent = str;
+                    return div.innerHTML;
+                }
+                function loadFromStorage() {
+                    try {
+                        const raw = localStorage.getItem(STORAGE_KEY);
+                        state.observations = raw ? JSON.parse(raw) : [];
+                    } catch (e) { state.observations = []; }
+                }
+                function saveToStorage() {
+                    try {
+                        localStorage.setItem(STORAGE_KEY, JSON.stringify(state.observations));
+                    } catch (e) { alert('Не удалось сохранить данные.'); }
+                }
+                function updateStats() {
+                    const total = state.observations.length;
+                    const confirmed = state.observations.filter(o => calcStatus(o.checks).key === 'confirmed').length;
+                    const pending = state.observations.filter(o => calcStatus(o.checks).key === 'pending').length;
+                    const empty = state.observations.filter(o => calcStatus(o.checks).key === 'empty').length;
+                    document.getElementById('statTotal').textContent = total;
+                    document.getElementById('statConfirmed').textContent = confirmed;
+                    document.getElementById('statPending').textContent = pending;
+                    document.getElementById('statEmpty').textContent = empty;
+                }
+                function openForm(observationId) {
+                    state.editingId = observationId || null;
+                    const wrapper = document.getElementById('checksFormWrapper');
+                    const title = document.getElementById('checksFormTitle');
+                    const hypothesis = document.getElementById('checksHypothesis');
+                    const errorEl = document.getElementById('checksFormError');
+                    errorEl.classList.add('hidden');
+                    document.querySelectorAll('#page-three-checks .checks-check').forEach(check => {
+                        check.classList.remove('selected-yes', 'selected-no');
+                        check.querySelectorAll('.checks-toggle').forEach(t => t.classList.remove('active'));
+                        check.querySelector('.checks-check-note').value = '';
+                    });
+                    if (observationId) {
+                        const obs = state.observations.find(o => o.id === observationId);
+                        if (obs) {
+                            title.textContent = 'Редактирование наблюдения';
+                            hypothesis.value = obs.hypothesis;
+                            obs.checks.forEach((check, idx) => {
+                                const checkEl = document.querySelector('#page-three-checks .checks-check[data-check="' + idx + '"]');
+                                if (!checkEl) return;
+                                if (check.confirmed === true) {
+                                    checkEl.classList.add('selected-yes');
+                                    checkEl.querySelector('.checks-toggle[data-value="true"]').classList.add('active');
+                                } else if (check.confirmed === false) {
+                                    checkEl.classList.add('selected-no');
+                                    checkEl.querySelector('.checks-toggle[data-value="false"]').classList.add('active');
+                                }
+                                checkEl.querySelector('.checks-check-note').value = check.note || '';
+                            });
+                        }
+                    } else {
+                        title.textContent = 'Новое наблюдение';
+                        hypothesis.value = '';
+                    }
+                    wrapper.classList.remove('hidden');
+                    updateStatusPreview();
+                    wrapper.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+                function closeForm() {
+                    document.getElementById('checksFormWrapper').classList.add('hidden');
+                    state.editingId = null;
+                }
+                function updateStatusPreview() {
+                    const checks = collectChecksFromForm();
+                    const status = calcStatus(checks);
+                    document.getElementById('checksStatusValue').textContent =
+                        status.icon + ' ' + status.label + ' (' + checks.filter(c => c.confirmed === true).length + ' из 3)';
+                }
+                function collectChecksFromForm() {
+                    const checks = [];
+                    document.querySelectorAll('#page-three-checks .checks-check').forEach(checkEl => {
+                        const activeToggle = checkEl.querySelector('.checks-toggle.active');
+                        const note = checkEl.querySelector('.checks-check-note').value.trim();
+                        checks.push({
+                            confirmed: activeToggle ? activeToggle.dataset.value === 'true' : null,
+                            note: note
+                        });
+                    });
+                    return checks;
+                }
+                function saveObservation() {
+                    const hypothesis = document.getElementById('checksHypothesis').value.trim();
+                    const errorEl = document.getElementById('checksFormError');
+                    if (!hypothesis) {
+                        errorEl.textContent = 'Введите гипотезу — что вы заметили?';
+                        errorEl.classList.remove('hidden');
+                        return;
+                    }
+                    const checks = collectChecksFromForm();
+                    const now = new Date().toISOString();
+                    if (state.editingId) {
+                        const idx = state.observations.findIndex(o => o.id === state.editingId);
+                        if (idx !== -1) {
+                            state.observations[idx].hypothesis = hypothesis;
+                            state.observations[idx].checks = checks;
+                            state.observations[idx].updatedAt = now;
+                        }
+                    } else {
+                        state.observations.unshift({
+                            id: generateId(),
+                            hypothesis: hypothesis,
+                            checks: checks,
+                            createdAt: now,
+                            updatedAt: now
+                        });
+                    }
+                    saveToStorage();
+                    renderList();
+                    updateStats();
+                    closeForm();
+                }
+                function renderList() {
+                    const listEl = document.getElementById('checksList');
+                    const emptyEl = document.getElementById('checksEmpty');
+                    let filtered = state.observations;
+                    if (state.filter !== 'all') {
+                        filtered = state.observations.filter(o => calcStatus(o.checks).key === state.filter);
+                    }
+                    if (filtered.length === 0) {
+                        listEl.innerHTML = '';
+                        emptyEl.classList.remove('hidden');
+                        return;
+                    }
+                    emptyEl.classList.add('hidden');
+                    listEl.innerHTML = filtered.map(obs => {
+                        const status = calcStatus(obs.checks);
+                        const indicators = obs.checks.map(c => {
+                            if (c.confirmed === true) return '<span class="checks-item-indicator yes">✓</span>';
+                            if (c.confirmed === false) return '<span class="checks-item-indicator no">✗</span>';
+                            return '<span class="checks-item-indicator none">·</span>';
+                        }).join('');
+                        return '<div class="checks-item" data-id="' + obs.id + '">' +
+                            '<div class="checks-item-status ' + status.key + '"></div>' +
+                            '<div class="checks-item-body">' +
+                                '<div class="checks-item-hypothesis">' + escapeHtml(obs.hypothesis) + '</div>' +
+                                '<div class="checks-item-meta">' +
+                                    '<span class="checks-item-indicators">' + indicators + '</span>' +
+                                    '<span>' + status.icon + ' ' + status.label + '</span>' +
+                                    '<span>·</span>' +
+                                    '<span>' + formatDate(obs.createdAt) + '</span>' +
+                                '</div>' +
+                            '</div>' +
+                            '<div class="checks-item-actions">' +
+                                '<button class="checks-item-btn" data-action="edit" data-id="' + obs.id + '">Изменить</button>' +
+                                '<button class="checks-item-btn danger" data-action="delete" data-id="' + obs.id + '">Удалить</button>' +
+                            '</div>' +
+                        '</div>';
+                    }).join('');
+                }
+                function exportJson() {
+                    if (state.observations.length === 0) { alert('Нет сохранённых наблюдений.'); return; }
+                    const data = { exportedAt: new Date().toISOString(), source: 'Алхимия перехода — Правило трёх подтверждений', observations: state.observations };
+                    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = 'observations_' + new Date().toISOString().slice(0, 10) + '.json';
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    URL.revokeObjectURL(url);
+                }
+                function exportWhatsApp() {
+                    if (state.observations.length === 0) { alert('Нет сохранённых наблюдений.'); return; }
+                    let message = 'Наблюдения с сайта «Алхимия перехода»\n\n';
+                    state.observations.forEach((obs, idx) => {
+                        const status = calcStatus(obs.checks);
+                        const confirmed = obs.checks.filter(c => c.confirmed === true).length;
+                        message += (idx + 1) + '. ' + obs.hypothesis + '\n   Статус: ' + status.label + ' (' + confirmed + ' из 3)\n';
+                        obs.checks.forEach((c, i) => {
+                            const mark = c.confirmed === true ? '✓' : (c.confirmed === false ? '✗' : '·');
+                            const note = c.note ? ' — ' + c.note : '';
+                            message += '   ' + mark + ' Проверка ' + (i + 1) + note + '\n';
+                        });
+                        message += '\n';
+                    });
+                    window.open('https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(message), '_blank');
+                }
+                function clearAll() {
+                    if (state.observations.length === 0) return;
+                    if (!confirm('Удалить все наблюдения (' + state.observations.length + ')?')) return;
+                    state.observations = [];
+                    saveToStorage();
+                    renderList();
+                    updateStats();
+                }
+                function bindEvents() {
+                    document.getElementById('checksAddBtn').addEventListener('click', function() { openForm(null); });
+                    document.getElementById('checksSaveBtn').addEventListener('click', saveObservation);
+                    document.getElementById('checksCancelBtn').addEventListener('click', closeForm);
+                    document.querySelectorAll('#page-three-checks .checks-check').forEach(checkEl => {
+                        const toggles = checkEl.querySelectorAll('.checks-toggle');
+                        toggles.forEach(toggle => {
+                            toggle.addEventListener('click', function() {
+                                const value = this.dataset.value;
+                                toggles.forEach(t => t.classList.remove('active'));
+                                this.classList.add('active');
+                                checkEl.classList.remove('selected-yes', 'selected-no');
+                                if (value === 'true') checkEl.classList.add('selected-yes');
+                                else checkEl.classList.add('selected-no');
+                                updateStatusPreview();
+                            });
+                        });
+                    });
+                    document.querySelectorAll('#page-three-checks .checks-filter').forEach(btn => {
+                        btn.addEventListener('click', function() {
+                            document.querySelectorAll('#page-three-checks .checks-filter').forEach(b => b.classList.remove('active'));
+                            this.classList.add('active');
+                            state.filter = this.dataset.filter;
+                            renderList();
+                        });
+                    });
+                    document.getElementById('checksList').addEventListener('click', function(e) {
+                        const btn = e.target.closest('.checks-item-btn');
+                        if (!btn) return;
+                        const action = btn.dataset.action;
+                        const id = btn.dataset.id;
+                        if (action === 'edit') { openForm(id); }
+                        else if (action === 'delete') {
+                            if (confirm('Удалить это наблюдение?')) {
+                                state.observations = state.observations.filter(o => o.id !== id);
+                                saveToStorage();
+                                renderList();
+                                updateStats();
+                            }
+                        }
+                    });
+                    document.getElementById('checksExportJsonBtn').addEventListener('click', exportJson);
+                    document.getElementById('checksExportWaBtn').addEventListener('click', exportWhatsApp);
+                    document.getElementById('checksClearAllBtn').addEventListener('click', clearAll);
+                }
+                function init() {
+                    const page = document.getElementById('page-three-checks');
+                    if (!page) return;
+                    if (page.dataset.inited === '1') return;
+                    page.dataset.inited = '1';
+                    loadFromStorage();
+                    bindEvents();
+                    updateStats();
+                    renderList();
+                }
+                return { init };
+            })();
+
+            // ═══════════════════════════════════════════
+            // МОДУЛЬ «ЛАБОРАТОРИЯ СОСТОЯНИЯ»
+            // ═══════════════════════════════════════════
+            const stateLab = (function() {
+                const STORAGE_KEY = 'at_state_experiments';
+                const WHATSAPP_NUMBER = '77078161239';
+
+                const SCALES = [
+                    { key: 'tension',    label: 'Напряжение',       low: 'спокоен', high: 'напряжён' },
+                    { key: 'anxiety',    label: 'Тревога',          low: 'тихо',    high: 'тревожно' },
+                    { key: 'irritation', label: 'Раздражение',      low: 'ровно',   high: 'раздражён' },
+                    { key: 'energy',     label: 'Энергия',          low: 'истощён', high: 'полон сил' },
+                    { key: 'clarity',    label: 'Ясность мышления', low: 'туман',   high: 'ясно' }
+                ];
+
+                const CHANNELS = [
+                    { id: 'breathing', icon: '🫁', title: 'Дыхание', desc: 'Пять минут спокойного дыхания', timer: 300,
+                      steps: ['Сядьте удобно, выпрямите спину','Вдох — 4 секунды','Спокойный выдох — 6 секунд','Пауза — 2 секунды','Повторяйте 5 минут'],
+                      note: 'Не нужно «правильно дышать». Просто наблюдайте, что происходит.' },
+                    { id: 'movement', icon: '🏃', title: 'Движение', desc: 'Пройтись / приседания / потянуть плечи', timer: null,
+                      steps: ['Пройдитесь 5–10 минут','Или сделайте несколько приседаний','Или потяните плечи','Или встряхните кисти 30 секунд','Сосредоточьтесь на движении стоп'],
+                      note: 'Изменение состояния можно исследовать не только через мысли.' },
+                    { id: 'shake', icon: '👐', title: 'Встряхивание', desc: 'Встряхните кисти 30 секунд', timer: 30,
+                      steps: ['Поднимите руки на уровень груди','Расслабьте кисти','Встряхивайте 30 секунд','Почувствуйте, как напряжение уходит'],
+                      note: 'Простое движение для быстрого переключения.' },
+                    { id: 'posture', icon: '🧍', title: 'Изменение позиции', desc: 'Выпрямитесь и расправьте плечи', timer: 60,
+                      steps: ['Примите привычную позу','Понаблюдайте 30 секунд','Теперь выпрямитесь','Расправьте плечи, посмотрите вперёд','Сделайте спокойный выдох','Понаблюдайте 30–60 секунд'],
+                      note: 'Проверьте, влияет ли положение тела именно на ваше состояние.' },
+                    { id: 'temperature', icon: '💧', title: 'Холод / тепло', desc: 'Умыться прохладной водой', timer: null,
+                      steps: ['Умойтесь прохладной водой','Почувствуйте лицо, руки, дыхание','Оцените состояние'],
+                      note: 'Иногда состояние проще изменить через тело, чем через убеждение.' },
+                    { id: 'here', icon: '👁', title: '«Я здесь»', desc: 'Ориентация в пространстве', timer: 60,
+                      steps: ['Найдите глазами 5 предметов','Услышьте 3 звука','Почувствуйте 2 касания','Спросите себя: «Где сейчас моё внимание?»'],
+                      note: 'Это переключает из внутреннего сценария в наблюдение.' },
+                    { id: 'anchor', icon: '🖼', title: 'Визуальный якорь', desc: 'Смотреть на фото места, где хорошо', timer: 60,
+                      steps: ['Выберите изображение места, где вам хорошо','Смотрите 60 секунд','Не заставляйте себя расслабляться','Наблюдайте: дыхание, мышцы, тело, мысли'],
+                      note: 'Задача не «расслабиться», а наблюдать изменение состояния.' },
+                    { id: 'voice', icon: '🔊', title: 'Голос', desc: 'Произнести фразу тремя способами', timer: null,
+                      steps: ['Произнесите фразу «Я справлюсь с этим» тихо и неуверенно','Затем — громко и напряжённо','Затем — спокойно и медленно','Что произошло с состоянием после каждого варианта?'],
+                      note: 'Голос — почти никто не использует его как самостоятельный эксперимент.' },
+                    { id: 'music', icon: '🎵', title: 'Музыка', desc: 'Одна композиция, которая вызывает состояние', timer: null,
+                      steps: ['Включите одну знакомую композицию','Закройте глаза','Слушайте, не отвлекаясь','Отметьте: что изменилось?'],
+                      note: 'Так можно собрать свою «аптечку состояний».' },
+                    { id: 'smell', icon: '👃', title: 'Запах', desc: 'Кофе, дерево, море, духи, выпечка, хвоя', timer: null,
+                      steps: ['Вспомните или используйте знакомый запах','Сделайте спокойный вдох','Заметьте первое ощущение','Что изменилось в состоянии?'],
+                      note: 'Запах связан с памятью — иногда работает быстрее слов.' },
+                    { id: 'fact', icon: '💭', title: 'Факт или интерпретация?', desc: 'Разложить ситуацию на составляющие', timer: null,
+                      steps: ['Запишите: что произошло фактически?','Затем — что я добавил от себя? (интерпретация)','Затем — что я почувствовал? (эмоция)','Спросите: «Что изменится, если убрать интерпретацию?»'],
+                      note: 'Это классический инструмент наблюдателя.' },
+                    { id: 'reframe', icon: '🔄', title: 'Смена рамки', desc: 'Переформулировать одну и ту же ситуацию', timer: null,
+                      steps: ['Запишите ситуацию и автоматическую мысль','Вариант А: «Это отказ именно в этой ситуации»','Вариант Б: «Я пока не получил нужного результата»','Вариант В: «Что я могу изменить в следующем шаге?»','Отметьте, что произошло с состоянием'],
+                      note: 'Не «позитивное мышление» — а проверка: меняется ли состояние при смене рамки?' },
+                    { id: 'hand', icon: '🖐', title: 'Эксперимент с рукой', desc: 'Простой тест телесной реакции', timer: null,
+                      steps: ['Встаньте или сядьте прямо','Поднимите одну руку до уровня плеча','Другой рукой создайте умеренное сопротивление','Запомните ощущение устойчивости','Скажите про себя нейтральную фразу: «Я сейчас здесь»','Повторите тест — изменилось ли ощущение усилия?'],
+                      note: 'Не медицинская диагностика. Только наблюдение за изменением состояния.' },
+                    { id: 'social', icon: '👥', title: 'Социальная проверка', desc: 'Сравнить гипотезу с реальным ответом', timer: null,
+                      steps: ['У вас есть гипотеза: «Человек на меня злится»','Не делайте вывод','Задайте вопрос: «Как ты сейчас себя чувствуешь?»','Сравните свою гипотезу с реальным ответом'],
+                      note: 'Наблюдение → гипотеза → проверка реальностью.' },
+                    { id: 'scenario', icon: '🔄', title: 'Переключение сценария', desc: 'Записать ситуацию и три варианта', timer: null,
+                      steps: ['Запишите ситуацию: «Мне отказали»','Автоматическая мысль: «Я никому не нужен»','Состояние: тревога 8/10','Вариант А: «Это отказ именно в этой ситуации»','Вариант Б: «Я пока не получил нужного результата»','Вариант В: «Что конкретно я могу изменить?»','После каждого варианта — оцените состояние'],
+                      note: 'Это тест на смену рамки.' }
+                ];
+
+                let state = { currentStep: 1, selectedChannel: null, before: null, after: null, experiments: [], filter: 'all' };
+                let timerInterval = null;
+
+                function generateId() { return 'exp_' + Date.now() + '_' + Math.random().toString(36).slice(2, 8); }
+                function formatDate(iso) {
+                    const d = new Date(iso);
+                    const months = ['янв','фев','мар','апр','мая','июн','июл','авг','сен','окт','ноя','дек'];
+                    return d.getDate() + ' ' + months[d.getMonth()] + ' ' + d.getFullYear();
+                }
+                function escapeHtml(str) { const div = document.createElement('div'); div.textContent = str; return div.innerHTML; }
+                function loadFromStorage() {
+                    try { const raw = localStorage.getItem(STORAGE_KEY); state.experiments = raw ? JSON.parse(raw) : []; }
+                    catch (e) { state.experiments = []; }
+                }
+                function saveToStorage() {
+                    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state.experiments)); }
+                    catch (e) { alert('Не удалось сохранить данные.'); }
+                }
+                function renderScales(containerId, values) {
+                    const container = document.getElementById(containerId);
+                    if (!container) return;
+                    container.innerHTML = SCALES.map(scale => {
+                        const val = values && values[scale.key] !== undefined ? values[scale.key] : 5;
+                        return '<div class="lab-scale" data-key="' + scale.key + '">' +
+                            '<div class="lab-scale-header">' +
+                                '<span class="lab-scale-label">' + scale.label + '</span>' +
+                                '<span class="lab-scale-value" data-value>' + val + '</span>' +
+                            '</div>' +
+                            '<input type="range" class="lab-scale-slider" min="0" max="10" value="' + val + '" data-scale-key="' + scale.key + '">' +
+                            '<div class="lab-scale-hints"><span>0 — ' + scale.low + '</span><span>10 — ' + scale.high + '</span></div>' +
+                        '</div>';
+                    }).join('');
+                    container.querySelectorAll('.lab-scale-slider').forEach(slider => {
+                        slider.addEventListener('input', function() {
+                            const valueEl = this.closest('.lab-scale').querySelector('[data-value]');
+                            valueEl.textContent = this.value;
+                        });
+                    });
+                }
+                function collectScales(containerId) {
+                    const container = document.getElementById(containerId);
+                    if (!container) return null;
+                    const values = {};
+                    container.querySelectorAll('.lab-scale-slider').forEach(slider => {
+                        values[slider.dataset.scaleKey] = parseInt(slider.value);
+                    });
+                    return values;
+                }
+                function collectBody(containerId) {
+                    const container = document.getElementById(containerId);
+                    if (!container) return [];
+                    const checked = [];
+                    container.querySelectorAll('input[type="checkbox"]:checked').forEach(cb => checked.push(cb.value));
+                    return checked;
+                }
+                function renderChannels(containerId, excludeId) {
+                    const container = document.getElementById(containerId);
+                    if (!container) return;
+                    const channels = excludeId ? CHANNELS.filter(c => c.id !== excludeId) : CHANNELS;
+                    container.innerHTML = channels.map(ch =>
+                        '<button type="button" class="lab-channel" data-channel-id="' + ch.id + '">' +
+                            '<span class="lab-channel-icon">' + ch.icon + '</span>' +
+                            '<div class="lab-channel-title">' + ch.title + '</div>' +
+                            '<div class="lab-channel-desc">' + ch.desc + '</div>' +
+                        '</button>'
+                    ).join('');
+                    container.querySelectorAll('.lab-channel').forEach(btn => {
+                        btn.addEventListener('click', function() {
+                            state.selectedChannel = this.dataset.channelId;
+                            renderExperiment();
+                            goToStep(3);
+                        });
+                    });
+                }
+                function renderExperiment() {
+                    const channel = CHANNELS.find(c => c.id === state.selectedChannel);
+                    if (!channel) return;
+                    const titleEl = document.getElementById('labStep3Title');
+                    const contentEl = document.getElementById('labStep3Content');
+                    titleEl.textContent = 'Шаг 3. ' + channel.icon + ' ' + channel.title;
+                    contentEl.innerHTML =
+                        '<div class="lab-experiment">' +
+                            '<h3>' + channel.icon + ' ' + channel.title + '</h3>' +
+                            '<ol class="lab-experiment-steps">' + channel.steps.map(s => '<li>' + s + '</li>').join('') + '</ol>' +
+                            '<div class="lab-experiment-note">' + channel.note + '</div>' +
+                            (channel.timer ?
+                                '<div class="lab-timer">' +
+                                    '<div class="lab-timer-display" id="labTimerDisplay">' + formatTime(channel.timer) + '</div>' +
+                                    '<button type="button" class="btn btn-secondary" id="labTimerBtn">▶ Запустить таймер</button>' +
+                                    '<button type="button" class="btn btn-secondary hidden" id="labTimerResetBtn">↻ Сбросить</button>' +
+                                '</div>' : '') +
+                        '</div>';
+                    if (channel.timer) bindTimer(channel.timer);
+                }
+                function formatTime(seconds) {
+                    const m = Math.floor(seconds / 60);
+                    const s = seconds % 60;
+                    return (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s;
+                }
+                function bindTimer(initialSeconds) {
+                    const display = document.getElementById('labTimerDisplay');
+                    const startBtn = document.getElementById('labTimerBtn');
+                    const resetBtn = document.getElementById('labTimerResetBtn');
+                    if (!display || !startBtn) return;
+                    let remaining = initialSeconds;
+                    let running = false;
+                    function updateDisplay() {
+                        display.textContent = formatTime(remaining);
+                        display.classList.toggle('running', running);
+                        display.classList.toggle('done', remaining === 0);
+                    }
+                    function stop() {
+                        if (timerInterval) { clearInterval(timerInterval); timerInterval = null; }
+                        running = false;
+                        updateDisplay();
+                    }
+                    startBtn.addEventListener('click', function() {
+                        if (running) { stop(); startBtn.textContent = '▶ Продолжить'; return; }
+                        if (remaining === 0) remaining = initialSeconds;
+                        running = true;
+                        startBtn.textContent = '⏸ Пауза';
+                        if (resetBtn) resetBtn.classList.remove('hidden');
+                        updateDisplay();
+                        timerInterval = setInterval(() => {
+                            remaining--;
+                            updateDisplay();
+                            if (remaining <= 0) {
+                                stop();
+                                startBtn.textContent = '✓ Готово';
+                                startBtn.disabled = true;
+                            }
+                        }, 1000);
+                    });
+                    if (resetBtn) {
+                        resetBtn.addEventListener('click', function() {
+                            stop();
+                            remaining = initialSeconds;
+                            startBtn.textContent = '▶ Запустить таймер';
+                            startBtn.disabled = false;
+                            resetBtn.classList.add('hidden');
+                            updateDisplay();
+                        });
+                    }
+                    updateDisplay();
+                }
+                function goToStep(stepNum) {
+                    state.currentStep = stepNum;
+                    document.querySelectorAll('#page-tool-state-lab .lab-step').forEach(el => el.classList.add('hidden'));
+                    const stepEl = document.getElementById('labStep' + stepNum);
+                    if (stepEl) stepEl.classList.remove('hidden');
+                    document.querySelectorAll('.lab-progress-step').forEach(el => {
+                        const num = parseInt(el.dataset.step);
+                        el.classList.toggle('active', num === stepNum);
+                        el.classList.toggle('done', num < stepNum);
+                    });
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+                function goToNotWorked() {
+                    document.querySelectorAll('#page-tool-state-lab .lab-step').forEach(el => el.classList.add('hidden'));
+                    document.getElementById('labStepNotWorked').classList.remove('hidden');
+                    renderChannels('labChannelsAlternatives', state.selectedChannel);
+                    document.querySelectorAll('.lab-progress-step').forEach(el => el.classList.remove('active'));
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+                function calculateAndShowResult(worked) {
+                    const before = state.before;
+                    const after = state.after;
+                    const rows = SCALES.map(scale => {
+                        const b = before.values[scale.key];
+                        const a = after.values[scale.key];
+                        const delta = a - b;
+                        let deltaClass = 'neutral';
+                        if (['tension', 'anxiety', 'irritation'].includes(scale.key)) {
+                            if (delta < 0) deltaClass = 'good';
+                            else if (delta > 0) deltaClass = 'bad';
+                        } else {
+                            if (delta > 0) deltaClass = 'good';
+                            else if (delta < 0) deltaClass = 'bad';
+                        }
+                        const deltaText = delta > 0 ? '+' + delta : String(delta);
+                        return '<div class="lab-result-row">' +
+                            '<div class="lab-result-label">' + scale.label + '</div>' +
+                            '<div class="lab-result-values">' +
+                                '<span class="lab-result-before">' + b + '</span>' +
+                                '<span class="lab-result-arrow">→</span>' +
+                                '<span class="lab-result-after">' + a + '</span>' +
+                                '<span class="lab-result-delta ' + deltaClass + '">' + deltaText + '</span>' +
+                            '</div>' +
+                        '</div>';
+                    }).join('');
+                    const deltas = SCALES.map(s => after.values[s.key] - before.values[s.key]);
+                    const avgDelta = deltas.reduce((a, b) => a + b, 0) / deltas.length;
+                    const avgDeltaText = avgDelta > 0 ? '+' + avgDelta.toFixed(1) : avgDelta.toFixed(1);
+                    const channel = CHANNELS.find(c => c.id === state.selectedChannel);
+                    document.getElementById('labResult').innerHTML = rows +
+                        '<div class="lab-result-summary">' +
+                            '<div class="lab-result-summary-label">Среднее изменение</div>' +
+                            '<div class="lab-result-summary-value">' + avgDeltaText + '</div>' +
+                        '</div>';
+                    const experiment = {
+                        id: generateId(),
+                        channel: channel.id,
+                        channelName: channel.icon + ' ' + channel.title,
+                        before: before,
+                        after: after,
+                        delta: SCALES.reduce((acc, s) => { acc[s.key] = after.values[s.key] - before.values[s.key]; return acc; }, {}),
+                        avgDelta: parseFloat(avgDelta.toFixed(2)),
+                        worked: worked,
+                        createdAt: new Date().toISOString()
+                    };
+                    state.experiments.unshift(experiment);
+                    saveToStorage();
+                    renderBank();
+                    goToStep(5);
+                }
+                function renderBank() {
+                    const tbody = document.getElementById('labBankBody');
+                    const emptyEl = document.getElementById('labBankEmpty');
+                    const tableEl = document.getElementById('labBankTable');
+                    let filtered = state.experiments;
+                    if (state.filter === 'worked') filtered = state.experiments.filter(e => e.worked);
+                    else if (state.filter === 'failed') filtered = state.experiments.filter(e => !e.worked);
+                    if (filtered.length === 0) {
+                        tbody.innerHTML = '';
+                        emptyEl.classList.remove('hidden');
+                        tableEl.style.display = 'none';
+                        return;
+                    }
+                    emptyEl.classList.add('hidden');
+                    tableEl.style.display = '';
+                    tbody.innerHTML = filtered.map(exp => {
+                        const beforeAvg = Object.values(exp.before.values).reduce((a, b) => a + b, 0) / 5;
+                        const afterAvg = Object.values(exp.after.values).reduce((a, b) => a + b, 0) / 5;
+                        const delta = exp.avgDelta;
+                        const deltaText = delta > 0 ? '+' + delta : String(delta);
+                        const deltaClass = exp.worked ? 'good' : 'bad';
+                        const workedIcon = exp.worked ? '✅' : '❌';
+                        return '<tr>' +
+                            '<td>' + escapeHtml(exp.channelName) + ' ' + workedIcon + '</td>' +
+                            '<td>' + beforeAvg.toFixed(1) + '</td>' +
+                            '<td>' + afterAvg.toFixed(1) + '</td>' +
+                            '<td class="delta ' + deltaClass + '">' + deltaText + '</td>' +
+                            '<td><div class="lab-bank-row-actions">' +
+                                '<button class="checks-item-btn danger" data-action="delete" data-id="' + exp.id + '">Удалить</button>' +
+                            '</div></td>' +
+                        '</tr>';
+                    }).join('');
+                }
+                function exportJson() {
+                    if (state.experiments.length === 0) { alert('Нет сохранённых экспериментов.'); return; }
+                    const data = { exportedAt: new Date().toISOString(), source: 'Алхимия перехода — Лаборатория состояния', experiments: state.experiments };
+                    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = 'state_experiments_' + new Date().toISOString().slice(0, 10) + '.json';
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    URL.revokeObjectURL(url);
+                }
+                function exportWhatsApp() {
+                    if (state.experiments.length === 0) { alert('Нет сохранённых экспериментов.'); return; }
+                    let message = 'Эксперименты с сайта «Алхимия перехода»\nЛаборатория состояния\n\n';
+                    state.experiments.forEach((exp, idx) => {
+                        const workedText = exp.worked ? '✅ Работает' : '❌ Не сработало';
+                        message += (idx + 1) + '. ' + exp.channelName + '\n   ' + workedText + '\n   Среднее изменение: ' + (exp.avgDelta > 0 ? '+' : '') + exp.avgDelta + '\n   Дата: ' + formatDate(exp.createdAt) + '\n\n';
+                    });
+                    window.open('https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(message), '_blank');
+                }
+                function clearAll() {
+                    if (state.experiments.length === 0) return;
+                    if (!confirm('Удалить все эксперименты (' + state.experiments.length + ')?')) return;
+                    state.experiments = [];
+                    saveToStorage();
+                    renderBank();
+                }
+                function restart() {
+                    state.currentStep = 1;
+                    state.selectedChannel = null;
+                    state.before = null;
+                    state.after = null;
+                    document.querySelectorAll('#labBodyBefore input, #labBodyAfter input').forEach(cb => cb.checked = false);
+                    renderScales('labScalesBefore', { tension: 5, anxiety: 5, irritation: 5, energy: 5, clarity: 5 });
+                    renderScales('labScalesAfter', { tension: 5, anxiety: 5, irritation: 5, energy: 5, clarity: 5 });
+                    renderChannels('labChannels');
+                    goToStep(1);
+                }
+                function bindEvents() {
+                    const s1n = document.getElementById('labBtnStep1Next');
+                    if (s1n) s1n.addEventListener('click', function() {
+                        state.before = { values: collectScales('labScalesBefore'), body: collectBody('labBodyBefore') };
+                        renderChannels('labChannels');
+                        goToStep(2);
+                    });
+                    const s2b = document.getElementById('labBtnStep2Back');
+                    if (s2b) s2b.addEventListener('click', () => goToStep(1));
+                    const s3n = document.getElementById('labBtnStep3Next');
+                    if (s3n) s3n.addEventListener('click', function() {
+                        renderScales('labScalesAfter', { tension: 5, anxiety: 5, irritation: 5, energy: 5, clarity: 5 });
+                        goToStep(4);
+                    });
+                    const s3b = document.getElementById('labBtnStep3Back');
+                    if (s3b) s3b.addEventListener('click', () => goToStep(2));
+                    const s4n = document.getElementById('labBtnStep4Next');
+                    if (s4n) s4n.addEventListener('click', function() {
+                        state.after = { values: collectScales('labScalesAfter'), body: collectBody('labBodyAfter') };
+                        calculateAndShowResult(true);
+                    });
+                    const wy = document.getElementById('labBtnWorkedYes');
+                    if (wy) wy.addEventListener('click', function() {
+                        if (state.experiments.length > 0) {
+                            state.experiments[0].worked = true;
+                            saveToStorage();
+                            renderBank();
+                        }
+                        restart();
+                    });
+                    const wn = document.getElementById('labBtnWorkedNo');
+                    if (wn) wn.addEventListener('click', function() {
+                        if (state.experiments.length > 0) {
+                            state.experiments[0].worked = false;
+                            saveToStorage();
+                            renderBank();
+                        }
+                        goToNotWorked();
+                    });
+                    const nws = document.getElementById('labBtnNotWorkedSkip');
+                    if (nws) nws.addEventListener('click', restart);
+                    const rb = document.getElementById('labBtnRestart');
+                    if (rb) rb.addEventListener('click', restart);
+                    document.querySelectorAll('#labBankFilters .checks-filter').forEach(btn => {
+                        btn.addEventListener('click', function() {
+                            document.querySelectorAll('#labBankFilters .checks-filter').forEach(b => b.classList.remove('active'));
+                            this.classList.add('active');
+                            state.filter = this.dataset.filter;
+                            renderBank();
+                        });
+                    });
+                    const bb = document.getElementById('labBankBody');
+                    if (bb) bb.addEventListener('click', function(e) {
+                        const btn = e.target.closest('button[data-action="delete"]');
+                        if (!btn) return;
+                        if (confirm('Удалить этот эксперимент?')) {
+                            state.experiments = state.experiments.filter(e => e.id !== btn.dataset.id);
+                            saveToStorage();
+                            renderBank();
+                        }
+                    });
+                    const e1 = document.getElementById('labBtnExportJson');
+                    if (e1) e1.addEventListener('click', exportJson);
+                    const e2 = document.getElementById('labBtnExportWa');
+                    if (e2) e2.addEventListener('click', exportWhatsApp);
+                    const e3 = document.getElementById('labBtnClearAll');
+                    if (e3) e3.addEventListener('click', clearAll);
+                }
+                function init() {
+                    const page = document.getElementById('page-tool-state-lab');
+                    if (!page) return;
+                    if (page.dataset.inited === '1') return;
+                    page.dataset.inited = '1';
+                    loadFromStorage();
+                    bindEvents();
+                    renderScales('labScalesBefore', { tension: 5, anxiety: 5, irritation: 5, energy: 5, clarity: 5 });
+                    renderBank();
+                    goToStep(1);
+                }
+                return { init };
+            })();
+                initFromHash();
+                window.addEventListener('hashchange', initFromHash);
+        })();
+    </script>
+    </body>
+    </html>
+   
+  
