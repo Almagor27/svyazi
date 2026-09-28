@@ -1325,7 +1325,297 @@
         }
         .lab-bank-empty.hidden { display: none; }
         .lab-bank-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1.25rem; }
+        /* ═══════════════════════════════════════════ */
+        /* У-СИН — АККОРДЕОН */
+        /* ═══════════════════════════════════════════ */
+        .wuxing-accordion {
+            margin: 1.5rem 0 2rem;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            background: var(--bg-card);
+        }
 
+        .wuxing-item {
+            border-bottom: 1px solid var(--border-light);
+        }
+        .wuxing-item:last-child {
+            border-bottom: none;
+        }
+
+        .wuxing-header {
+            display: flex;
+            align-items: center;
+            gap: 0.875rem;
+            width: 100%;
+            padding: 1.125rem 1.25rem;
+            background: transparent;
+            border: none;
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text);
+            cursor: pointer;
+            text-align: left;
+            transition: background 0.15s ease;
+        }
+        .wuxing-header:hover {
+            background: var(--bg-alt);
+        }
+        .wuxing-header:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: -2px;
+        }
+
+        .wuxing-icon {
+            font-size: 1.5rem;
+            line-height: 1;
+            flex-shrink: 0;
+        }
+
+        .wuxing-title {
+            flex: 1;
+            font-size: 1.0625rem;
+        }
+
+        .wuxing-codes {
+            font-family: var(--font-mono);
+            font-size: 0.8125rem;
+            font-weight: 500;
+            color: var(--accent);
+            background: var(--accent-bg);
+            padding: 0.25rem 0.625rem;
+            border-radius: 6px;
+            flex-shrink: 0;
+        }
+
+        .wuxing-arrow {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            transition: transform 0.2s ease;
+            flex-shrink: 0;
+        }
+
+        .wuxing-item.open .wuxing-arrow {
+            transform: rotate(180deg);
+        }
+
+        .wuxing-body {
+            display: none;
+            padding: 0 1.25rem 1.25rem;
+        }
+        .wuxing-item.open .wuxing-body {
+            display: block;
+        }
+
+        .wuxing-body p {
+            font-size: 0.9375rem;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+        .wuxing-body p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Заголовки таблицы в У-Син */
+        .glossary-table th {
+            text-align: left;
+            padding: 0.75rem 0.5rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            border-bottom: 2px solid var(--border);
+        }
+
+        @media (max-width: 640px) {
+            .wuxing-header {
+                padding: 1rem;
+                gap: 0.625rem;
+            }
+            .wuxing-title {
+                font-size: 1rem;
+            }
+            .wuxing-codes {
+                font-size: 0.75rem;
+                padding: 0.2rem 0.5rem;
+            }
+            .wuxing-body {
+                padding: 0 1rem 1rem;
+            }
+            .glossary-table td,
+            .glossary-table th {
+                padding: 0.625rem 0.375rem;
+                font-size: 0.875rem;
+            }
+        }
+        /* ═══════════════════════════════════════════ */
+        /* ДЛЯ ЖЕНЩИН — дополнения */
+        /* ═══════════════════════════════════════════ */
+
+        /* Стили для аккордеона У-Син уже есть — используются здесь повторно */
+
+        /* Заголовки h4 внутри аккордеона */
+        .wuxing-body h4 {
+            font-size: 0.9375rem;
+            font-weight: 600;
+            color: var(--accent-dark);
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Списки внутри аккордеона — компактнее */
+        .wuxing-body .rules-list {
+            margin: 0.5rem 0 0;
+        }
+
+        .wuxing-body .rules-list li {
+            padding: 0.5rem 0 0.5rem 1.5rem;
+            font-size: 0.9375rem;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .wuxing-body .rules-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* Чекбоксы теста */
+        .female-quiz-checkbox {
+            accent-color: var(--accent);
+            flex-shrink: 0;
+        }
+
+        /* Форма теста */
+        #femaleQuizResult.hidden {
+            display: none;
+        }
+
+        /* Мобильная версия */
+        @media (max-width: 640px) {
+            .wuxing-body h4 {
+                font-size: 0.875rem;
+            }
+            .wuxing-body .rules-list li {
+                padding: 0.375rem 0 0.375rem 1.25rem;
+                font-size: 0.875rem;
+            }
+        }
+        /* ═══════════════════════════════════════════ */
+        /* СОВМЕСТИМОСТЬ ПАРЫ */
+        /* ═══════════════════════════════════════════ */
+        .compat-form {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-lg);
+            padding: 1.75rem;
+            margin: 1.5rem 0 2rem;
+        }
+
+        .compat-inputs {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .compat-error {
+            margin-top: 1rem;
+            font-size: 0.9375rem;
+            color: var(--danger);
+        }
+        .compat-error.hidden {
+            display: none;
+        }
+
+        .compat-block {
+            margin: 2rem 0;
+            padding: 1.75rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-lg);
+        }
+
+        .compat-block-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 1.25rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        /* Пара */
+        .compat-pair {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            padding: 1rem 0;
+        }
+
+        .compat-pair-item {
+            text-align: center;
+            flex: 1;
+            min-width: 140px;
+        }
+
+        .compat-pair-icon {
+            font-size: 3rem;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .compat-pair-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-muted);
+            font-weight: 600;
+            margin-bottom: 0.375rem;
+        }
+
+        .compat-pair-value {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 0.25rem;
+        }
+
+        .compat-pair-code {
+            font-family: var(--font-mono);
+            font-size: 0.875rem;
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        .compat-pair-divider {
+            font-size: 2rem;
+            font-weight: 300;
+            color: var(--text-light);
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 640px) {
+            .compat-pair {
+                gap: 0.75rem;
+            }
+            .compat-pair-icon {
+                font-size: 2.25rem;
+            }
+            .compat-pair-value {
+                font-size: 1.0625rem;
+            }
+            .compat-pair-divider {
+                font-size: 1.5rem;
+            }
+            .compat-form {
+                padding: 1.25rem;
+            }
+            .compat-block {
+                padding: 1.25rem;
+            }
+        }
         /* ═══════════════════════════════════════════ */
         /* FOOTER */
         /* ═══════════════════════════════════════════ */
@@ -1442,9 +1732,10 @@
                         <a href="#" data-page="tools" role="menuitem">Все инструменты</a>
                         <a href="#" data-page="three-checks" role="menuitem">Правило трёх подтверждений</a>
                         <a href="#" data-page="tool-budget" role="menuitem">Бюджет ресурса</a>
-                        <a href="#" data-page="tool-female" role="menuitem">Исходный код — Женский</a>
-                        <a href="#" data-page="tool-male" role="menuitem">Исходный код — Мужской</a>
+                        <a href="#" data-page="tool-female" role="menuitem">Для женщин</a>
+                        <a href="#" data-page="tool-male" role="menuitem">Мужской код</a>
                         <a href="#" data-page="tool-observer" role="menuitem">Наблюдатель</a>
+                        <a href="#" data-page="compatibility" role="menuitem">Совместимость пары</a>
                         <a href="#" data-page="tool-state-lab" class="new" role="menuitem">Лаборатория состояния</a>
                     </div>
                 </div>
@@ -1479,6 +1770,7 @@
         <a href="#" data-page="tool-female">Исходный код — Женский</a>
         <a href="#" data-page="tool-male">Исходный код — Мужской</a>
         <a href="#" data-page="tool-observer">Наблюдатель</a>
+        <a href="#" data-page="compatibility">Совместимость пары</a>
         <a href="#" data-page="tool-state-lab">Лаборатория состояния</a>
 
         <div class="mobile-section-title">Ещё</div>
@@ -1551,11 +1843,11 @@
                             <div class="game-card-title">У-Син</div>
                             <div class="game-card-desc">Хочу посмотреть на отношения через пять элементов.</div>
                         </a>
-                        <a href="#" class="game-card" data-page="three-checks">
-                            <span class="game-card-icon">🎲</span>
-                            <div class="game-card-title">Просто развлечься</div>
-                            <div class="game-card-desc">Хочу проверить несколько гипотез.</div>
-                        </a>
+                        <a href="#" class="game-card" data-page="compatibility">
+    <span class="game-card-icon">💞</span>
+    <div class="game-card-title">Просто развлечься</div>
+    <div class="game-card-desc">Хочу проверить совместимость с партнёром.</div>
+</a>
                     </div>
                 </div>
             </section>
@@ -1746,6 +2038,9 @@
         <!-- ═══════════════════════════════════════ -->
         <!-- КАРТА ОТНОШЕНИЙ -->
         <!-- ═══════════════════════════════════════ -->
+                <!-- ═══════════════════════════════════════ -->
+        <!-- КАРТА ОТНОШЕНИЙ -->
+        <!-- ═══════════════════════════════════════ -->
         <div class="page" id="page-relationships">
             <div class="container-narrow">
                 <div class="breadcrumbs">
@@ -1756,29 +2051,307 @@
 
                 <h1>Карта отношений</h1>
                 <p style="font-size: 1.125rem; color: var(--text-muted); margin-bottom: 2rem;">
-                    Как люди соединяются?
+                    Как мы взаимодействуем?
                 </p>
 
-                <h2>Типы связей</h2>
-                <ul class="rules-list">
-                    <li><strong>Питание</strong> — один ресурс поддерживает другой</li>
-                    <li><strong>Синтез</strong> — два элемента создают третье (общее дело, семью, проект)</li>
-                    <li><strong>Равенство</strong> — два однотипных элемента усиливают или конкурируют</li>
-                    <li><strong>Поток</strong> — один задаёт направление, другой реализует</li>
-                    <li><strong>Напряжение</strong> — несогласованность элементов создаёт конфликт</li>
-                </ul>
+                <p>
+                    Мы привыкли думать об отношениях через чувства — «люблю», «не люблю», «подходит», «не подходит».
+                </p>
+                <p>
+                    Но есть <strong>другой слой</strong> — <strong>тип связи</strong>. Как <strong>энергии</strong> двух людей взаимодействуют.
+                    Не «кто прав», не «кто виноват». А <strong>как устроена система</strong>.
+                </p>
+                <p style="margin-bottom: 2rem;">
+                    Есть <strong>три механизма притяжения</strong>. И <strong>пять типов связей</strong>.
+                </p>
 
-                <h2 style="margin-top: 2.5rem;">Ведущий → Ведомый</h2>
-                <p>Не как «кто главнее», а как <strong>функция внутри системы</strong>.</p>
-
-                <div class="placeholder">
-                    <div class="placeholder-icon">🎭</div>
-                    <h3>Раздел в разработке</h3>
-                    <p>Здесь появятся: интерактивная карта типов связей, примеры, архитектура отношений.</p>
+                <div class="notice" style="margin-bottom: 2rem;">
+                    <div class="notice-title">Это авторская модель</div>
+                    <p>
+                        Всё, что вы прочитаете ниже — <strong>наблюдения и гипотезы</strong>, а не диагноз.
+                        Проверяйте на своей жизни. Сравнивайте. Делайте выводы.
+                    </p>
                 </div>
 
-                <div style="margin-top: 2.5rem;">
-                    <a href="#" class="btn btn-secondary" data-page="home">На главную</a>
+                <!-- ═══════ РОДИТЕЛЬСКИЙ ПОТОК ═══════ -->
+                <h2 style="margin-top: 3rem;">Родительский поток</h2>
+                <p>
+                    <strong>Первый механизм.</strong> Пары создаются не только по взаимному притяжению. Часто — по <strong>недополученному</strong> в детстве.
+                </p>
+                <p>
+                    Один восполняет то, чего не дала мать. Другой — то, что не дал отец.
+                </p>
+                <p>
+                    Но <strong>«родительское место»</strong> — не всегда родитель. На него может встать любой человек: начальник, бабушка, подруга, друг.
+                </p>
+
+                <h3 style="margin-top: 1.5rem;">Кто может встать на «родительское место»</h3>
+                <ul class="rules-list">
+                    <li><strong>Начальник</strong> — если не хватило отца (структура, авторитет)</li>
+                    <li><strong>Бабушка</strong> — если не хватило матери (тепло, забота)</li>
+                    <li><strong>Подруга-одноэлементница</strong> — если не хватило сестры (отражение, «ровня»)</li>
+                    <li><strong>Друг-одноэлементник</strong> — если не хватило брата (отражение, «ровня»)</li>
+                </ul>
+
+                <p style="margin-top: 1rem;">
+                    Обратите внимание: <strong>«сестринское» и «братское» место</strong> — особое. Там ищут не дополнение, а <strong>отражение</strong>. Не того, кто «закроет пустоту» другим элементом, а того, кто такой же — «ровня», «свой».
+                </p>
+
+                <p>
+                    Мы <strong>интуитивно</strong> — энергетически — притягиваем недостающие элементы для гармонизации своих энергоструктур.
+                    Не «случайно встретились». А <strong>притянулись</strong> — потому что нужны друг другу.
+                </p>
+
+                <h3 style="margin-top: 1.5rem;">Как проявляется в паре</h3>
+                <ul class="rules-list">
+                    <li>Один играет роль <strong>«матери»</strong> — заботится, утешает, «спасает»</li>
+                    <li>Другой играет роль <strong>«отца»</strong> — защищает, решает, «ведёт»</li>
+                    <li>Оба <strong>заполняют пустоты</strong> друг друга</li>
+                </ul>
+
+                <h3 style="margin-top: 1.5rem;">Сильная и слабая стороны</h3>
+                <ul class="rules-list">
+                    <li><strong>Сильная:</strong> глубокое притяжение — не только по элементам, но и по боли. Пары держатся, даже когда логика говорит «разойтись»</li>
+                    <li><strong>Слабая:</strong> без осознания — повторение цикла. Один выгорает, второй остаётся «ребёнком». Дети получают тот же сценарий</li>
+                </ul>
+
+                <p style="margin-top: 1.5rem; padding: 1.25rem; background: var(--bg-alt); border-radius: var(--radius); font-size: 0.9375rem;">
+                    <strong>Как проверить:</strong> задумайтесь — что вы даёте партнёру из того, что не получили от родителей?
+                    И что он даёт вам?
+                </p>
+
+                <!-- ═══════ ПОТОК РАЗВИТИЯ ═══════ -->
+                <h2 style="margin-top: 3rem;">Поток развития</h2>
+                <p>
+                    <strong>Второй механизм.</strong> Не «закрыть пустоту», а <strong>расти</strong>.
+                </p>
+                <p>
+                    Если человек ищет, чему научиться — или кого научить — он сталкивается с <strong>противоположностью</strong>.
+                </p>
+
+                <h3 style="margin-top: 1.5rem;">Действие → противодействие</h3>
+                <p>
+                    В системе У-Син противоположные элементы работают по принципу <strong>действие → противодействие</strong>.
+                </p>
+                <p>
+                    Это не «равное взаимодействие». Это — <strong>асимметрия</strong>.
+                </p>
+
+                <div style="display: grid; gap: 1rem; margin: 1.5rem 0;">
+
+                    <div class="card" style="border-left: 3px solid var(--accent);">
+                        <p style="font-weight: 600; margin-bottom: 0.5rem;">Пример 1. Вода → Огонь</p>
+                        <p style="font-size: 0.9375rem; margin-bottom: 0.5rem;">
+                            <strong>Вода способна погасить Огонь.</strong>
+                            Но Огонь <strong>не может уничтожить Воду</strong> — она просто переходит в другое состояние (пар, газ).
+                            А когда остынет — вернётся.
+                        </p>
+                        <p style="font-size: 0.875rem; color: var(--text-muted); margin: 0;">
+                            Мало воды — сухое не горит.<br>
+                            Оптимум — вода стимулирует горение (угольная пыль).<br>
+                            Много — огонь гаснет.
+                        </p>
+                    </div>
+
+                    <div class="card" style="border-left: 3px solid var(--accent);">
+                        <p style="font-weight: 600; margin-bottom: 0.5rem;">Пример 2. Металл → Дерево</p>
+                        <p style="font-size: 0.9375rem; margin-bottom: 0.5rem;">
+                            <strong>Металл способен обработать или разрубить Дерево.</strong>
+                            Но Дерево <strong>не может уничтожить Металл</strong> — только затупить.
+                        </p>
+                        <p style="font-size: 0.875rem; color: var(--text-muted); margin: 0;">
+                            Мало — не формирует.<br>
+                            Оптимум — обрабатывает (Мастер, Папа Карло).<br>
+                            Много — рубит (Дровосек).
+                        </p>
+                    </div>
+
+                </div>
+
+                <p style="margin-top: 1rem;">
+                    <strong>Остальные пары</strong> работают по тому же принципу. Возьмите схему У-Син — и попробуйте увидеть сами.
+                </p>
+
+                <h3 style="margin-top: 1.5rem;">Аналогия: Учитель → Ученик</h3>
+                <p>
+                    То же самое — в отношениях учителя и ученика.
+                </p>
+                <p>
+                    <strong>Плохой учитель</strong> способен уничтожить всякий интерес ученика к учёбе.
+                    <strong>Хороший</strong> — стимулирует и оттачивает интерес.
+                </p>
+                <p>
+                    Но <strong>ученик не способен сломать учителя</strong>. Направление действия — фиксировано.
+                </p>
+
+                <p style="margin-top: 1.5rem; padding: 1.25rem; background: var(--bg-alt); border-radius: var(--radius); font-size: 0.9375rem;">
+                    <strong>Как проверить:</strong> чему вас научил партнёр? А чему вы научили его?
+                    И что вы с ним делаете — рубите или обрабатываете?
+                </p>
+
+                <!-- ═══════ 5 ТИПОВ СВЯЗЕЙ ═══════ -->
+                <h2 style="margin-top: 3rem;">Пять типов связей</h2>
+                <p style="color: var(--text-muted); font-size: 0.9375rem; margin-bottom: 1.5rem;">
+                    Нажмите на тип, чтобы раскрыть описание.
+                </p>
+
+                <div class="wuxing-accordion">
+
+                    <!-- Питание -->
+                    <div class="wuxing-item">
+                        <button class="wuxing-header" type="button" aria-expanded="false">
+                            <span class="wuxing-icon">🍃</span>
+                            <span class="wuxing-title">Питание</span>
+                            <span class="wuxing-arrow" aria-hidden="true">▾</span>
+                        </button>
+                        <div class="wuxing-body">
+                            <p><strong>Суть:</strong> один элемент поддерживает другой. По кругу У-Син: Вода → Дерево → Огонь → Земля → Металл → Вода.</p>
+                            <p><strong>Как проявляется в паре:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li>Один даёт ресурс — второй растёт благодаря этому</li>
+                                <li>Один вдохновляет — второй действует</li>
+                                <li>Один успокаивает — второй восстанавливается</li>
+                            </ul>
+                            <p style="margin-top: 0.75rem;"><strong>Сильная сторона:</strong> крепкий тыл. Естественный энергообмен.</p>
+                            <p><strong>Слабая сторона:</strong> может перерасти в «спасательство». Питающий истощается, если не получает отдачи.</p>
+                            <p style="margin-top: 0.75rem; font-size: 0.875rem; color: var(--text-muted);">
+                                <strong>Как проверить:</strong> после общения с этим человеком — вы чувствуете себя лучше или хуже?
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Синтез -->
+                    <div class="wuxing-item">
+                        <button class="wuxing-header" type="button" aria-expanded="false">
+                            <span class="wuxing-icon">🎨</span>
+                            <span class="wuxing-title">Синтез</span>
+                            <span class="wuxing-arrow" aria-hidden="true">▾</span>
+                        </button>
+                        <div class="wuxing-body">
+                            <p><strong>Суть:</strong> два элемента создают третье — общее дело, семью, проект.</p>
+                            <p><strong>Как проявляется в паре:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li>Вместе создают то, чего не могли бы по отдельности</li>
+                                <li>Общий проект — бизнес, дом, дети</li>
+                                <li>Сотворчество</li>
+                            </ul>
+                            <p style="margin-top: 0.75rem;"><strong>Сильная сторона:</strong> общая миссия держит пару. Каждый раскрывается через другого.</p>
+                            <p><strong>Слабая сторона:</strong> если проект заканчивается — связь слабеет. Растворение личного в общем.</p>
+                            <p style="margin-top: 0.75rem; font-size: 0.875rem; color: var(--text-muted);">
+                                <strong>Как проверить:</strong> есть ли у вас общее дело, которое важно обоим?
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Равенство -->
+                    <div class="wuxing-item">
+                        <button class="wuxing-header" type="button" aria-expanded="false">
+                            <span class="wuxing-icon">⚖️</span>
+                            <span class="wuxing-title">Равенство</span>
+                            <span class="wuxing-arrow" aria-hidden="true">▾</span>
+                        </button>
+                        <div class="wuxing-body">
+                            <p><strong>Суть:</strong> два однотипных элемента — усиливают друг друга или конкурируют.</p>
+                            <p><strong>Как проявляется в паре:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li>Похожие люди понимают друг друга с полуслова</li>
+                                <li>Или — соревнуются за одно и то же место</li>
+                                <li>«Два капитана»</li>
+                            </ul>
+                            <p style="margin-top: 0.75rem;"><strong>Сильная сторона:</strong> ментальный синтез. Легко друг с другом.</p>
+                            <p><strong>Слабая сторона:</strong> конкуренция. Нет комплементарности — оба хотят одного.</p>
+                            <p style="margin-top: 0.75rem; font-size: 0.875rem; color: var(--text-muted);">
+                                <strong>Как проверить:</strong> вы дополняете друг друга или боретесь за одну роль?
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Поток -->
+                    <div class="wuxing-item">
+                        <button class="wuxing-header" type="button" aria-expanded="false">
+                            <span class="wuxing-icon">🌊</span>
+                            <span class="wuxing-title">Поток</span>
+                            <span class="wuxing-arrow" aria-hidden="true">▾</span>
+                        </button>
+                        <div class="wuxing-body">
+                            <p><strong>Суть:</strong> один задаёт направление, другой реализует.</p>
+                            <p><strong>Как проявляется в паре:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li>Один видит цель — второй находит путь</li>
+                                <li>Один вдохновляет — второй воплощает</li>
+                                <li>Разные роли — но одна цель</li>
+                            </ul>
+                            <p style="margin-top: 0.75rem;"><strong>Сильная сторона:</strong> эффективность. Каждый на своём месте.</p>
+                            <p><strong>Слабая сторона:</strong> застой, если роли застыли. Ведомый теряет себя.</p>
+                            <p style="margin-top: 0.75rem; font-size: 0.875rem; color: var(--text-muted);">
+                                <strong>Как проверить:</strong> вы знаете, кто в паре ведёт, а кто реализует — и обоих это устраивает?
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Напряжение -->
+                    <div class="wuxing-item">
+                        <button class="wuxing-header" type="button" aria-expanded="false">
+                            <span class="wuxing-icon">⚡</span>
+                            <span class="wuxing-title">Напряжение</span>
+                            <span class="wuxing-arrow" aria-hidden="true">▾</span>
+                        </button>
+                        <div class="wuxing-body">
+                            <p><strong>Суть:</strong> элементы несогласованы — создают конфликт. По У-Син: сдерживание.</p>
+                            <p><strong>Как проявляется в паре:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li>Конфликты по одному и тому же поводу</li>
+                                <li>Непонимание с полуслова</li>
+                                <li>Ощущение «мы разные»</li>
+                            </ul>
+                            <p style="margin-top: 0.75rem;"><strong>Сильная сторона:</strong> стимул к росту — через конфликт можно увидеть себя. Страсть, если напряжения много (но не переходит в разрушение).</p>
+                            <p><strong>Слабая сторона:</strong> истощение обоих. Разрушение без работы над собой.</p>
+                            <p style="margin-top: 0.75rem; font-size: 0.875rem; color: var(--text-muted);">
+                                <strong>Как проверить:</strong> конфликты разрешаются — или повторяются по кругу?
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- ═══════ ВЕДУЩИЙ → ВЕДОМЫЙ ═══════ -->
+                <h2 style="margin-top: 3rem;">Ведущий → Ведомый</h2>
+                <p>
+                    <strong>Не «кто главнее»</strong> — а <strong>функция внутри системы</strong>.
+                </p>
+
+                <div style="display: grid; gap: 1rem; margin: 1.5rem 0;">
+                    <div class="card">
+                        <p style="font-weight: 600; margin-bottom: 0.5rem;">Ведущий</p>
+                        <p style="font-size: 0.9375rem; margin: 0;">Формирует глобальную траекторию, берёт ответственность за смыслы и стратегический вектор пары.</p>
+                    </div>
+                    <div class="card">
+                        <p style="font-weight: 600; margin-bottom: 0.5rem;">Ведомый</p>
+                        <p style="font-size: 0.9375rem; margin: 0;">Трансформирует идеи Ведущего в материальное русло, питает союз своей устойчивой энергией.</p>
+                    </div>
+                </div>
+
+                <p>
+                    Это не иерархия. Это <strong>распределение ролей</strong>. В здоровой паре они <strong>могут меняться</strong> — в зависимости от сферы.
+                </p>
+
+                <!-- ═══════ ФИНАЛЬНЫЙ NOTICE ═══════ -->
+                <div class="notice" style="margin-top: 3rem;">
+                    <div class="notice-title">Это авторская модель</div>
+                    <p>
+                        «Карта отношений» — авторская интерпретационная система. Она не является диагностикой, медицинским заключением или окончательной характеристикой.
+                    </p>
+                    <p>
+                        Используйте её как способ посмотреть на привычные отношения под другим углом.
+                    </p>
+                    <p style="font-weight: 600; color: var(--accent-dark);">
+                        Не верить. Наблюдать. Сравнивать. Проверять.
+                    </p>
+                </div>
+
+                <div style="margin-top: 2.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <a href="#" class="btn btn-primary" data-page="three-checks">Проверить через правило трёх</a>
+                    <a href="#" class="btn btn-secondary" data-page="wuxing">← К У-Син</a>
                 </div>
             </div>
         </div>
@@ -1800,14 +2373,169 @@
                 </p>
 
                 <p>
-                    В этой системе пять элементов используются как способ описать взаимодействия между людьми. Мы не рассказываем сначала историю китайской философии — мы сразу переходим к делу.
+                    <strong>У-Син — это не философия. Это язык описания взаимодействий.</strong>
+                </p>
+                <p>
+                    Пять элементов — не «типы людей». Это способы описать, <strong>как взаимодействуют энергии</strong> в паре. У каждого элемента — свой характер, свой ритм, свой способ реагировать на другого.
+                </p>
+                <p style="margin-bottom: 2rem;">
+                    Мы не рассказываем историю китайской философии. Мы сразу переходим к делу: как эти элементы проявляются в отношениях и как их проверить на собственной паре.
                 </p>
 
-                <div class="placeholder">
-                    <div class="placeholder-icon">🔄</div>
-                    <h3>Раздел в разработке</h3>
-                    <p>Здесь появится интерактивная схема пяти элементов с карточками: Дерево, Огонь, Земля, Металл, Вода.</p>
+                <!-- Схема -->
+                                <div style="margin: 2.5rem auto; text-align: center; max-width: 560px;">
+                    <div style="background: var(--bg-alt); border: 1px dashed var(--border); border-radius: var(--radius-lg); padding: 3rem 1.5rem; color: var(--text-muted);">
+                        <div style="font-size: 2.5rem; margin-bottom: 0.5rem; opacity: 0.5;">🔄</div>
+                        <p style="font-size: 0.875rem; margin: 0;">Схема связей пяти элементов</p>
+                    </div>
                 </div>
+
+                <!-- Текст под схемой -->
+                <p><strong>Три типа связей</strong> между элементами:</p>
+                <ul class="rules-list">
+                    <li><strong>Питание, дополнение</strong> — один элемент поддерживает другой. По кругу: Дерево → Огонь → Земля → Металл → Вода → Дерево.</li>
+                    <li><strong>Поток</strong> — движение энергии в паре: один задаёт направление, другой реализует.</li>
+                    <li><strong>Сдержание</strong> — элемент через один сдерживает рост другого: Дерево → Земля, Земля → Вода, Вода → Огонь, Огонь → Металл, Металл → Дерево.</li>
+                </ul>
+
+                <p style="margin-bottom: 2rem;">
+                    Эти три типа — <strong>основа для понимания сценариев</strong> в паре.
+                </p>
+
+                <!-- Карточки элементов — аккордеон -->
+                <h2 style="margin-top: 3rem;">Пять элементов</h2>
+                <p style="color: var(--text-muted); font-size: 0.9375rem; margin-bottom: 1.5rem;">
+                    Нажмите на элемент, чтобы раскрыть описание.
+                </p>
+
+                <div class="wuxing-accordion">
+
+                    <!-- Дерево -->
+                    <div class="wuxing-item">
+                        <button class="wuxing-header" type="button" aria-expanded="false">
+                            <span class="wuxing-icon">🌳</span>
+                            <span class="wuxing-title">Дерево</span>
+                            <span class="wuxing-codes">4 · 5</span>
+                            <span class="wuxing-arrow" aria-hidden="true">▾</span>
+                        </button>
+                        <div class="wuxing-body">
+                            <p><strong>Суть:</strong> рост, развитие, напор.</p>
+                            <p><strong>В отношениях:</strong> инициирует, строит планы, но может давить.</p>
+                        </div>
+                    </div>
+
+                    <!-- Огонь -->
+                    <div class="wuxing-item">
+                        <button class="wuxing-header" type="button" aria-expanded="false">
+                            <span class="wuxing-icon">🔥</span>
+                            <span class="wuxing-title">Огонь</span>
+                            <span class="wuxing-codes">6 · 7</span>
+                            <span class="wuxing-arrow" aria-hidden="true">▾</span>
+                        </button>
+                        <div class="wuxing-body">
+                            <p><strong>Суть:</strong> страсть, вдохновение, тепло.</p>
+                            <p><strong>В отношениях:</strong> зажигает, но требует постоянного внимания и отклика.</p>
+                        </div>
+                    </div>
+
+                    <!-- Земля -->
+                    <div class="wuxing-item">
+                        <button class="wuxing-header" type="button" aria-expanded="false">
+                            <span class="wuxing-icon">🪨</span>
+                            <span class="wuxing-title">Земля</span>
+                            <span class="wuxing-codes">8 · 9</span>
+                            <span class="wuxing-arrow" aria-hidden="true">▾</span>
+                        </button>
+                        <div class="wuxing-body">
+                            <p><strong>Суть:</strong> устойчивость, забота, стабильность.</p>
+                            <p><strong>В отношениях:</strong> удерживает, обустраивает, но может «заземлить» порывы другого.</p>
+                        </div>
+                    </div>
+
+                    <!-- Металл -->
+                    <div class="wuxing-item">
+                        <button class="wuxing-header" type="button" aria-expanded="false">
+                            <span class="wuxing-icon">⚪</span>
+                            <span class="wuxing-title">Металл</span>
+                            <span class="wuxing-codes">0 · 1</span>
+                            <span class="wuxing-arrow" aria-hidden="true">▾</span>
+                        </button>
+                        <div class="wuxing-body">
+                            <p><strong>Суть:</strong> структура, ясность, точность.</p>
+                            <p><strong>В отношениях:</strong> задаёт правила, держит форму, но может быть холодным и жёстким.</p>
+                        </div>
+                    </div>
+
+                    <!-- Вода -->
+                    <div class="wuxing-item">
+                        <button class="wuxing-header" type="button" aria-expanded="false">
+                            <span class="wuxing-icon">💧</span>
+                            <span class="wuxing-title">Вода</span>
+                            <span class="wuxing-codes">2 · 3</span>
+                            <span class="wuxing-arrow" aria-hidden="true">▾</span>
+                        </button>
+                        <div class="wuxing-body">
+                            <p><strong>Суть:</strong> глубина, чувствительность, текучесть.</p>
+                            <p><strong>В отношениях:</strong> слышит тонко, адаптируется, но может «утекать» в себя.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Календарь -->
+                <h2 style="margin-top: 3rem;">Как определить свой элемент</h2>
+                <p>
+                    Возьмите <strong>последнюю цифру года рождения</strong> — это ваш код.
+                </p>
+
+                <div style="overflow-x: auto; margin: 1.5rem 0;">
+                    <table class="glossary-table">
+                        <thead>
+                            <tr>
+                                <th>Код</th>
+                                <th>Элемент</th>
+                                <th>Полярность</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>0</td><td>Металл</td><td>Ян</td></tr>
+                            <tr><td>1</td><td>Металл</td><td>Инь</td></tr>
+                            <tr><td>2</td><td>Вода</td><td>Ян</td></tr>
+                            <tr><td>3</td><td>Вода</td><td>Инь</td></tr>
+                            <tr><td>4</td><td>Дерево</td><td>Ян</td></tr>
+                            <tr><td>5</td><td>Дерево</td><td>Инь</td></tr>
+                            <tr><td>6</td><td>Огонь</td><td>Ян</td></tr>
+                            <tr><td>7</td><td>Огонь</td><td>Инь</td></tr>
+                            <tr><td>8</td><td>Земля</td><td>Ян</td></tr>
+                            <tr><td>9</td><td>Земля</td><td>Инь</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p style="margin-bottom: 2rem;">
+                    <strong>Дальше — самостоятельное исследование.</strong>
+                    Сравните свой код с кодом партнёра. Посмотрите на схему. Проверьте на реальных ситуациях.
+                </p>
+
+                <div class="notice">
+                    <div class="notice-title">Это не диагностика</div>
+                    <p>
+                        У-Син — авторская интерпретационная модель. Она не «определяет» вашу судьбу и не заменяет консультацию специалиста.
+                        Используйте её как способ посмотреть на привычные отношения под другим углом.
+                    </p>
+                    <p>
+                        <strong>Не верить. Наблюдать. Сравнивать. Проверять.</strong>
+                    </p>
+                </div>
+
+                <div style="margin-top: 2.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <a href="#" class="btn btn-primary" data-page="three-checks">Проверить через правило трёх</a>
+                    <a href="#" class="btn btn-secondary" data-page="home">На главную</a>
+                </div>
+            </div>
+        </div>
+                </div>
+
 
                 <div style="margin-top: 2.5rem;">
                     <a href="#" class="btn btn-secondary" data-page="home">На главную</a>
@@ -1858,22 +2586,22 @@
                         <div class="tool-item-left">
                             <div class="tool-item-icon">♀</div>
                             <div>
-                                <div class="tool-item-title">Исходный код — Женский</div>
+                                <div class="tool-item-title">Для женщин</div>
                                 <div class="tool-item-desc">Авторская типология. Не диагностика личности</div>
                             </div>
                         </div>
-                        <span class="tool-item-badge">Скоро</span>
+                        <span class="tool-item-badge">Новое</span>
                     </a>
 
                     <a href="#" class="tool-item" data-page="tool-male">
                         <div class="tool-item-left">
                             <div class="tool-item-icon">♂</div>
                             <div>
-                                <div class="tool-item-title">Исходный код — Мужской</div>
+                                <div class="tool-item-title">Код мужской</div>
                                 <div class="tool-item-desc">Авторская типология. Не диагностика личности</div>
                             </div>
                         </div>
-                        <span class="tool-item-badge">Скоро</span>
+                        <span class="tool-item-badge">Новое</span>
                     </a>
 
                     <a href="#" class="tool-item" data-page="tool-observer">
@@ -1884,8 +2612,16 @@
                                 <div class="tool-item-desc">Попробуйте описать ситуацию без оценочных слов</div>
                             </div>
                         </div>
-                        <span class="tool-item-badge">Скоро</span>
-                    </a>
+                       <a href="#" class="tool-item" data-page="compatibility">
+    <div class="tool-item-left">
+        <div class="tool-item-icon">💞</div>
+        <div>
+            <div class="tool-item-title">Совместимость пары</div>
+            <div class="tool-item-desc">Посмотрите на вашу пару через У-Син</div>
+        </div>
+    </div>
+    <span class="tool-item-badge new">Новое</span>
+</a>
 
                     <a href="#" class="tool-item" data-page="tool-state-lab">
                         <div class="tool-item-left">
@@ -1895,7 +2631,7 @@
                                 <div class="tool-item-desc">Пульт управления состоянием: измерь → выбери → сделай → сравни</div>
                             </div>
                         </div>
-                        <span class="tool-item-badge new">В разработке</span>
+                        <span class="tool-item-badge new">Новое</span>
                     </a>
                 </div>
 
@@ -2293,6 +3029,9 @@
             </div>
         </div>
 
+                <!-- ═══════════════════════════════════════ -->
+        <!-- ДЛЯ ЖЕНЩИН -->
+        <!-- ═══════════════════════════════════════ -->
         <div class="page" id="page-tool-female">
             <div class="container-narrow">
                 <div class="breadcrumbs">
@@ -2300,23 +3039,757 @@
                     <span>/</span>
                     <a href="#" data-page="tools">Инструменты</a>
                     <span>/</span>
-                    Исходный код — Женский
+                    Для женщин
                 </div>
-                <h1>Исходный код — Женский</h1>
-                <p style="font-size: 0.9375rem; color: var(--accent-dark); font-weight: 500; margin-bottom: 1rem;">
+
+                <h1>Для женщин</h1>
+                <p style="font-size: 1.125rem; color: var(--text-muted); margin-bottom: 2rem;">
                     Авторская типология. Не диагностика личности.
                 </p>
-                <div class="placeholder">
-                    <div class="placeholder-icon">♀</div>
-                    <h3>Инструмент в разработке</h3>
-                    <p>Здесь появятся: код наблюдения, «Как сделать так, чтобы он меня понял», практики.</p>
+
+                <p>
+                    Эта страница — для тех, кто:
+                </p>
+                <ul class="rules-list">
+                    <li>хочет <strong>понять</strong>, почему в отношениях повторяется одно и то же</li>
+                    <li>устал(а) от <strong>общих советов</strong> — и хочет <strong>конкретный инструмент</strong></li>
+                    <li>готова <strong>наблюдать, а не верить</strong> — и <strong>проверять на своей жизни</strong></li>
+                </ul>
+
+                <p style="margin-bottom: 2rem;">
+                    Мы не обещаем «правильных ответов». Мы предлагаем <strong>более точные вопросы</strong>.
+                </p>
+
+                <div class="notice" style="margin-bottom: 2rem;">
+                    <div class="notice-title">Локальное хранение</div>
+                    <p>
+                        Эта страница <strong>ничего не сохраняет</strong>. Все инструменты — только для наблюдения.
+                        Если хотите сохранить свои выводы — используйте <strong>Правило трёх подтверждений</strong>.
+                    </p>
                 </div>
-                <div style="margin-top: 2.5rem;">
+
+                <!-- ═══════ КОД НАБЛЮДЕНИЯ ═══════ -->
+                <h2 style="margin-top: 3rem;">Код наблюдения</h2>
+                <p>
+                    Возьмите <strong>последнюю цифру года рождения</strong> — это ваш код.
+                    Потом — найдите свою карточку ниже.
+                </p>
+
+                <div style="overflow-x: auto; margin: 1.5rem 0;">
+                    <table class="glossary-table">
+                        <thead>
+                            <tr>
+                                <th>Код</th>
+                                <th>Элемент</th>
+                                <th>Полярность</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>0</td><td>Металл</td><td>Ян</td></tr>
+                            <tr><td>1</td><td>Металл</td><td>Инь</td></tr>
+                            <tr><td>2</td><td>Вода</td><td>Ян</td></tr>
+                            <tr><td>3</td><td>Вода</td><td>Инь</td></tr>
+                            <tr><td>4</td><td>Дерево</td><td>Ян</td></tr>
+                            <tr><td>5</td><td>Дерево</td><td>Инь</td></tr>
+                            <tr><td>6</td><td>Огонь</td><td>Ян</td></tr>
+                            <tr><td>7</td><td>Огонь</td><td>Инь</td></tr>
+                            <tr><td>8</td><td>Земля</td><td>Ян</td></tr>
+                            <tr><td>9</td><td>Земля</td><td>Инь</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- ═══════ 10 ПРОФИЛЕЙ ═══════ -->
+                <h2 style="margin-top: 3rem;">Ваш профиль</h2>
+                <p style="color: var(--text-muted); font-size: 0.9375rem; margin-bottom: 1.5rem;">
+                    Нажмите на свой код, чтобы раскрыть описание.
+                </p>
+
+                <div class="wuxing-accordion">
+
+                    <!-- КОД 0 -->
+                    <div class="wuxing-item">
+                        <button class="wuxing-header" type="button" aria-expanded="false">
+                            <span class="wuxing-icon">⚪</span>
+                            <span class="wuxing-title">Код 0 — Ян-Металл</span>
+                            <span class="wuxing-arrow" aria-hidden="true">▾</span>
+                        </button>
+                        <div class="wuxing-body">
+                            <p><strong>Суть:</strong> структура, ясность, статус.</p>
+                            <p><strong>В отношениях:</strong> держит форму, задаёт правила, но может быть холодной.</p>
+
+                            <h4 style="margin-top: 1rem;">Цветовая аптечка</h4>
+                            <ul class="rules-list" style="margin-top: 0.5rem;">
+                                <li>💧 <strong>Даёт энергию:</strong> Земля — песочный, крем</li>
+                                <li>⚪ <strong>Статус:</strong> Металл — серый, белый, платина</li>
+                                <li>🔥 <strong>Снимает напряжение:</strong> Вода — синий, чёрный</li>
+                                <li>⚡ <strong>Бодрит:</strong> Огонь — красный, бордо</li>
+                            </ul>
+
+                            <h4 style="margin-top: 1rem;">Баланс Ян и Инь</h4>
+                            <p><strong>⚠️ Маркеры контроля Ян:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li>Требуете точности, чёткости, «правильности»</li>
+                                <li>Холодность, если что-то не соответствует стандартам</li>
+                                <li>Ощущение: «Он недостаточно старается»</li>
+                            </ul>
+                            <p style="margin-top: 0.75rem;"><strong>🔄 Что усиливает Инь:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li>Мягкие ткани (шёлк, бархат), плавные силуэты</li>
+                                <li>Синий, чёрный, индиго (Вода — снятие напряжения)</li>
+                                <li>Снизьте планку: «Достаточно хорошо — уже хорошо»</li>
+                            </ul>
+                            <p style="margin-top: 0.75rem;"><strong>💫 Что это даёт в паре:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li><strong>С Янским мужчиной:</strong> перестаёте соревноваться в статусе</li>
+                                <li><strong>С Иньским мужчиной:</strong> он видит в вас женщину, а не руководителя</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- КОД 1 -->
+                    <div class="wuxing-item">
+                        <button class="wuxing-header" type="button" aria-expanded="false">
+                            <span class="wuxing-icon">⚪</span>
+                            <span class="wuxing-title">Код 1 — Инь-Металл</span>
+                            <span class="wuxing-arrow" aria-hidden="true">▾</span>
+                        </button>
+                        <div class="wuxing-body">
+                            <p><strong>Суть:</strong> изящество, утончённость, чувство формы.</p>
+                            <p><strong>В отношениях:</strong> требует чистоты, но может уйти в холод.</p>
+
+                            <h4 style="margin-top: 1rem;">Цветовая аптечка</h4>
+                            <ul class="rules-list" style="margin-top: 0.5rem;">
+                                <li>💧 <strong>Даёт энергию:</strong> Земля — песочный, крем</li>
+                                <li>⚪ <strong>Статус:</strong> Металл — белый, платиновый, серебристый</li>
+                                <li>🔥 <strong>Снимает напряжение:</strong> Вода — синий, чёрный</li>
+                                <li>⚡ <strong>Бодрит:</strong> Огонь — красный, бордо</li>
+                            </ul>
+
+                            <h4 style="margin-top: 1rem;">Баланс Ян и Инь</h4>
+                            <p>✅ Ваша сила — в Инь. Но проверьте: не «замерзаете» ли вы?</p>
+                            <p style="margin-top: 0.75rem;"><strong>⚠️ Маркеры чрезмерного Инь:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li>Холодное молчание в ответ на боль</li>
+                                <li>Отстранённость, «дистанция»</li>
+                                <li>Ощущение: «Мне никто не нужен»</li>
+                            </ul>
+                            <p style="margin-top: 0.75rem;"><strong>🔄 Что поддерживает баланс:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li>Мягкие, тёплые оттенки (Огонь — снятие напряжения)</li>
+                                <li>Тепло физическое: обнимать, прикасаться</li>
+                                <li>Проговорите вслух то, что чувствуете</li>
+                            </ul>
+                            <p style="margin-top: 0.75rem;"><strong>💫 Что это даёт в паре:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li><strong>С Янским мужчиной:</strong> ваша холодность перестаёт его отталкивать</li>
+                                <li><strong>С Иньским мужчиной:</strong> вы даёте ему понять, что он вам нужен</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- КОД 2 -->
+                    <div class="wuxing-item">
+                        <button class="wuxing-header" type="button" aria-expanded="false">
+                            <span class="wuxing-icon">💧</span>
+                            <span class="wuxing-title">Код 2 — Ян-Вода</span>
+                            <span class="wuxing-arrow" aria-hidden="true">▾</span>
+                        </button>
+                        <div class="wuxing-body">
+                            <p><strong>Суть:</strong> глубина, первопроходство, интуиция.</p>
+                            <p><strong>В отношениях:</strong> чувствует скрытое, ведёт, но может «замораживать».</p>
+
+                            <h4 style="margin-top: 1rem;">Цветовая аптечка</h4>
+                            <ul class="rules-list" style="margin-top: 0.5rem;">
+                                <li>💧 <strong>Даёт энергию:</strong> Металл — серебряный, белый</li>
+                                <li>💧 <strong>Статус:</strong> Вода — синий, индиго, чёрный</li>
+                                <li>🔥 <strong>Снимает напряжение:</strong> Дерево — зелёный, изумруд</li>
+                                <li>⚡ <strong>Бодрит:</strong> Земля — бежевый, коричневый</li>
+                            </ul>
+
+                            <h4 style="margin-top: 1rem;">Баланс Ян и Инь</h4>
+                            <p><strong>⚠️ Маркеры контроля Ян:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li>Скрываете эмоции, «замораживаете» чувства</li>
+                                <li>Прячете уязвимость за силой</li>
+                                <li>Ощущение: «Я справлюсь одна»</li>
+                            </ul>
+                            <p style="margin-top: 0.75rem;"><strong>🔄 Что усиливает Инь:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li>Мягкие струящиеся ткани (шифон, атлас)</li>
+                                <li>Зелёный, изумруд (Дерево — снятие напряжения)</li>
+                                <li>Разрешите себе не знать ответа — просто быть</li>
+                            </ul>
+                            <p style="margin-top: 0.75rem;"><strong>💫 Что это даёт в паре:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li><strong>С Янским мужчиной:</strong> он не чувствует конкуренции — открывается</li>
+                                <li><strong>С Иньским мужчиной:</strong> он чувствует вашу глубину, доверяет</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- КОД 3 -->
+                    <div class="wuxing-item">
+                        <button class="wuxing-header" type="button" aria-expanded="false">
+                            <span class="wuxing-icon">💧</span>
+                            <span class="wuxing-title">Код 3 — Инь-Вода</span>
+                            <span class="wuxing-arrow" aria-hidden="true">▾</span>
+                        </button>
+                        <div class="wuxing-body">
+                            <p><strong>Суть:</strong> чувствительность, адаптация, глубина.</p>
+                            <p><strong>В отношениях:</strong> слышит тонко, но может «утекать» в себя.</p>
+
+                            <h4 style="margin-top: 1rem;">Цветовая аптечка</h4>
+                            <ul class="rules-list" style="margin-top: 0.5rem;">
+                                <li>💧 <strong>Даёт энергию:</strong> Металл — серебряный, белый</li>
+                                <li>💧 <strong>Статус:</strong> Вода — морской, лазурный, бирюза</li>
+                                <li>🔥 <strong>Снимает напряжение:</strong> Дерево — зелёный, изумруд</li>
+                                <li>⚡ <strong>Бодрит:</strong> Земля — бежевый, коричневый</li>
+                            </ul>
+
+                            <h4 style="margin-top: 1rem;">Баланс Ян и Инь</h4>
+                            <p>✅ Ваша сила — в Инь. Но проверьте: не «растворяетесь» ли вы?</p>
+                            <p style="margin-top: 0.75rem;"><strong>⚠️ Маркеры чрезмерного Инь:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li>Уходите в себя, когда больно</li>
+                                <li>Не говорите о своих желаниях</li>
+                                <li>Ощущение: «Он сам должен догадаться»</li>
+                            </ul>
+                            <p style="margin-top: 0.75rem;"><strong>🔄 Что поддерживает баланс:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li>Прямые, конкретные формулировки</li>
+                                <li>«Мне нужно вот это» — без намёков</li>
+                                <li>Мягкая физическая активность (движение, вода, прогулки)</li>
+                            </ul>
+                            <p style="margin-top: 0.75rem;"><strong>💫 Что это даёт в паре:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li><strong>С Янским мужчиной:</strong> он понимает вас — без угадывания</li>
+                                <li><strong>С Иньским мужчиной:</strong> вы не тянете его наверх, а идёте рядом</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- КОД 4 -->
+                    <div class="wuxing-item">
+                        <button class="wuxing-header" type="button" aria-expanded="false">
+                            <span class="wuxing-icon">🌳</span>
+                            <span class="wuxing-title">Код 4 — Ян-Дерево</span>
+                            <span class="wuxing-arrow" aria-hidden="true">▾</span>
+                        </button>
+                        <div class="wuxing-body">
+                            <p><strong>Суть:</strong> напор, инициатива, движение вперёд.</p>
+                            <p><strong>В отношениях:</strong> ведёт, строит планы, но может задавливать.</p>
+
+                            <h4 style="margin-top: 1rem;">Цветовая аптечка</h4>
+                            <ul class="rules-list" style="margin-top: 0.5rem;">
+                                <li>💧 <strong>Даёт энергию:</strong> Вода — синий, индиго, лазурный</li>
+                                <li>🌳 <strong>Статус:</strong> Дерево — изумруд, олива, хаки</li>
+                                <li>🔥 <strong>Снимает напряжение:</strong> Огонь — коралловый, тёплый красный</li>
+                                <li>⚡ <strong>Бодрит:</strong> Металл — серебряный, белый, платиновый</li>
+                            </ul>
+
+                            <h4 style="margin-top: 1rem;">Баланс Ян и Инь</h4>
+                            <p><strong>⚠️ Маркеры контроля Ян:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li>Всё решаете сама — даже когда не спрашивают</li>
+                                <li>«Проще сделать самой, чем просить»</li>
+                                <li>Ощущение: «Если ослаблю контроль — всё развалится»</li>
+                            </ul>
+                            <p style="margin-top: 0.75rem;"><strong>🔄 Что усиливает Инь:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li>Мягкие ткани, пастельные оттенки (Огонь — снятие напряжения)</li>
+                                <li>Синий, индиго в гардеробе (Вода — питание)</li>
+                                <li>Пауза перед действием: «Позволю другому сделать по-своему»</li>
+                            </ul>
+                            <p style="margin-top: 0.75rem;"><strong>💫 Что это даёт в паре:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li><strong>С Янским мужчиной:</strong> перестаёте конкурировать — он перестаёт защищаться</li>
+                                <li><strong>С Иньским мужчиной:</strong> даёте ему пространство проявить инициативу</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- КОД 5 -->
+                    <div class="wuxing-item">
+                        <button class="wuxing-header" type="button" aria-expanded="false">
+                            <span class="wuxing-icon">🌳</span>
+                            <span class="wuxing-title">Код 5 — Инь-Дерево</span>
+                            <span class="wuxing-arrow" aria-hidden="true">▾</span>
+                        </button>
+                        <div class="wuxing-body">
+                            <p><strong>Суть:</strong> гибкость, рост, адаптация.</p>
+                            <p><strong>В отношениях:</strong> поддерживает, вдохновляет, но может растворяться в чужом росте.</p>
+
+                            <h4 style="margin-top: 1rem;">Цветовая аптечка</h4>
+                            <ul class="rules-list" style="margin-top: 0.5rem;">
+                                <li>💧 <strong>Даёт энергию:</strong> Вода — синий, индиго, лазурный</li>
+                                <li>🌳 <strong>Статус:</strong> Дерево — изумруд, олива, хаки</li>
+                                <li>🔥 <strong>Снимает напряжение:</strong> Огонь — коралловый, тёплый красный</li>
+                                <li>⚡ <strong>Бодрит:</strong> Металл — серебряный, белый, платиновый</li>
+                            </ul>
+
+                            <h4 style="margin-top: 1rem;">Баланс Ян и Инь</h4>
+                            <p>✅ Ваша сила — в Инь. Но проверьте: не «утекаете» ли вы?</p>
+                            <p style="margin-top: 0.75rem;"><strong>⚠️ Маркеры чрезмерного Инь:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li>Растворяетесь в желаниях партнёра</li>
+                                <li>Теряете свои ориентиры</li>
+                                <li>Соглашаетесь, чтобы избежать конфликта</li>
+                            </ul>
+                            <p style="margin-top: 0.75rem;"><strong>🔄 Что поддерживает баланс:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li>Чётко обозначайте свои желания — мягко, но конкретно</li>
+                                <li>Просите о помощи прямо: «Мне нужна твоя поддержка»</li>
+                                <li>Оставляйте время только для себя — без оправданий</li>
+                            </ul>
+                            <p style="margin-top: 0.75rem;"><strong>💫 Что это даёт в паре:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li><strong>С Янским мужчиной:</strong> не теряете себя рядом с его напором</li>
+                                <li><strong>С Иньским мужчиной:</strong> мягко активируете его инициативу</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- КОД 6 -->
+                    <div class="wuxing-item">
+                        <button class="wuxing-header" type="button" aria-expanded="false">
+                            <span class="wuxing-icon">🔥</span>
+                            <span class="wuxing-title">Код 6 — Ян-Огонь</span>
+                            <span class="wuxing-arrow" aria-hidden="true">▾</span>
+                        </button>
+                        <div class="wuxing-body">
+                            <p><strong>Суть:</strong> страсть, яркость, лидерство.</p>
+                            <p><strong>В отношениях:</strong> зажигает, ведёт, но может выжигать.</p>
+
+                            <h4 style="margin-top: 1rem;">Цветовая аптечка</h4>
+                            <ul class="rules-list" style="margin-top: 0.5rem;">
+                                <li>💧 <strong>Даёт энергию:</strong> Дерево — зелёный, олива, изумруд</li>
+                                <li>🔥 <strong>Статус:</strong> Огонь — красный, бордо, золото</li>
+                                <li>🪨 <strong>Снимает напряжение:</strong> Земля — песочный, терракота</li>
+                                <li>⚡ <strong>Бодрит:</strong> Вода — синий, чёрный, индиго</li>
+                            </ul>
+
+                            <h4 style="margin-top: 1rem;">Баланс Ян и Инь</h4>
+                            <p><strong>⚠️ Маркеры контроля Ян:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li>Вспышки гнева, если что-то не по-вашему</li>
+                                <li>Требуете немедленного отклика</li>
+                                <li>Ощущение: «Я всё делаю, а он не ценит»</li>
+                            </ul>
+                            <p style="margin-top: 0.75rem;"><strong>🔄 Что усиливает Инь:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li>Песочные, терракотовые оттенки (Земля — снятие напряжения)</li>
+                                <li>Замедление: пауза перед реакцией</li>
+                                <li>«Дам ему время ответить — не сразу»</li>
+                            </ul>
+                            <p style="margin-top: 0.75rem;"><strong>💫 Что это даёт в паре:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li><strong>С Янским мужчиной:</strong> перестаёте соревноваться в силе</li>
+                                <li><strong>С Иньским мужчиной:</strong> он чувствует вашу энергию — и откликается</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- КОД 7 -->
+                    <div class="wuxing-item">
+                        <button class="wuxing-header" type="button" aria-expanded="false">
+                            <span class="wuxing-icon">🔥</span>
+                            <span class="wuxing-title">Код 7 — Инь-Огонь</span>
+                            <span class="wuxing-arrow" aria-hidden="true">▾</span>
+                        </button>
+                        <div class="wuxing-body">
+                            <p><strong>Суть:</strong> тепло, эмоциональность, вдохновение.</p>
+                            <p><strong>В отношениях:</strong> согревает, чувствует тонко, но может уйти в обиду.</p>
+
+                            <h4 style="margin-top: 1rem;">Цветовая аптечка</h4>
+                            <ul class="rules-list" style="margin-top: 0.5rem;">
+                                <li>💧 <strong>Даёт энергию:</strong> Дерево — зелёный, олива, изумруд</li>
+                                <li>🔥 <strong>Статус:</strong> Огонь — коралловый, розовое золото, рубин</li>
+                                <li>🪨 <strong>Снимает напряжение:</strong> Земля — песочный, терракота</li>
+                                <li>⚡ <strong>Бодрит:</strong> Вода — синий, чёрный, индиго</li>
+                            </ul>
+
+                            <h4 style="margin-top: 1rem;">Баланс Ян и Инь</h4>
+                            <p>✅ Ваша сила — в Инь. Но проверьте: не «угасаете» ли вы?</p>
+                            <p style="margin-top: 0.75rem;"><strong>⚠️ Маркеры чрезмерного Инь:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li>Демонстративные обиды, слёзы</li>
+                                <li>Ощущение: «Меня не ценят»</li>
+                                <li>Уход в себя, чтобы вас «спасли»</li>
+                            </ul>
+                            <p style="margin-top: 0.75rem;"><strong>🔄 Что поддерживает баланс:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li>Тёплый красный, коралл, золото (Огонь — статус) — вернуть яркость</li>
+                                <li>Прямая просьба о тепле: «Обними меня»</li>
+                                <li>Обозначайте потребность до того, как уйти в обиду</li>
+                            </ul>
+                            <p style="margin-top: 0.75rem;"><strong>💫 Что это даёт в паре:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li><strong>С Янским мужчиной:</strong> он видит вашу силу, не только слабость</li>
+                                <li><strong>С Иньским мужчиной:</strong> ваша теплота согревает его, он откликается</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- КОД 8 -->
+                    <div class="wuxing-item">
+                        <button class="wuxing-header" type="button" aria-expanded="false">
+                            <span class="wuxing-icon">🪨</span>
+                            <span class="wuxing-title">Код 8 — Ян-Земля</span>
+                            <span class="wuxing-arrow" aria-hidden="true">▾</span>
+                        </button>
+                        <div class="wuxing-body">
+                            <p><strong>Суть:</strong> устойчивость, забота, структура.</p>
+                            <p><strong>В отношениях:</strong> держит всё на себе, обустраивает, но может задавливать заботой.</p>
+
+                            <h4 style="margin-top: 1rem;">Цветовая аптечка</h4>
+                            <ul class="rules-list" style="margin-top: 0.5rem;">
+                                <li>💧 <strong>Даёт энергию:</strong> Огонь — красный, тёплый</li>
+                                <li>🪨 <strong>Статус:</strong> Земля — бежевый, коричневый, шоколад</li>
+                                <li>🔥 <strong>Снимает напряжение:</strong> Металл — серый, серебро</li>
+                                <li>⚡ <strong>Бодрит:</strong> Дерево — зелёный, олива</li>
+                            </ul>
+
+                            <h4 style="margin-top: 1rem;">Баланс Ян и Инь</h4>
+                            <p><strong>⚠️ Маркеры контроля Ян:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li>«Я всё решу сама» — даже когда не просят</li>
+                                <li>Контроль бюджета, расписания, всех решений</li>
+                                <li>Ощущение: «Без меня всё остановится»</li>
+                            </ul>
+                            <p style="margin-top: 0.75rem;"><strong>🔄 Что усиливает Инь:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li>Мягкие ткани (кашемир, шерсть)</li>
+                                <li>Дайте другим сделать по-своему — даже если не идеально</li>
+                                <li>Замедлите темп: «Не всё нужно контролировать»</li>
+                            </ul>
+                            <p style="margin-top: 0.75rem;"><strong>💫 Что это даёт в паре:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li><strong>С Янским мужчиной:</strong> перестаёте бороться за власть</li>
+                                <li><strong>С Иньским мужчиной:</strong> даёте ему роль добытчика — он её принимает</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- КОД 9 -->
+                    <div class="wuxing-item">
+                        <button class="wuxing-header" type="button" aria-expanded="false">
+                            <span class="wuxing-icon">🪨</span>
+                            <span class="wuxing-title">Код 9 — Инь-Земля</span>
+                            <span class="wuxing-arrow" aria-hidden="true">▾</span>
+                        </button>
+                        <div class="wuxing-body">
+                            <p><strong>Суть:</strong> мягкость, уют, питание.</p>
+                            <p><strong>В отношениях:</strong> обустраивает пространство, согревает, но может «раствориться».</p>
+
+                            <h4 style="margin-top: 1rem;">Цветовая аптечка</h4>
+                            <ul class="rules-list" style="margin-top: 0.5rem;">
+                                <li>💧 <strong>Даёт энергию:</strong> Огонь — красный, тёплый</li>
+                                <li>🪨 <strong>Статус:</strong> Земля — песочный, крем, кофе</li>
+                                <li>🔥 <strong>Снимает напряжение:</strong> Металл — серый, серебро</li>
+                                <li>⚡ <strong>Бодрит:</strong> Дерево — зелёный, олива</li>
+                            </ul>
+
+                            <h4 style="margin-top: 1rem;">Баланс Ян и Инь</h4>
+                            <p>✅ Ваша сила — в Инь. Но проверьте: не «стираете» ли вы себя?</p>
+                            <p style="margin-top: 0.75rem;"><strong>⚠️ Маркеры чрезмерного Инь:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li>Растворяетесь в доме, детях, быте</li>
+                                <li>Забываете про свои желания</li>
+                                <li>Ощущение: «Меня как будто нет»</li>
+                            </ul>
+                            <p style="margin-top: 0.75rem;"><strong>🔄 Что поддерживает баланс:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li>Тёплые песочные, кремовые (Земля — статус) — подчеркнуть себя</li>
+                                <li>Выделите личное время — вне дома</li>
+                                <li>Прямо говорите о своих потребностях</li>
+                            </ul>
+                            <p style="margin-top: 0.75rem;"><strong>💫 Что это даёт в паре:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li><strong>С Янским мужчиной:</strong> вас видят, а не только вашу заботу</li>
+                                <li><strong>С Иньским мужчиной:</strong> вы перестаёте быть «мамой» для партнёра</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- ═══════ КАК ОН МЕНЯ ПОНИМАЕТ ═══════ -->
+                <h2 style="margin-top: 3rem;">Как он меня понимает</h2>
+
+                <p style="font-weight: 500; margin-bottom: 0.5rem;">
+                    Прежде чем говорить — определите, с каким элементом вы имеете дело.
+                </p>
+                <p style="margin-bottom: 0.5rem;">
+                    Последняя цифра года рождения → элемент → канал восприятия.
+                </p>
+                <p style="font-style: italic; color: var(--text-muted); margin-bottom: 1.5rem;">
+                    Это не манипуляция. Это — язык. Вы просто начинаете говорить на его языке.
+                </p>
+
+                <div class="wuxing-accordion">
+
+                    <!-- Металл -->
+                    <div class="wuxing-item">
+                        <button class="wuxing-header" type="button" aria-expanded="false">
+                            <span class="wuxing-icon">⚪</span>
+                            <span class="wuxing-title">Металл — коды 0, 1</span>
+                            <span class="wuxing-codes">Зрение</span>
+                            <span class="wuxing-arrow" aria-hidden="true">▾</span>
+                        </button>
+                        <div class="wuxing-body">
+                            <p><strong>Что он слышит:</strong> когда вы говорите эмоционально и намёками — он слышит шум. Он не понимает запроса, потому что для него нет структуры.</p>
+
+                            <p style="margin-top: 0.75rem;"><strong>Что работает:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li><strong>Формат:</strong> чёткий список задач — на бумаге, в мессенджере, схемой</li>
+                                <li><strong>Время:</strong> спокойная обстановка, без свидетелей</li>
+                                <li><strong>Тон:</strong> ровный, по делу, без эмоциональных всплесков</li>
+                            </ul>
+
+                            <p style="margin-top: 0.75rem;"><strong>Что не работает:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li>Эмоциональные бури, слёзы, обвинения</li>
+                                <li>«Ты должен сам догадаться»</li>
+                                <li>Намёки и скрытые ожидания</li>
+                            </ul>
+
+                            <p style="margin-top: 0.75rem;"><strong>Готовые фразы:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li>Вместо <em>«Ты меня не слышишь!»</em> → <strong>«Мне нужна твоя помощь. Вот список.»</strong></li>
+                                <li>Вместо <em>«Ты меня не понимаешь»</em> → <strong>«Помоги разобраться. Вот что происходит.»</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Вода -->
+                    <div class="wuxing-item">
+                        <button class="wuxing-header" type="button" aria-expanded="false">
+                            <span class="wuxing-icon">💧</span>
+                            <span class="wuxing-title">Вода — коды 2, 3</span>
+                            <span class="wuxing-codes">Слух</span>
+                            <span class="wuxing-arrow" aria-hidden="true">▾</span>
+                        </button>
+                        <div class="wuxing-body">
+                            <p><strong>Что он слышит:</strong> когда вы кричите или демонстративно молчите — он закрывается. Ему нужен голос, тон, интонация.</p>
+
+                            <p style="margin-top: 0.75rem;"><strong>Что работает:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li><strong>Формат:</strong> мягкий, спокойный разговор — сядьте рядом, смотрите в глаза</li>
+                                <li><strong>Время:</strong> когда вы оба в тишине — не в суете</li>
+                                <li><strong>Тон:</strong> сниженный, тёплый — почти шёпот</li>
+                            </ul>
+
+                            <p style="margin-top: 0.75rem;"><strong>Что не работает:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li>Крик — он мгновенно «замерзает»</li>
+                                <li>Демонстративное молчание — он не понимает</li>
+                                <li>Намёки — он слышит слова, а не между строк</li>
+                            </ul>
+
+                            <p style="margin-top: 0.75rem;"><strong>Готовые фразы:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li>Вместо <em>«Ты меня не любишь»</em> → <strong>«Мне сейчас нужно услышать, что я важна»</strong></li>
+                                <li>Вместо <em>«Ты меня не замечаешь»</em> → <strong>«Мне не хватает твоего голоса рядом»</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Дерево -->
+                    <div class="wuxing-item">
+                        <button class="wuxing-header" type="button" aria-expanded="false">
+                            <span class="wuxing-icon">🌳</span>
+                            <span class="wuxing-title">Дерево — коды 4, 5</span>
+                            <span class="wuxing-codes">Обоняние</span>
+                            <span class="wuxing-arrow" aria-hidden="true">▾</span>
+                        </button>
+                        <div class="wuxing-body">
+                            <p><strong>Что он слышит:</strong> он чует фальшь — мгновенно. Скрытая обида, «всё в порядке» сквозь зубы — он считывает это как ложь.</p>
+
+                            <p style="margin-top: 0.75rem;"><strong>Что работает:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li><strong>Формат:</strong> прямая честность — без манипуляций</li>
+                                <li><strong>Время:</strong> когда вы сами готовы говорить правду</li>
+                                <li><strong>Тон:</strong> открытый, без хитростей</li>
+                            </ul>
+
+                            <p style="margin-top: 0.75rem;"><strong>Что не работает:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li>Манипуляции, хитрые заходы</li>
+                                <li>Фальшь, «дипломатия»</li>
+                                <li>Скрытые обиды, недосказанность</li>
+                            </ul>
+
+                            <p style="margin-top: 0.75rem;"><strong>Готовые фразы:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li>Вместо <em>«Всё в порядке»</em> (когда нет) → <strong>«Мне плохо. Вот что случилось.»</strong></li>
+                                <li>Вместо <em>«Ничего не случилось»</em> → <strong>«Есть проблема. Давай разберёмся вместе.»</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Огонь -->
+                    <div class="wuxing-item">
+                        <button class="wuxing-header" type="button" aria-expanded="false">
+                            <span class="wuxing-icon">🔥</span>
+                            <span class="wuxing-title">Огонь — коды 6, 7</span>
+                            <span class="wuxing-codes">Осязание</span>
+                            <span class="wuxing-arrow" aria-hidden="true">▾</span>
+                        </button>
+                        <div class="wuxing-body">
+                            <p><strong>Что он слышит:</strong> когда вы держите дистанцию — он не слышит вас вообще. Ему нужен физический контакт — иначе он не воспринимает слова.</p>
+
+                            <p style="margin-top: 0.75rem;"><strong>Что работает:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li><strong>Формат:</strong> сначала прикосновение — потом слова</li>
+                                <li><strong>Время:</strong> когда вы оба в телесном контакте</li>
+                                <li><strong>Тон:</strong> тёплый, нежный — с прикосновением</li>
+                            </ul>
+
+                            <p style="margin-top: 0.75rem;"><strong>Что не работает:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li>Дистанция, холодность</li>
+                                <li>Разговоры «через стол»</li>
+                                <li>Только слова — без тепла</li>
+                            </ul>
+
+                            <p style="margin-top: 0.75rem;"><strong>Готовые фразы:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li>Вместо <em>«Ты меня не хочешь»</em> → подойдите, обнимите: <strong>«Мне нужен ты»</strong></li>
+                                <li>Вместо <em>«Ты меня не замечаешь»</em> → <strong>«Прикоснись ко мне. Просто будь рядом.»</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Земля -->
+                    <div class="wuxing-item">
+                        <button class="wuxing-header" type="button" aria-expanded="false">
+                            <span class="wuxing-icon">🪨</span>
+                            <span class="wuxing-title">Земля — коды 8, 9</span>
+                            <span class="wuxing-codes">Вкус</span>
+                            <span class="wuxing-arrow" aria-hidden="true">▾</span>
+                        </button>
+                        <div class="wuxing-body">
+                            <p><strong>Что он слышит:</strong> когда вы налетаете с разговором в суете — он не воспринимает это. Ему нужна атмосфера — уют, еда, спокойствие.</p>
+
+                            <p style="margin-top: 0.75rem;"><strong>Что работает:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li><strong>Формат:</strong> спокойный разговор за столом — после еды</li>
+                                <li><strong>Время:</strong> когда никто никуда не торопится</li>
+                                <li><strong>Тон:</strong> размеренный, без напряжения</li>
+                            </ul>
+
+                            <p style="margin-top: 0.75rem;"><strong>Что не работает:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li>Разговоры «на бегу»</li>
+                                <li>Разговоры в момент стресса</li>
+                                <li>Требование немедленного ответа</li>
+                            </ul>
+
+                            <p style="margin-top: 0.75rem;"><strong>Готовые фразы:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li>Вместо <em>«Поговори со мной»</em> (в суете) → дождитесь спокойного момента — например, после ужина</li>
+                                <li>Вместо <em>«Ты меня не слушаешь»</em> → за ужином, спокойно: <strong>«Есть разговор. Важный.»</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- ═══════ ТЕСТ НА ИСТОЩЕНИЕ ═══════ -->
+                <h2 style="margin-top: 3rem;">Тест на истощение</h2>
+                <p style="color: var(--text-muted); font-size: 0.9375rem; margin-bottom: 1.5rem;">
+                    Отметьте, что откликается. Это не диагноз — это признаки, которые стоит исследовать.
+                </p>
+
+                <div class="checks-form" style="border-radius: var(--radius-lg);">
+
+                    <div class="checks-check" style="padding: 1rem 1.25rem;">
+                        <label style="display: flex; gap: 0.75rem; align-items: flex-start; cursor: pointer;">
+                            <input type="checkbox" class="female-quiz-checkbox" data-q="1" style="margin-top: 0.25rem; transform: scale(1.2); cursor: pointer;">
+                            <span>Часто ловите себя на мысли: «Проще и быстрее сделать самой, чем просить его»?</span>
+                        </label>
+                    </div>
+
+                    <div class="checks-check" style="padding: 1rem 1.25rem;">
+                        <label style="display: flex; gap: 0.75rem; align-items: flex-start; cursor: pointer;">
+                            <input type="checkbox" class="female-quiz-checkbox" data-q="2" style="margin-top: 0.25rem; transform: scale(1.2); cursor: pointer;">
+                            <span>Есть ощущение: если вы ослабите контроль хотя бы на день — всё развалится?</span>
+                        </label>
+                    </div>
+
+                    <div class="checks-check" style="padding: 1rem 1.25rem;">
+                        <label style="display: flex; gap: 0.75rem; align-items: flex-start; cursor: pointer;">
+                            <input type="checkbox" class="female-quiz-checkbox" data-q="3" style="margin-top: 0.25rem; transform: scale(1.2); cursor: pointer;">
+                            <span>Ловите себя на раздражении в стиле «настоящие мужики перевелись»?</span>
+                        </label>
+                    </div>
+
+                    <div class="checks-check" style="padding: 1rem 1.25rem;">
+                        <label style="display: flex; gap: 0.75rem; align-items: flex-start; cursor: pointer;">
+                            <input type="checkbox" class="female-quiz-checkbox" data-q="4" style="margin-top: 0.25rem; transform: scale(1.2); cursor: pointer;">
+                            <span>Испытываете хроническую усталость, даже после долгого сна?</span>
+                        </label>
+                    </div>
+
+                    <div class="checks-check" style="padding: 1rem 1.25rem;">
+                        <label style="display: flex; gap: 0.75rem; align-items: flex-start; cursor: pointer;">
+                            <input type="checkbox" class="female-quiz-checkbox" data-q="5" style="margin-top: 0.25rem; transform: scale(1.2); cursor: pointer;">
+                            <span>Из отношений исчезли романтика и флирт — остались только бытовые планы?</span>
+                        </label>
+                    </div>
+
+                    <button class="btn btn-primary" type="button" id="femaleQuizBtn" style="width: 100%; margin-top: 1rem;">
+                        Показать результат
+                    </button>
+
+                    <div id="femaleQuizResult" class="hidden" style="margin-top: 1.5rem; padding: 1.25rem; background: var(--accent-bg); border-radius: var(--radius-lg); border-left: 3px solid var(--accent);">
+                        <h4 id="femaleQuizTitle" style="margin-bottom: 0.5rem; color: var(--accent-dark);"></h4>
+                        <p id="femaleQuizText" style="font-size: 0.9375rem; margin-bottom: 0.5rem;"></p>
+                        <p style="font-size: 0.875rem; color: var(--text-muted); font-style: italic;">
+                            Это не диагноз. Это признаки, которые стоит исследовать. Посмотрите на вопросы, где вы ответили «да».
+                        </p>
+                    </div>
+
+                </div>
+
+                <!-- ═══════ ПЕРЕЗАГРУЗКА СОСТОЯНИЯ ═══════ -->
+                <h2 style="margin-top: 3rem;">Перезагрузка состояния</h2>
+                <p>
+                    Если тест показал жёлтую или красную зону — или просто хотите проверить, <strong>какие способы переключения работают именно для вас</strong> — откройте <strong>Лабораторию состояния</strong>.
+                </p>
+                <p style="color: var(--text-muted); font-size: 0.9375rem; margin-bottom: 1.5rem;">
+                    Там вы сможете измерить своё состояние до и после эксперимента — и собрать свой <strong>банк работающих переключателей</strong>.
+                </p>
+
+                <a href="#" class="btn btn-primary" data-page="tool-state-lab">
+                    Открыть Лабораторию состояния →
+                </a>
+
+                <!-- ═══════ ФИНАЛЬНЫЙ NOTICE ═══════ -->
+                <div class="notice" style="margin-top: 3rem;">
+                    <div class="notice-title">Это авторская модель</div>
+                    <p>
+                        «Для женщин» — авторская интерпретационная система. Она не является диагностикой личности, медицинским заключением или окончательной характеристикой.
+                    </p>
+                    <p>
+                        Используйте её как способ посмотреть на привычные отношения под другим углом.
+                    </p>
+                    <p style="font-weight: 600; color: var(--accent-dark);">
+                        Не верить. Наблюдать. Сравнивать. Проверять.
+                    </p>
+                </div>
+
+                <div style="margin-top: 2.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <a href="#" class="btn btn-primary" data-page="three-checks">Проверить через правило трёх</a>
                     <a href="#" class="btn btn-secondary" data-page="tools">← К инструментам</a>
                 </div>
             </div>
         </div>
 
+               <!-- ═══════════════════════════════════════ -->
+        <!-- МУЖСКОЙ КОД -->
+        <!-- ═══════════════════════════════════════ -->
         <div class="page" id="page-tool-male">
             <div class="container-narrow">
                 <div class="breadcrumbs">
@@ -2324,18 +3797,737 @@
                     <span>/</span>
                     <a href="#" data-page="tools">Инструменты</a>
                     <span>/</span>
-                    Исходный код — Мужской
+                    Мужской код
                 </div>
-                <h1>Исходный код — Мужской</h1>
-                <p style="font-size: 0.9375rem; color: var(--accent-dark); font-weight: 500; margin-bottom: 1rem;">
+
+                <h1>Мужской код</h1>
+                <p style="font-size: 1.125rem; color: var(--text-muted); margin-bottom: 2rem;">
                     Авторская типология. Не диагностика личности.
                 </p>
-                <div class="placeholder">
-                    <div class="placeholder-icon">♂</div>
-                    <h3>Инструмент в разработке</h3>
-                    <p>Здесь появятся: мужские архетипы, «Как просить у неё», практики.</p>
+
+                <p>
+                    Эта страница — для тех, кто:
+                </p>
+                <ul class="rules-list">
+                    <li>хочет <strong>понять</strong>, почему в отношениях повторяется одно и то же</li>
+                    <li>устал от <strong>общих советов</strong> — и хочет <strong>конкретный инструмент</strong></li>
+                    <li>готов <strong>наблюдать, а не верить</strong> — и <strong>проверять на своей жизни</strong></li>
+                </ul>
+
+                <p style="margin-bottom: 2rem;">
+                    Мы не обещаем «правильных ответов». Мы предлагаем <strong>более точные вопросы</strong>.
+                </p>
+
+                <div class="notice" style="margin-bottom: 2rem;">
+                    <div class="notice-title">Локальное хранение</div>
+                    <p>
+                        Эта страница <strong>ничего не сохраняет</strong>. Все инструменты — только для наблюдения.
+                        Если хотите сохранить свои выводы — используйте <strong>Правило трёх подтверждений</strong>.
+                    </p>
                 </div>
-                <div style="margin-top: 2.5rem;">
+
+                <!-- ═══════ КОД НАБЛЮДЕНИЯ ═══════ -->
+                <h2 style="margin-top: 3rem;">Код наблюдения</h2>
+                <p>
+                    Возьмите <strong>последнюю цифру года рождения</strong> — это ваш код.
+                    Потом — найдите свою карточку ниже.
+                </p>
+
+                <div style="overflow-x: auto; margin: 1.5rem 0;">
+                    <table class="glossary-table">
+                        <thead>
+                            <tr>
+                                <th>Код</th>
+                                <th>Элемент</th>
+                                <th>Полярность</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>0</td><td>Металл</td><td>Ян</td></tr>
+                            <tr><td>1</td><td>Металл</td><td>Инь</td></tr>
+                            <tr><td>2</td><td>Вода</td><td>Ян</td></tr>
+                            <tr><td>3</td><td>Вода</td><td>Инь</td></tr>
+                            <tr><td>4</td><td>Дерево</td><td>Ян</td></tr>
+                            <tr><td>5</td><td>Дерево</td><td>Инь</td></tr>
+                            <tr><td>6</td><td>Огонь</td><td>Ян</td></tr>
+                            <tr><td>7</td><td>Огонь</td><td>Инь</td></tr>
+                            <tr><td>8</td><td>Земля</td><td>Ян</td></tr>
+                            <tr><td>9</td><td>Земля</td><td>Инь</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- ═══════ 10 ПРОФИЛЕЙ ═══════ -->
+                <h2 style="margin-top: 3rem;">Ваш профиль</h2>
+                <p style="color: var(--text-muted); font-size: 0.9375rem; margin-bottom: 1.5rem;">
+                    Нажмите на свой код, чтобы раскрыть описание.
+                </p>
+
+                <div class="wuxing-accordion">
+
+                    <!-- КОД 0 -->
+                    <div class="wuxing-item">
+                        <button class="wuxing-header" type="button" aria-expanded="false">
+                            <span class="wuxing-icon">⚪</span>
+                            <span class="wuxing-title">Код 0 — Ян-Металл</span>
+                            <span class="wuxing-arrow" aria-hidden="true">▾</span>
+                        </button>
+                        <div class="wuxing-body">
+                            <p><strong>Суть:</strong> структура, ясность, статус.</p>
+                            <p><strong>В отношениях:</strong> держит форму, задаёт правила, но может быть холодным.</p>
+
+                            <h4 style="margin-top: 1rem;">Аптечка ресурсов</h4>
+                            <ul class="rules-list" style="margin-top: 0.5rem;">
+                                <li>💧 <strong>Источник энергии:</strong> Земля — песочный, крем + ресторан, вкусная еда, сервировка</li>
+                                <li>🔥 <strong>Снятие напряжения (заземление):</strong> Вода — синий, чёрный + ванна, бассейн, душ</li>
+                            </ul>
+
+                            <h4 style="margin-top: 1rem;">Баланс Ян и Инь</h4>
+                            <p><strong>⚠️ Маркеры контроля Ян:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li>Требуете точности, чёткости, «правильности»</li>
+                                <li>Холодность, если что-то не соответствует стандартам</li>
+                                <li>Ощущение: «Она недостаточно старается»</li>
+                            </ul>
+                            <p style="margin-top: 0.75rem;"><strong>🔄 Что усиливает Инь:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li>Мягкие ткани (шёлк, бархат), плавные силуэты</li>
+                                <li>Синий, чёрный, индиго (Вода — снятие напряжения)</li>
+                                <li>Снизьте планку: «Достаточно хорошо — уже хорошо»</li>
+                            </ul>
+                            <p style="margin-top: 0.75rem;"><strong>💫 Что это даёт в паре:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li><strong>С Янской женщиной:</strong> перестаёте соревноваться в статусе</li>
+                                <li><strong>С Иньской женщиной:</strong> она видит в вас мужчину, а не руководителя</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- КОД 1 -->
+                    <div class="wuxing-item">
+                        <button class="wuxing-header" type="button" aria-expanded="false">
+                            <span class="wuxing-icon">⚪</span>
+                            <span class="wuxing-title">Код 1 — Инь-Металл</span>
+                            <span class="wuxing-arrow" aria-hidden="true">▾</span>
+                        </button>
+                        <div class="wuxing-body">
+                            <p><strong>Суть:</strong> изящество, утончённость, чувство формы.</p>
+                            <p><strong>В отношениях:</strong> требует чистоты, но может уйти в холод.</p>
+
+                            <h4 style="margin-top: 1rem;">Аптечка ресурсов</h4>
+                            <ul class="rules-list" style="margin-top: 0.5rem;">
+                                <li>💧 <strong>Источник энергии:</strong> Земля — песочный, крем + ресторан, вкусная еда, сервировка</li>
+                                <li>🔥 <strong>Снятие напряжения (заземление):</strong> Вода — синий, чёрный + ванна, бассейн, душ</li>
+                            </ul>
+
+                            <h4 style="margin-top: 1rem;">Баланс Ян и Инь</h4>
+                            <p>✅ Ваша сила — в Инь. Но проверьте: не «замерзаете» ли вы?</p>
+                            <p style="margin-top: 0.75rem;"><strong>⚠️ Маркеры чрезмерного Инь:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li>Холодное молчание в ответ на боль</li>
+                                <li>Отстранённость, «дистанция»</li>
+                                <li>Ощущение: «Мне никто не нужен»</li>
+                            </ul>
+                            <p style="margin-top: 0.75rem;"><strong>🔄 Что поддерживает баланс:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li>Мягкие, тёплые оттенки (Огонь — снятие напряжения)</li>
+                                <li>Тепло физическое: обнимать, прикасаться</li>
+                                <li>Проговорите вслух то, что чувствуете</li>
+                            </ul>
+                            <p style="margin-top: 0.75rem;"><strong>💫 Что это даёт в паре:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li><strong>С Янской женщиной:</strong> ваша холодность перестаёт её отталкивать</li>
+                                <li><strong>С Иньской женщиной:</strong> вы даёте ей понять, что она вам нужна</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- КОД 2 -->
+                    <div class="wuxing-item">
+                        <button class="wuxing-header" type="button" aria-expanded="false">
+                            <span class="wuxing-icon">💧</span>
+                            <span class="wuxing-title">Код 2 — Ян-Вода</span>
+                            <span class="wuxing-arrow" aria-hidden="true">▾</span>
+                        </button>
+                        <div class="wuxing-body">
+                            <p><strong>Суть:</strong> глубина, первопроходство, интуиция.</p>
+                            <p><strong>В отношениях:</strong> чувствует скрытое, ведёт, но может «замораживать».</p>
+
+                            <h4 style="margin-top: 1rem;">Аптечка ресурсов</h4>
+                            <ul class="rules-list" style="margin-top: 0.5rem;">
+                                <li>💧 <strong>Источник энергии:</strong> Металл — серебряный, белый + серебро, золото</li>
+                                <li>🔥 <strong>Снятие напряжения (заземление):</strong> Дерево — зелёный, изумруд + ароматические палочки, растения</li>
+                            </ul>
+
+                            <h4 style="margin-top: 1rem;">Баланс Ян и Инь</h4>
+                            <p><strong>⚠️ Маркеры контроля Ян:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li>Скрываете эмоции, «замораживаете» чувства</li>
+                                <li>Прячете уязвимость за силой</li>
+                                <li>Ощущение: «Я справлюсь сам»</li>
+                            </ul>
+                            <p style="margin-top: 0.75rem;"><strong>🔄 Что усиливает Инь:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li>Мягкие струящиеся ткани (шифон, атлас)</li>
+                                <li>Зелёный, изумруд (Дерево — снятие напряжения)</li>
+                                <li>Разрешите себе не знать ответа — просто быть</li>
+                            </ul>
+                            <p style="margin-top: 0.75rem;"><strong>💫 Что это даёт в паре:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li><strong>С Янской женщиной:</strong> она не чувствует конкуренции — открывается</li>
+                                <li><strong>С Иньской женщиной:</strong> она чувствует вашу глубину, доверяет</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- КОД 3 -->
+                    <div class="wuxing-item">
+                        <button class="wuxing-header" type="button" aria-expanded="false">
+                            <span class="wuxing-icon">💧</span>
+                            <span class="wuxing-title">Код 3 — Инь-Вода</span>
+                            <span class="wuxing-arrow" aria-hidden="true">▾</span>
+                        </button>
+                        <div class="wuxing-body">
+                            <p><strong>Суть:</strong> чувствительность, адаптация, глубина.</p>
+                            <p><strong>В отношениях:</strong> слышит тонко, но может «утекать» в себя.</p>
+
+                            <h4 style="margin-top: 1rem;">Аптечка ресурсов</h4>
+                            <ul class="rules-list" style="margin-top: 0.5rem;">
+                                <li>💧 <strong>Источник энергии:</strong> Металл — серебряный, белый + серебро, золото</li>
+                                <li>🔥 <strong>Снятие напряжения (заземление):</strong> Дерево — зелёный, изумруд + ароматические палочки, растения</li>
+                            </ul>
+
+                            <h4 style="margin-top: 1rem;">Баланс Ян и Инь</h4>
+                            <p>✅ Ваша сила — в Инь. Но проверьте: не «растворяетесь» ли вы?</p>
+                            <p style="margin-top: 0.75rem;"><strong>⚠️ Маркеры чрезмерного Инь:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li>Уходите в себя, когда больно</li>
+                                <li>Не говорите о своих желаниях</li>
+                                <li>Ощущение: «Она сама должна догадаться»</li>
+                            </ul>
+                            <p style="margin-top: 0.75rem;"><strong>🔄 Что поддерживает баланс:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li>Прямые, конкретные формулировки</li>
+                                <li>«Мне нужно вот это» — без намёков</li>
+                                <li>Мягкая физическая активность (движение, вода, прогулки)</li>
+                            </ul>
+                            <p style="margin-top: 0.75rem;"><strong>💫 Что это даёт в паре:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li><strong>С Янской женщиной:</strong> она понимает вас — без угадывания</li>
+                                <li><strong>С Иньской женщиной:</strong> вы не тянете её наверх, а идёте рядом</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- КОД 4 -->
+                    <div class="wuxing-item">
+                        <button class="wuxing-header" type="button" aria-expanded="false">
+                            <span class="wuxing-icon">🌳</span>
+                            <span class="wuxing-title">Код 4 — Ян-Дерево</span>
+                            <span class="wuxing-arrow" aria-hidden="true">▾</span>
+                        </button>
+                        <div class="wuxing-body">
+                            <p><strong>Суть:</strong> напор, инициатива, движение вперёд.</p>
+                            <p><strong>В отношениях:</strong> ведёт, строит планы, но может давить.</p>
+
+                            <h4 style="margin-top: 1rem;">Аптечка ресурсов</h4>
+                            <ul class="rules-list" style="margin-top: 0.5rem;">
+                                <li>💧 <strong>Источник энергии:</strong> Вода — синий, индиго, лазурный + ванна, душ, река, дождь, мягкая музыка</li>
+                                <li>🔥 <strong>Снятие напряжения (заземление):</strong> Огонь — коралловый, тёплый красный + свеча, костёр, камин, объятия</li>
+                            </ul>
+
+                            <h4 style="margin-top: 1rem;">Баланс Ян и Инь</h4>
+                            <p><strong>⚠️ Маркеры контроля Ян:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li>Всё решаете сами — даже когда не спрашивают</li>
+                                <li>«Проще сделать самому, чем просить»</li>
+                                <li>Ощущение: «Если ослаблю контроль — всё развалится»</li>
+                            </ul>
+                            <p style="margin-top: 0.75rem;"><strong>🔄 Что усиливает Инь:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li>Мягкие ткани, пастельные оттенки (Огонь — снятие напряжения)</li>
+                                <li>Синий, индиго в гардеробе (Вода — питание)</li>
+                                <li>Пауза перед действием: «Позволю другому сделать по-своему»</li>
+                            </ul>
+                            <p style="margin-top: 0.75rem;"><strong>💫 Что это даёт в паре:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li><strong>С Янской женщиной:</strong> перестаёте конкурировать — она перестаёт защищаться</li>
+                                <li><strong>С Иньской женщиной:</strong> даёте ей пространство проявить инициативу</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- КОД 5 -->
+                    <div class="wuxing-item">
+                        <button class="wuxing-header" type="button" aria-expanded="false">
+                            <span class="wuxing-icon">🌳</span>
+                            <span class="wuxing-title">Код 5 — Инь-Дерево</span>
+                            <span class="wuxing-arrow" aria-hidden="true">▾</span>
+                        </button>
+                        <div class="wuxing-body">
+                            <p><strong>Суть:</strong> гибкость, рост, адаптация.</p>
+                            <p><strong>В отношениях:</strong> поддерживает, вдохновляет, но может растворяться в чужом росте.</p>
+
+                            <h4 style="margin-top: 1rem;">Аптечка ресурсов</h4>
+                            <ul class="rules-list" style="margin-top: 0.5rem;">
+                                <li>💧 <strong>Источник энергии:</strong> Вода — синий, индиго, лазурный + ванна, душ, река, дождь, мягкая музыка</li>
+                                <li>🔥 <strong>Снятие напряжения (заземление):</strong> Огонь — коралловый, тёплый красный + свеча, костёр, камин, объятия</li>
+                            </ul>
+
+                            <h4 style="margin-top: 1rem;">Баланс Ян и Инь</h4>
+                            <p>✅ Ваша сила — в Инь. Но проверьте: не «утекаете» ли вы?</p>
+                            <p style="margin-top: 0.75rem;"><strong>⚠️ Маркеры чрезмерного Инь:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li>Растворяетесь в желаниях партнёрши</li>
+                                <li>Теряете свои ориентиры</li>
+                                <li>Соглашаетесь, чтобы избежать конфликта</li>
+                            </ul>
+                            <p style="margin-top: 0.75rem;"><strong>🔄 Что поддерживает баланс:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li>Чётко обозначайте свои желания — мягко, но конкретно</li>
+                                <li>Просите о помощи прямо: «Мне нужна твоя поддержка»</li>
+                                <li>Оставляйте время только для себя — без оправданий</li>
+                            </ul>
+                            <p style="margin-top: 0.75rem;"><strong>💫 Что это даёт в паре:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li><strong>С Янской женщиной:</strong> не теряете себя рядом с её напором</li>
+                                <li><strong>С Иньской женщиной:</strong> мягко активируете её инициативу</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- КОД 6 -->
+                    <div class="wuxing-item">
+                        <button class="wuxing-header" type="button" aria-expanded="false">
+                            <span class="wuxing-icon">🔥</span>
+                            <span class="wuxing-title">Код 6 — Ян-Огонь</span>
+                            <span class="wuxing-arrow" aria-hidden="true">▾</span>
+                        </button>
+                        <div class="wuxing-body">
+                            <p><strong>Суть:</strong> страсть, яркость, лидерство.</p>
+                            <p><strong>В отношениях:</strong> зажигает, ведёт, но может выжигать.</p>
+
+                            <h4 style="margin-top: 1rem;">Аптечка ресурсов</h4>
+                            <ul class="rules-list" style="margin-top: 0.5rem;">
+                                <li>💧 <strong>Источник энергии:</strong> Дерево — зелёный, олива, изумруд + растения, природа, объятия</li>
+                                <li>🔥 <strong>Снятие напряжения (заземление):</strong> Металл — серый, серебро + серебро, золото, украшения</li>
+                            </ul>
+
+                            <h4 style="margin-top: 1rem;">Баланс Ян и Инь</h4>
+                            <p><strong>⚠️ Маркеры контроля Ян:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li>Вспышки гнева, если что-то не по-вашему</li>
+                                <li>Требуете немедленного отклика</li>
+                                <li>Ощущение: «Я всё делаю, а она не ценит»</li>
+                            </ul>
+                            <p style="margin-top: 0.75rem;"><strong>🔄 Что усиливает Инь:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li>Серебро, золото, украшения (Металл — снятие напряжения)</li>
+                                <li>Замедление: пауза перед реакцией</li>
+                                <li>«Дам ей время ответить — не сразу»</li>
+                            </ul>
+                            <p style="margin-top: 0.75rem;"><strong>💫 Что это даёт в паре:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li><strong>С Янской женщиной:</strong> перестаёте соревноваться в силе</li>
+                                <li><strong>С Иньской женщиной:</strong> она чувствует вашу энергию — и откликается</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- КОД 7 -->
+                    <div class="wuxing-item">
+                        <button class="wuxing-header" type="button" aria-expanded="false">
+                            <span class="wuxing-icon">🔥</span>
+                            <span class="wuxing-title">Код 7 — Инь-Огонь</span>
+                            <span class="wuxing-arrow" aria-hidden="true">▾</span>
+                        </button>
+                        <div class="wuxing-body">
+                            <p><strong>Суть:</strong> тепло, эмоциональность, вдохновение.</p>
+                            <p><strong>В отношениях:</strong> согревает, чувствует тонко, но может уйти в обиду.</p>
+
+                            <h4 style="margin-top: 1rem;">Аптечка ресурсов</h4>
+                            <ul class="rules-list" style="margin-top: 0.5rem;">
+                                <li>💧 <strong>Источник энергии:</strong> Дерево — зелёный, олива, изумруд + растения, природа, объятия</li>
+                                <li>🔥 <strong>Снятие напряжения (заземление):</strong> Металл — серый, серебро + серебро, золото, украшения</li>
+                            </ul>
+
+                            <h4 style="margin-top: 1rem;">Баланс Ян и Инь</h4>
+                            <p>✅ Ваша сила — в Инь. Но проверьте: не «угасаете» ли вы?</p>
+                            <p style="margin-top: 0.75rem;"><strong>⚠️ Маркеры чрезмерного Инь:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li>Демонстративные обиды, уход в себя</li>
+                                <li>Ощущение: «Меня не ценят»</li>
+                                <li>Ожидание, что вас «спасут»</li>
+                            </ul>
+                            <p style="margin-top: 0.75rem;"><strong>🔄 Что поддерживает баланс:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li>Тёплый красный, коралл, золото (Огонь — статус) — вернуть яркость</li>
+                                <li>Прямая просьба о тепле: «Обними меня»</li>
+                                <li>Обозначайте потребность до того, как уйти в обиду</li>
+                            </ul>
+                            <p style="margin-top: 0.75rem;"><strong>💫 Что это даёт в паре:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li><strong>С Янской женщиной:</strong> она видит вашу силу, не только слабость</li>
+                                <li><strong>С Иньской женщиной:</strong> ваша теплота согревает её, она откликается</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- КОД 8 -->
+                    <div class="wuxing-item">
+                        <button class="wuxing-header" type="button" aria-expanded="false">
+                            <span class="wuxing-icon">🪨</span>
+                            <span class="wuxing-title">Код 8 — Ян-Земля</span>
+                            <span class="wuxing-arrow" aria-hidden="true">▾</span>
+                        </button>
+                        <div class="wuxing-body">
+                            <p><strong>Суть:</strong> устойчивость, забота, структура.</p>
+                            <p><strong>В отношениях:</strong> держит всё на себе, обустраивает, но может задавливать заботой.</p>
+
+                            <h4 style="margin-top: 1rem;">Аптечка ресурсов</h4>
+                            <ul class="rules-list" style="margin-top: 0.5rem;">
+                                <li>💧 <strong>Источник энергии:</strong> Огонь — красный, тёплый + телесное тепло, объятия</li>
+                                <li>🔥 <strong>Снятие напряжения (заземление):</strong> Металл — серый, серебро + серебро, золото, украшения</li>
+                            </ul>
+
+                            <h4 style="margin-top: 1rem;">Баланс Ян и Инь</h4>
+                            <p><strong>⚠️ Маркеры контроля Ян:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li>«Я всё решу сам» — даже когда не просят</li>
+                                <li>Контроль бюджета, расписания, всех решений</li>
+                                <li>Ощущение: «Без меня всё остановится»</li>
+                            </ul>
+                            <p style="margin-top: 0.75rem;"><strong>🔄 Что усиливает Инь:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li>Мягкие ткани (кашемир, шерсть)</li>
+                                <li>Дайте другим сделать по-своему — даже если не идеально</li>
+                                <li>Замедлите темп: «Не всё нужно контролировать»</li>
+                            </ul>
+                            <p style="margin-top: 0.75rem;"><strong>💫 Что это даёт в паре:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li><strong>С Янской женщиной:</strong> перестаёте бороться за власть</li>
+                                <li><strong>С Иньской женщиной:</strong> даёте ей роль хранительницы — она её принимает</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- КОД 9 -->
+                    <div class="wuxing-item">
+                        <button class="wuxing-header" type="button" aria-expanded="false">
+                            <span class="wuxing-icon">🪨</span>
+                            <span class="wuxing-title">Код 9 — Инь-Земля</span>
+                            <span class="wuxing-arrow" aria-hidden="true">▾</span>
+                        </button>
+                        <div class="wuxing-body">
+                            <p><strong>Суть:</strong> мягкость, уют, питание.</p>
+                            <p><strong>В отношениях:</strong> обустраивает пространство, согревает, но может «раствориться».</p>
+
+                            <h4 style="margin-top: 1rem;">Аптечка ресурсов</h4>
+                            <ul class="rules-list" style="margin-top: 0.5rem;">
+                                <li>💧 <strong>Источник энергии:</strong> Огонь — красный, тёплый + телесное тепло, объятия</li>
+                                <li>🔥 <strong>Снятие напряжения (заземление):</strong> Металл — серый, серебро + серебро, золото, украшения</li>
+                            </ul>
+
+                            <h4 style="margin-top: 1rem;">Баланс Ян и Инь</h4>
+                            <p>✅ Ваша сила — в Инь. Но проверьте: не «стираете» ли вы себя?</p>
+                            <p style="margin-top: 0.75rem;"><strong>⚠️ Маркеры чрезмерного Инь:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li>Растворяетесь в доме, быте, заботе</li>
+                                <li>Забываете про свои желания</li>
+                                <li>Ощущение: «Меня как будто нет»</li>
+                            </ul>
+                            <p style="margin-top: 0.75rem;"><strong>🔄 Что поддерживает баланс:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li>Тёплые песочные, кремовые (Земля — статус) — подчеркнуть себя</li>
+                                <li>Выделите личное время — вне дома</li>
+                                <li>Прямо говорите о своих потребностях</li>
+                            </ul>
+                            <p style="margin-top: 0.75rem;"><strong>💫 Что это даёт в паре:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li><strong>С Янской женщиной:</strong> вас видят, а не только вашу заботу</li>
+                                <li><strong>С Иньской женщиной:</strong> вы перестаёте быть «папой» для партнёрши</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- ═══════ КАК ОНА МЕНЯ ПОНИМАЕТ ═══════ -->
+                <h2 style="margin-top: 3rem;">Как она меня понимает</h2>
+
+                <p style="font-weight: 500; margin-bottom: 0.5rem;">
+                    Прежде чем говорить — определите, с каким элементом вы имеете дело.
+                </p>
+                <p style="margin-bottom: 0.5rem;">
+                    Последняя цифра года рождения → элемент → канал восприятия.
+                </p>
+                <p style="font-style: italic; color: var(--text-muted); margin-bottom: 1.5rem;">
+                    Это не манипуляция. Это — язык. Вы просто начинаете говорить на её языке.
+                </p>
+
+                <div class="wuxing-accordion">
+
+                    <!-- Металл -->
+                    <div class="wuxing-item">
+                        <button class="wuxing-header" type="button" aria-expanded="false">
+                            <span class="wuxing-icon">⚪</span>
+                            <span class="wuxing-title">Металл — коды 0, 1</span>
+                            <span class="wuxing-codes">Зрение</span>
+                            <span class="wuxing-arrow" aria-hidden="true">▾</span>
+                        </button>
+                        <div class="wuxing-body">
+                            <p><strong>Что она слышит:</strong> когда вы говорите эмоционально и намёками — она слышит шум. Она не понимает запроса, потому что для неё нет структуры.</p>
+
+                            <p style="margin-top: 0.75rem;"><strong>Что работает:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li><strong>Формат:</strong> чёткий, ясный разговор — с примерами, схемой, списком</li>
+                                <li><strong>Время:</strong> спокойная обстановка, без свидетелей</li>
+                                <li><strong>Тон:</strong> ровный, по делу, без эмоциональных всплесков</li>
+                            </ul>
+
+                            <p style="margin-top: 0.75rem;"><strong>Что не работает:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li>Эмоциональные бури, слёзы, обвинения</li>
+                                <li>«Ты должен сам догадаться»</li>
+                                <li>Намёки и скрытые ожидания</li>
+                            </ul>
+
+                            <p style="margin-top: 0.75rem;"><strong>Готовые фразы:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li>Вместо <em>«Что ты хочешь?»</em> → <strong>«Давай разберём вместе. Вот что я вижу.»</strong></li>
+                                <li>Вместо <em>«Ты меня не понимаешь»</em> → <strong>«Помоги мне разобраться. Вот что происходит.»</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Вода -->
+                    <div class="wuxing-item">
+                        <button class="wuxing-header" type="button" aria-expanded="false">
+                            <span class="wuxing-icon">💧</span>
+                            <span class="wuxing-title">Вода — коды 2, 3</span>
+                            <span class="wuxing-codes">Слух</span>
+                            <span class="wuxing-arrow" aria-hidden="true">▾</span>
+                        </button>
+                        <div class="wuxing-body">
+                            <p><strong>Что она слышит:</strong> когда вы кричите или демонстративно молчите — она закрывается. Ей нужен голос, тон, интонация.</p>
+
+                            <p style="margin-top: 0.75rem;"><strong>Что работает:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li><strong>Формат:</strong> мягкий, спокойный разговор — сядьте рядом, смотрите в глаза</li>
+                                <li><strong>Время:</strong> когда вы оба в тишине — не в суете</li>
+                                <li><strong>Тон:</strong> сниженный, тёплый — почти шёпот</li>
+                            </ul>
+
+                            <p style="margin-top: 0.75rem;"><strong>Что не работает:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li>Крик — она мгновенно «замерзает»</li>
+                                <li>Демонстративное молчание — она не понимает</li>
+                                <li>Намёки — она слышит слова, а не между строк</li>
+                            </ul>
+
+                            <p style="margin-top: 0.75rem;"><strong>Готовые фразы:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li>Вместо <em>«Ты меня не любишь»</em> → <strong>«Мне сейчас нужно услышать, что я важен»</strong></li>
+                                <li>Вместо <em>«Ты меня не замечаешь»</em> → <strong>«Мне не хватает твоего голоса рядом»</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Дерево -->
+                    <div class="wuxing-item">
+                        <button class="wuxing-header" type="button" aria-expanded="false">
+                            <span class="wuxing-icon">🌳</span>
+                            <span class="wuxing-title">Дерево — коды 4, 5</span>
+                            <span class="wuxing-codes">Обоняние</span>
+                            <span class="wuxing-arrow" aria-hidden="true">▾</span>
+                        </button>
+                        <div class="wuxing-body">
+                            <p><strong>Что она слышит:</strong> она чует фальшь — мгновенно. Скрытая обида, «всё в порядке» сквозь зубы — она считывает это как ложь. И — она очень чувствительна к запахам.</p>
+
+                            <p style="margin-top: 0.75rem;"><strong>Что работает:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li><strong>Формат:</strong> прямая честность — без манипуляций</li>
+                                <li><strong>Время:</strong> когда вы сами готовы говорить правду</li>
+                                <li><strong>Тон:</strong> открытый, без хитростей</li>
+                            </ul>
+
+                            <p style="margin-top: 0.75rem;"><strong>Что не работает:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li>Манипуляции, хитрые заходы</li>
+                                <li>Фальшь, «дипломатия»</li>
+                                <li>Скрытые обиды, недосказанность</li>
+                            </ul>
+
+                            <p style="margin-top: 0.75rem;"><strong>Готовые фразы:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li>Вместо <em>«Всё в порядке»</em> (когда нет) → <strong>«Мне плохо. Вот что случилось.»</strong></li>
+                                <li>Вместо <em>«Ничего не случилось»</em> → <strong>«Есть проблема. Давай разберёмся вместе.»</strong></li>
+                            </ul>
+
+                            <p style="margin-top: 0.75rem; padding: 0.75rem 1rem; background: var(--bg-alt); border-radius: var(--radius); font-size: 0.875rem;">
+                                <strong>Совет:</strong> если чувствуете её отстранённость — обратите внимание на запахи, которые сопровождают вас в последнее время (мыло, парфюм, крем после бритья).
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Огонь -->
+                    <div class="wuxing-item">
+                        <button class="wuxing-header" type="button" aria-expanded="false">
+                            <span class="wuxing-icon">🔥</span>
+                            <span class="wuxing-title">Огонь — коды 6, 7</span>
+                            <span class="wuxing-codes">Осязание</span>
+                            <span class="wuxing-arrow" aria-hidden="true">▾</span>
+                        </button>
+                        <div class="wuxing-body">
+                            <p><strong>Что она слышит:</strong> когда вы держите дистанцию — она не слышит вас вообще. Ей нужен физический контакт — иначе она не воспринимает слова. Она руками и кожей чувствует фактуру поверхностей, тканей.</p>
+
+                            <p style="margin-top: 0.75rem;"><strong>Что работает:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li><strong>Формат:</strong> сначала прикосновение — потом слова</li>
+                                <li><strong>Время:</strong> когда вы оба в телесном контакте</li>
+                                <li><strong>Тон:</strong> тёплый, нежный — с прикосновением</li>
+                            </ul>
+
+                            <p style="margin-top: 0.75rem;"><strong>Что не работает:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li>Дистанция, холодность</li>
+                                <li>Разговоры «через стол»</li>
+                                <li>Только слова — без тепла</li>
+                            </ul>
+
+                            <p style="margin-top: 0.75rem;"><strong>Готовые фразы:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li>Вместо <em>«Ты меня не хочешь»</em> → подойдите, обнимите: <strong>«Мне нужна ты»</strong></li>
+                                <li>Вместо <em>«Ты меня не замечаешь»</em> → <strong>«Прикоснись ко мне. Просто будь рядом.»</strong></li>
+                            </ul>
+
+                            <p style="margin-top: 0.75rem; padding: 0.75rem 1rem; background: var(--bg-alt); border-radius: var(--radius); font-size: 0.875rem;">
+                                <strong>Совет:</strong> следите за свойством прикосновений. Ей нужны нежные объятия — это её аптечка.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Земля -->
+                    <div class="wuxing-item">
+                        <button class="wuxing-header" type="button" aria-expanded="false">
+                            <span class="wuxing-icon">🪨</span>
+                            <span class="wuxing-title">Земля — коды 8, 9</span>
+                            <span class="wuxing-codes">Вкус</span>
+                            <span class="wuxing-arrow" aria-hidden="true">▾</span>
+                        </button>
+                        <div class="wuxing-body">
+                            <p><strong>Что она слышит:</strong> когда вы налетаете с разговором в суете — она не воспринимает это. Ей нужна атмосфера — уют, еда, спокойствие.</p>
+
+                            <p style="margin-top: 0.75rem;"><strong>Что работает:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li><strong>Формат:</strong> спокойный разговор за столом — после еды</li>
+                                <li><strong>Время:</strong> когда никто никуда не торопится</li>
+                                <li><strong>Тон:</strong> размеренный, без напряжения</li>
+                            </ul>
+
+                            <p style="margin-top: 0.75rem;"><strong>Что не работает:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li>Разговоры «на бегу»</li>
+                                <li>Разговоры в момент стресса</li>
+                                <li>Требование немедленного ответа</li>
+                            </ul>
+
+                            <p style="margin-top: 0.75rem;"><strong>Готовые фразы:</strong></p>
+                            <ul class="rules-list" style="margin-top: 0.25rem;">
+                                <li>Вместо <em>«Поговори со мной»</em> (в суете) → дождитесь спокойного момента — например, после ужина</li>
+                                <li>Вместо <em>«Ты меня не слушаешь»</em> → за ужином, спокойно: <strong>«Есть разговор. Важный.»</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- ═══════ ТЕСТ НА ИСТОЩЕНИЕ ═══════ -->
+                <h2 style="margin-top: 3rem;">Тест на истощение</h2>
+                <p style="color: var(--text-muted); font-size: 0.9375rem; margin-bottom: 1.5rem;">
+                    Отметьте, что откликается. Это не диагноз — это признаки, которые стоит исследовать.
+                </p>
+
+                <div class="checks-form" style="border-radius: var(--radius-lg);">
+
+                    <div class="checks-check" style="padding: 1rem 1.25rem;">
+                        <label style="display: flex; gap: 0.75rem; align-items: flex-start; cursor: pointer;">
+                            <input type="checkbox" class="male-quiz-checkbox" data-q="1" style="margin-top: 0.25rem; transform: scale(1.2); cursor: pointer;">
+                            <span>Чувствуете, что ваши усилия и вклад в семью не ценят так, как хотелось бы?</span>
+                        </label>
+                    </div>
+
+                    <div class="checks-check" style="padding: 1rem 1.25rem;">
+                        <label style="display: flex; gap: 0.75rem; align-items: flex-start; cursor: pointer;">
+                            <input type="checkbox" class="male-quiz-checkbox" data-q="2" style="margin-top: 0.25rem; transform: scale(1.2); cursor: pointer;">
+                            <span>Всё чаще хочется уйти в себя, в гараж, в компьютер — подальше от бытовых проблем?</span>
+                        </label>
+                    </div>
+
+                    <div class="checks-check" style="padding: 1rem 1.25rem;">
+                        <label style="display: flex; gap: 0.75rem; align-items: flex-start; cursor: pointer;">
+                            <input type="checkbox" class="male-quiz-checkbox" data-q="3" style="margin-top: 0.25rem; transform: scale(1.2); cursor: pointer;">
+                            <span>Раздражение и вспышки гнева стали возникать без видимой причины?</span>
+                        </label>
+                    </div>
+
+                    <div class="checks-check" style="padding: 1rem 1.25rem;">
+                        <label style="display: flex; gap: 0.75rem; align-items: flex-start; cursor: pointer;">
+                            <input type="checkbox" class="male-quiz-checkbox" data-q="4" style="margin-top: 0.25rem; transform: scale(1.2); cursor: pointer;">
+                            <span>Потеряли интерес к физической близости или инициатива исходит только от партнёрши?</span>
+                        </label>
+                    </div>
+
+                    <div class="checks-check" style="padding: 1rem 1.25rem;">
+                        <label style="display: flex; gap: 0.75rem; align-items: flex-start; cursor: pointer;">
+                            <input type="checkbox" class="male-quiz-checkbox" data-q="5" style="margin-top: 0.25rem; transform: scale(1.2); cursor: pointer;">
+                            <span>Чувствуете себя «дойной коровой» — источником ресурсов, но не мужчиной в полной мере?</span>
+                        </label>
+                    </div>
+
+                    <button class="btn btn-primary" type="button" id="maleQuizBtn" style="width: 100%; margin-top: 1rem;">
+                        Показать результат
+                    </button>
+
+                    <div id="maleQuizResult" class="hidden" style="margin-top: 1.5rem; padding: 1.25rem; background: var(--accent-bg); border-radius: var(--radius-lg); border-left: 3px solid var(--accent);">
+                        <h4 id="maleQuizTitle" style="margin-bottom: 0.5rem; color: var(--accent-dark);"></h4>
+                        <p id="maleQuizText" style="font-size: 0.9375rem; margin-bottom: 0.5rem;"></p>
+                        <p style="font-size: 0.875rem; color: var(--text-muted); font-style: italic;">
+                            Это не диагноз. Это признаки, которые стоит исследовать. Посмотрите на вопросы, где вы ответили «да».
+                        </p>
+                    </div>
+
+                </div>
+
+                <!-- ═══════ ПЕРЕЗАГРУЗКА СОСТОЯНИЯ ═══════ -->
+                <h2 style="margin-top: 3rem;">Перезагрузка состояния</h2>
+                <p>
+                    Если тест показал жёлтую или красную зону — или просто хотите проверить, <strong>какие способы переключения работают именно для вас</strong> — откройте <strong>Лабораторию состояния</strong>.
+                </p>
+                <p style="color: var(--text-muted); font-size: 0.9375rem; margin-bottom: 1.5rem;">
+                    Там вы сможете измерить своё состояние до и после эксперимента — и собрать свой <strong>банк работающих переключателей</strong>.
+                </p>
+
+                <a href="#" class="btn btn-primary" data-page="tool-state-lab">
+                    Открыть Лабораторию состояния →
+                </a>
+
+                <!-- ═══════ ФИНАЛЬНЫЙ NOTICE ═══════ -->
+                <div class="notice" style="margin-top: 3rem;">
+                    <div class="notice-title">Это авторская модель</div>
+                    <p>
+                        «Мужской код» — авторская интерпретационная система. Она не является диагностикой личности, медицинским заключением или окончательной характеристикой.
+                    </p>
+                    <p>
+                        Используйте её как способ посмотреть на привычные отношения под другим углом.
+                    </p>
+                    <p style="font-weight: 600; color: var(--accent-dark);">
+                        Не верить. Наблюдать. Сравнивать. Проверять.
+                    </p>
+                </div>
+
+                <div style="margin-top: 2.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <a href="#" class="btn btn-primary" data-page="three-checks">Проверить через правило трёх</a>
                     <a href="#" class="btn btn-secondary" data-page="tools">← К инструментам</a>
                 </div>
             </div>
@@ -2687,7 +4879,167 @@
                 </div>
             </div>
         </div>
+        <!-- ═══════════════════════════════════════ -->
+        <!-- СОВМЕСТИМОСТЬ ПАРЫ -->
+        <!-- ═══════════════════════════════════════ -->
+        <div class="page" id="page-compatibility">
+            <div class="container-narrow">
+                <div class="breadcrumbs">
+                    <a href="#" data-page="home">Главная</a>
+                    <span>/</span>
+                    <a href="#" data-page="tools">Инструменты</a>
+                    <span>/</span>
+                    Совместимость пары
+                </div>
 
+                <h1>Совместимость пары</h1>
+                <p style="font-size: 1.125rem; color: var(--text-muted); margin-bottom: 2rem;">
+                    Посмотрите на вашу пару через У-Син.
+                </p>
+
+                <p>
+                    Введите <strong>два года рождения</strong> — и узнайте:
+                </p>
+                <ul class="rules-list" style="margin-bottom: 2rem;">
+                    <li><strong>Свой элемент</strong> и <strong>элемент партнёра</strong></li>
+                    <li><strong>Тип связи</strong> между вами (действие → противодействие)</li>
+                    <li><strong>Что это значит</strong> для вашей пары</li>
+                    <li><strong>Куда идти дальше</strong> — к своим профилям</li>
+                </ul>
+
+                <div class="notice" style="margin-bottom: 2rem;">
+                    <div class="notice-title">Будь внимателен и к себе, и к партнёру!</div>
+                    <p>
+                        Это <strong>авторская модель</strong>, а не прогноз. Она не «определяет» судьбу и не заменяет диалог.
+                        Используйте её как <strong>способ посмотреть</strong> на привычные отношения под другим углом.
+                    </p>
+                </div>
+
+                <!-- ФОРМА -->
+                <div class="compat-form">
+
+                    <div class="compat-inputs">
+                        <div class="form-group" style="flex: 1;">
+                            <label class="form-label" for="compatYear1">Ваш год рождения</label>
+                            <input
+                                class="form-input"
+                                type="number"
+                                id="compatYear1"
+                                placeholder="1988"
+                                min="1900"
+                                max="2100"
+                            >
+                        </div>
+
+                        <div class="form-group" style="flex: 1;">
+                            <label class="form-label" for="compatYear2">Год рождения партнёра</label>
+                            <input
+                                class="form-input"
+                                type="number"
+                                id="compatYear2"
+                                placeholder="1990"
+                                min="1900"
+                                max="2100"
+                            >
+                        </div>
+                    </div>
+
+                    <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1.25rem;">
+                        <button class="btn btn-primary" type="button" id="compatBtn">
+                            Показать связь
+                        </button>
+                        <button class="btn btn-secondary" type="button" id="compatResetBtn">
+                            Сбросить
+                        </button>
+                    </div>
+
+                    <p class="compat-error hidden" id="compatError"></p>
+
+                </div>
+
+                <!-- РЕЗУЛЬТАТ -->
+                <div class="hidden" id="compatResult">
+
+                    <!-- Ваша пара -->
+                    <div class="compat-block">
+                        <h2 class="compat-block-title">Ваша пара</h2>
+                        <div class="compat-pair">
+                            <div class="compat-pair-item">
+                                <div class="compat-pair-icon" id="compatIcon1">🌳</div>
+                                <div class="compat-pair-label">Вы</div>
+                                <div class="compat-pair-value" id="compatElement1">—</div>
+                                <div class="compat-pair-code" id="compatCode1">—</div>
+                            </div>
+                            <div class="compat-pair-divider">+</div>
+                            <div class="compat-pair-item">
+                                <div class="compat-pair-icon" id="compatIcon2">🪨</div>
+                                <div class="compat-pair-label">Партнёр</div>
+                                <div class="compat-pair-value" id="compatElement2">—</div>
+                                <div class="compat-pair-code" id="compatCode2">—</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Тип связи -->
+                    <div class="compat-block">
+                        <h2 class="compat-block-title">Тип связи</h2>
+                        <div id="compatConnectionType">
+                            <p style="font-size: 1.0625rem; font-weight: 600; color: var(--accent-dark); margin-bottom: 0.75rem;">
+                                —
+                            </p>
+                            <p id="compatConnectionText" style="font-size: 0.9375rem;">
+                                —
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Что это значит -->
+                    <div class="compat-block">
+                        <h2 class="compat-block-title">Что это значит для вас</h2>
+                        <div id="compatMeaning">
+                            <p style="font-size: 0.9375rem;">
+                                —
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Что дальше -->
+                    <div class="compat-block">
+                        <h2 class="compat-block-title">Что дальше</h2>
+                        <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                            <a href="#" class="btn btn-secondary" data-page="tool-female" id="compatLink1">
+                                → Ваш профиль
+                            </a>
+                            <a href="#" class="btn btn-secondary" data-page="tool-male" id="compatLink2">
+                                → Профиль партнёра
+                            </a>
+                            <a href="#" class="btn btn-secondary" data-page="relationships">
+                                → Карта отношений
+                            </a>
+                            <a href="#" class="btn btn-primary" data-page="three-checks">
+                                → Проверить через правило трёх
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- ФИНАЛЬНЫЙ NOTICE -->
+                <div class="notice" style="margin-top: 3rem;">
+                    <div class="notice-title">Будь внимателен и к себе, и к партнёру!</div>
+                    <p>
+                        Это не «прогноз совместимости» и не диагноз. Это — <strong>модель</strong>, которую можно <strong>проверить</strong> на реальности.
+                    </p>
+                    <p style="font-weight: 600; color: var(--accent-dark);">
+                        Не верить. Наблюдать. Сравнивать. Проверять.
+                    </p>
+                </div>
+
+                <div style="margin-top: 2.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <a href="#" class="btn btn-secondary" data-page="tools">← К инструментам</a>
+                </div>
+            </div>
+        </div>
     </main>
 
     <!-- ═══════════════════════════════════════════ -->
@@ -3518,7 +5870,372 @@
                 }
                 return { init };
             })();
-                initFromHash();
+            // ═══════════════════════════════════════════
+            // АККОРДЕОН У-СИН
+            // ═══════════════════════════════════════════
+            (function initWuxing() {
+                const headers = document.querySelectorAll('.wuxing-header');
+                if (!headers.length) return;
+
+                headers.forEach(header => {
+                    header.addEventListener('click', function() {
+                        const item = this.closest('.wuxing-item');
+                        const isOpen = item.classList.toggle('open');
+                        this.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                    });
+                });
+            })();
+
+                   // ═══════════════════════════════════════════
+            // ТЕСТ «ДЛЯ ЖЕНЩИН»
+            // ═══════════════════════════════════════════
+            (function initFemaleQuiz() {
+                const btn = document.getElementById('femaleQuizBtn');
+                const result = document.getElementById('femaleQuizResult');
+                const title = document.getElementById('femaleQuizTitle');
+                const text = document.getElementById('femaleQuizText');
+
+                if (!btn || !result) return;
+
+                btn.addEventListener('click', function() {
+                    const checkboxes = document.querySelectorAll('.female-quiz-checkbox');
+                    let score = 0;
+                    checkboxes.forEach(cb => { if (cb.checked) score++; });
+
+                    result.classList.remove('hidden');
+
+                    if (score <= 1) {
+                        title.textContent = '🟢 Зелёная зона: Баланс сохранён';
+                        text.textContent = 'Вы умеете доверять миру и партнёру, не перегружая психику контролем. Продолжайте беречь этот внутренний покой.';
+                    } else if (score <= 3) {
+                        title.textContent = '🟡 Жёлтая зона: Скрытая усталость';
+                        text.textContent = 'Вы постепенно уходите в мужскую Янскую позицию контроля. Слишком много задач держится исключительно на вашем внимании. Попробуйте делегировать мелкие бытовые вопросы — даже если партнёр сделает их неидеально.';
+                    } else {
+                        title.textContent = '🔴 Красная зона: Глубокое истощение';
+                        text.textContent = 'Ваша женская энергия заблокирована гиперконтролем. Вы полностью тянете на себе «мужской груз» в быту или отношениях, что ведёт к опустошению. Необходима срочная пауза, практики заземления и осознанный отказ от роли спасателя в семье.';
+                    }
+
+                    result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                });
+            // ═══════════════════════════════════════════
+            // ТЕСТ «МУЖСКОЙ КОД»
+            // ═══════════════════════════════════════════
+            (function initMaleQuiz() {
+                const btn = document.getElementById('maleQuizBtn');
+                const result = document.getElementById('maleQuizResult');
+                const title = document.getElementById('maleQuizTitle');
+                const text = document.getElementById('maleQuizText');
+
+                if (!btn || !result) return;
+
+                btn.addEventListener('click', function() {
+                    const checkboxes = document.querySelectorAll('.male-quiz-checkbox');
+                    let score = 0;
+                    checkboxes.forEach(cb => { if (cb.checked) score++; });
+
+                    result.classList.remove('hidden');
+
+                    if (score <= 1) {
+                        title.textContent = '🟢 Зелёная зона: Мужская сила в балансе';
+                        text.textContent = 'Вы умеете сохранять внутренний стержень, не теряя связи с собой. Продолжайте в том же духе.';
+                    } else if (score <= 3) {
+                        title.textContent = '🟡 Жёлтая зона: Скрытое истощение';
+                        text.textContent = 'Вы начинаете терять связь со своей мужской природой. Пора вспомнить, чего хотите лично вы — не для семьи, не для работы, а для себя.';
+                    } else {
+                        title.textContent = '🔴 Красная зона: Глубокое истощение';
+                        text.textContent = 'Вы полностью растворились в роли «добытчика» и потеряли себя. Необходима пауза и возвращение к личным целям. Позвольте себе быть не только источником ресурсов, но и человеком.';
+                    }
+
+                    result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                });
+            })();
+            // ═══════════════════════════════════════════
+            // СОВМЕСТИМОСТЬ ПАРЫ
+            // ═══════════════════════════════════════════
+            (function initCompatibility() {
+
+                // ─── ДАННЫЕ ЭЛЕМЕНТОВ ───
+                const ELEMENTS = {
+                    'Металл': { icon: '⚪', num: 0 },
+                    'Вода':   { icon: '💧', num: 1 },
+                    'Дерево': { icon: '🌳', num: 2 },
+                    'Огонь':  { icon: '🔥', num: 3 },
+                    'Земля':  { icon: '🪨', num: 4 }
+                };
+
+                // ─── КОД → ЭЛЕМЕНТ ───
+                const CODE_TO_ELEMENT = {
+                    0: 'Металл', 1: 'Металл',
+                    2: 'Вода',   3: 'Вода',
+                    4: 'Дерево', 5: 'Дерево',
+                    6: 'Огонь',  7: 'Огонь',
+                    8: 'Земля',  9: 'Земля'
+                };
+
+                // ─── КОД → ПОЛЯРНОСТЬ ───
+                const CODE_TO_POLARITY = {
+                    0: 'Ян', 1: 'Инь',
+                    2: 'Ян', 3: 'Инь',
+                    4: 'Ян', 5: 'Инь',
+                    6: 'Ян', 7: 'Инь',
+                    8: 'Ян', 9: 'Инь'
+                };
+
+                // ─── МАТРИЦА СВЯЗЕЙ ───
+                // Ключ: [элемент_1]_[элемент_2]
+                // Данные: { type, text, meaning }
+                const MATRIX = {
+
+                    // ДЕРЕВО
+                    'Дерево_Дерево': {
+                        type: 'Равенство',
+                        text: 'Два однотипных элемента. Усиление или конкуренция.',
+                        meaning: 'Вы похожи. Понимаете друг друга с полуслова. Но можете соревноваться за одну роль — «кто главный».'
+                    },
+                    'Дерево_Огонь': {
+                        type: 'Питание (Дерево → Огонь)',
+                        text: 'Дерево питает Огонь. Вы даёте ресурс партнёру.',
+                        meaning: 'Вы — источник вдохновения. Он — тот, кто действует. Естественный энергообмен. Следите, чтобы не выгореть.'
+                    },
+                    'Дерево_Земля': {
+                        type: 'Действие → противодействие (Дерево → Земля)',
+                        text: 'Дерево действует на Землю: корни, крона — лишают плодородия. Земля отвечает: не может «выгнать» Дерево.',
+                        meaning: 'Вы — действующий. Он — отвечающий. Мало — не питает. Оптимум — обогащает (перегной). Много — пробивает (разрушает). Ваша задача — найти меру.'
+                    },
+                    'Дерево_Металл': {
+                        type: 'Действие → противодействие (Металл → Дерево)',
+                        text: 'Металл действует на Дерево: рубит или обрабатывает. Дерево отвечает: меняет форму или затупляет.',
+                        meaning: 'Он — действующий. Вы — отвечающий. Мало — не формирует. Оптимум — обрабатывает (Учитель, Папа Карло). Много — рубит (Агрессор). Следите за мерой его воздействия.'
+                    },
+                    'Дерево_Вода': {
+                        type: 'Питание (Вода → Дерево)',
+                        text: 'Вода питает Дерево. Партнёр даёт вам ресурс.',
+                        meaning: 'Он — источник. Вы — тот, кто растёт. Естественный энергообмен. Следите, чтобы он не истощился.'
+                    },
+
+                    // ОГОНЬ
+                    'Огонь_Дерево': {
+                        type: 'Питание (Дерево → Огонь)',
+                        text: 'Дерево питает Огонь. Партнёр даёт вам ресурс.',
+                        meaning: 'Он — источник вдохновения. Вы — тот, кто действует. Естественный энергообмен. Следите, чтобы он не выгорел.'
+                    },
+                    'Огонь_Огонь': {
+                        type: 'Равенство',
+                        text: 'Два однотипных элемента. Усиление или конкуренция.',
+                        meaning: 'Вы похожи. Много страсти. Но можете соревноваться в силе — «кто ярче».'
+                    },
+                    'Огонь_Земля': {
+                        type: 'Питание (Огонь → Земля)',
+                        text: 'Огонь питает Землю. Вы даёте ресурс партнёру.',
+                        meaning: 'Вы — источник тепла. Он — тот, кто держит форму. Естественный энергообмен. Следите, чтобы не выгореть.'
+                    },
+                    'Огонь_Металл': {
+                        type: 'Действие → противодействие (Огонь → Металл)',
+                        text: 'Огонь действует на Металл: плавит или куёт. Металл отвечает: меняет форму или теряет её.',
+                        meaning: 'Вы — действующий. Он — отвечающий. Мало — не греет. Оптимум — куёт (придаёт форму). Много — плавит (разрушает). Ваша задача — найти меру.'
+                    },
+                    'Огонь_Вода': {
+                        type: 'Действие → противодействие (Вода → Огонь)',
+                        text: 'Вода действует на Огонь: гасит или стимулирует (угольная пыль). Огонь не может уничтожить Воду — она меняет состояние (пар).',
+                        meaning: 'Он — действующий. Вы — отвечающий. Мало — сухое не горит. Оптимум — вода стимулирует горение. Много — гаснет. Следите за мерой.'
+                    },
+
+                    // ЗЕМЛЯ
+                    'Земля_Дерево': {
+                        type: 'Действие → противодействие (Дерево → Земля)',
+                        text: 'Дерево действует на Землю: корни, крона — лишают плодородия. Земля отвечает: не может «выгнать» Дерево.',
+                        meaning: 'Он — действующий. Вы — отвечающий. Мало — не питает. Оптимум — обогащает (перегной). Много — пробивает (разрушает). Следите за мерой его воздействия.'
+                    },
+                    'Земля_Огонь': {
+                        type: 'Питание (Огонь → Земля)',
+                        text: 'Огонь питает Землю. Партнёр даёт вам ресурс.',
+                        meaning: 'Он — источник тепла. Вы — тот, кто держит форму. Естественный энергообмен. Следите, чтобы он не выгорел.'
+                    },
+                    'Земля_Земля': {
+                        type: 'Равенство',
+                        text: 'Два однотипных элемента. Усиление или конкуренция.',
+                        meaning: 'Вы похожи. Много стабильности. Но можете соревноваться за контроль — «кто главный в доме».'
+                    },
+                    'Земля_Металл': {
+                        type: 'Питание (Земля → Металл)',
+                        text: 'Земля питает Металл. Вы даёте ресурс партнёру.',
+                        meaning: 'Вы — источник. Он — тот, кто формирует структуру. Естественный энергообмен. Следите, чтобы не истощиться.'
+                    },
+                    'Земля_Вода': {
+                        type: 'Действие → противодействие (Земля → Вода)',
+                        text: 'Земля действует на Воду: впитывает, останавливает. Вода отвечает: не может пробить Землю надолго.',
+                        meaning: 'Вы — действующий. Он — отвечающий. Мало — не удерживает. Оптимум — создаёт русло (направляет). Много — становится плотиной (останавливает). Ваша задача — найти меру.'
+                    },
+
+                    // МЕТАЛЛ
+                    'Металл_Дерево': {
+                        type: 'Действие → противодействие (Металл → Дерево)',
+                        text: 'Металл действует на Дерево: рубит или обрабатывает. Дерево отвечает: меняет форму или затупляет.',
+                        meaning: 'Вы — действующий. Он — отвечающий. Мало — не формирует. Оптимум — обрабатывает (Учитель, Папа Карло). Много — рубит (Агрессор). Ваша задача — найти меру.'
+                    },
+                    'Металл_Огонь': {
+                        type: 'Действие → противодействие (Огонь → Металл)',
+                        text: 'Огонь действует на Металл: плавит или куёт. Металл отвечает: меняет форму или теряет её.',
+                        meaning: 'Он — действующий. Вы — отвечающий. Мало — не греет. Оптимум — куёт (придаёт форму). Много — плавит (разрушает). Следите за мерой его воздействия.'
+                    },
+                    'Металл_Земля': {
+                        type: 'Питание (Земля → Металл)',
+                        text: 'Земля питает Металл. Партнёр даёт вам ресурс.',
+                        meaning: 'Он — источник. Вы — тот, кто формирует структуру. Естественный энергообмен. Следите, чтобы он не истощился.'
+                    },
+                    'Металл_Металл': {
+                        type: 'Равенство',
+                        text: 'Два однотипных элемента. Усиление или конкуренция.',
+                        meaning: 'Вы похожи. Много структуры. Но можете соревноваться в статусе — «кто прав».'
+                    },
+                    'Металл_Вода': {
+                        type: 'Питание (Металл → Вода)',
+                        text: 'Металл питает Воду. Вы даёте ресурс партнёру.',
+                        meaning: 'Вы — источник структуры. Он — тот, кто течёт и адаптируется. Естественный энергообмен. Следите, чтобы не истощиться.'
+                    },
+
+                    // ВОДА
+                    'Вода_Дерево': {
+                        type: 'Питание (Вода → Дерево)',
+                        text: 'Вода питает Дерево. Вы даёте ресурс партнёру.',
+                        meaning: 'Вы — источник. Он — тот, кто растёт. Естественный энергообмен. Следите, чтобы не истощиться.'
+                    },
+                    'Вода_Огонь': {
+                        type: 'Действие → противодействие (Вода → Огонь)',
+                        text: 'Вода действует на Огонь: гасит или стимулирует (угольная пыль). Огонь не может уничтожить Воду — она меняет состояние (пар).',
+                        meaning: 'Вы — действующий. Он — отвечающий. Мало — сухое не горит. Оптимум — вода стимулирует горение. Много — гаснет. Ваша задача — найти меру.'
+                    },
+                    'Вода_Земля': {
+                        type: 'Действие → противодействие (Земля → Вода)',
+                        text: 'Земля действует на Воду: впитывает, останавливает. Вода отвечает: не может пробить Землю надолго.',
+                        meaning: 'Он — действующий. Вы — отвечающий. Мало — не удерживает. Оптимум — создаёт русло (направляет). Много — становится плотиной (останавливает). Следите за мерой его воздействия.'
+                    },
+                    'Вода_Металл': {
+                        type: 'Питание (Металл → Вода)',
+                        text: 'Металл питает Воду. Партнёр даёт вам ресурс.',
+                        meaning: 'Он — источник структуры. Вы — тот, кто течёт и адаптируется. Естественный энергообмен. Следите, чтобы он не истощился.'
+                    },
+                    'Вода_Вода': {
+                        type: 'Равенство',
+                        text: 'Два однотипных элемента. Усиление или конкуренция.',
+                        meaning: 'Вы похожи. Много глубины. Но можете соревноваться в чувствительности — «кто тоньше чувствует».'
+                    }
+                };
+
+                // ─── ЭЛЕМЕНТЫ DOM ───
+                const year1Input = document.getElementById('compatYear1');
+                const year2Input = document.getElementById('compatYear2');
+                const btn = document.getElementById('compatBtn');
+                const resetBtn = document.getElementById('compatResetBtn');
+                const errorEl = document.getElementById('compatError');
+                const resultEl = document.getElementById('compatResult');
+
+                if (!btn || !resultEl) return;
+
+                // ─── ФУНКЦИИ ───
+                function getCode(year) {
+                    const lastDigit = parseInt(year.toString().slice(-1));
+                    return isNaN(lastDigit) ? null : lastDigit;
+                }
+
+                function showError(message) {
+                    errorEl.textContent = message;
+                    errorEl.classList.remove('hidden');
+                    resultEl.classList.add('hidden');
+                }
+
+                function clearError() {
+                    errorEl.textContent = '';
+                    errorEl.classList.add('hidden');
+                }
+
+                function calculate() {
+                    clearError();
+
+                    const year1 = year1Input.value.trim();
+                    const year2 = year2Input.value.trim();
+
+                    if (!year1 || year1.length < 4) {
+                        showError('Введите ваш год рождения (4 цифры)');
+                        return;
+                    }
+                    if (!year2 || year2.length < 4) {
+                        showError('Введите год рождения партнёра (4 цифры)');
+                        return;
+                    }
+
+                    const code1 = getCode(year1);
+                    const code2 = getCode(year2);
+
+                    const element1 = CODE_TO_ELEMENT[code1];
+                    const element2 = CODE_TO_ELEMENT[code2];
+
+                    const polarity1 = CODE_TO_POLARITY[code1];
+                    const polarity2 = CODE_TO_POLARITY[code2];
+
+                    const matrixKey = element1 + '_' + element2;
+                    const connection = MATRIX[matrixKey];
+
+                    if (!connection) {
+                        showError('Не удалось определить связь. Проверьте ввод.');
+                        return;
+                    }
+
+                    // ── Заполняем результат ──
+
+                    // Ваша пара
+                    document.getElementById('compatIcon1').textContent = ELEMENTS[element1].icon;
+                    document.getElementById('compatElement1').textContent = element1;
+                    document.getElementById('compatCode1').textContent = 'Код ' + code1 + ' — ' + polarity1;
+
+                    document.getElementById('compatIcon2').textContent = ELEMENTS[element2].icon;
+                    document.getElementById('compatElement2').textContent = element2;
+                    document.getElementById('compatCode2').textContent = 'Код ' + code2 + ' — ' + polarity2;
+
+                    // Тип связи
+                    document.getElementById('compatConnectionType').innerHTML =
+                        '<p style="font-size: 1.0625rem; font-weight: 600; color: var(--accent-dark); margin-bottom: 0.75rem;">' +
+                        connection.type +
+                        '</p>' +
+                        '<p style="font-size: 0.9375rem;">' +
+                        connection.text +
+                        '</p>';
+
+                    // Что это значит
+                    document.getElementById('compatMeaning').innerHTML =
+                        '<p style="font-size: 0.9375rem;">' + connection.meaning + '</p>';
+
+                    // Ссылки на профили
+                    document.getElementById('compatLink1').href = '#' + 'tool-female';
+                    document.getElementById('compatLink2').href = '#' + 'tool-male';
+
+                    // Показываем результат
+                    resultEl.classList.remove('hidden');
+                    resultEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+
+                function reset() {
+                    year1Input.value = '';
+                    year2Input.value = '';
+                    clearError();
+                    resultEl.classList.add('hidden');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+
+                // ─── СОБЫТИЯ ───
+                btn.addEventListener('click', calculate);
+                resetBtn.addEventListener('click', reset);
+
+                // Enter в полях
+                year1Input.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') calculate();
+                });
+                year2Input.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') calculate();
+                });
+
+            })();
+            })();         initFromHash();
                 window.addEventListener('hashchange', initFromHash);
         })();
     </script>
