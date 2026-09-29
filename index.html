@@ -1617,6 +1617,269 @@
             }
         }
         /* ═══════════════════════════════════════════ */
+        /* НАБЛЮДАТЕЛЬ */
+        /* ═══════════════════════════════════════════ */
+
+        /* Форма */
+        .observer-form {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-lg);
+            padding: 1.75rem;
+            margin: 1.5rem 0 2rem;
+        }
+
+        .observer-error {
+            margin-top: 1rem;
+            font-size: 0.9375rem;
+            color: var(--danger);
+        }
+        .observer-error.hidden {
+            display: none;
+        }
+
+        /* Кнопки-примеры */
+        .observer-examples {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .observer-example-btn {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            font-family: inherit;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            background: var(--bg-alt);
+            border: 1px solid var(--border-light);
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+        .observer-example-btn:hover {
+            color: var(--accent);
+            border-color: var(--accent);
+            background: var(--accent-bg);
+        }
+
+        /* Цепочка слоёв */
+        .observer-chain {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            margin: 1.5rem 0;
+        }
+
+        .observer-layer {
+            padding: 1.25rem 1.5rem;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-light);
+            background: var(--bg-card);
+            border-left-width: 4px;
+        }
+
+        .observer-layer-fact {
+            border-left-color: var(--success);
+        }
+        .observer-layer-interp {
+            border-left-color: var(--warning);
+        }
+        .observer-layer-emotion {
+            border-left-color: var(--accent);
+        }
+        .observer-layer-reaction {
+            border-left-color: var(--danger);
+        }
+
+        .observer-layer-header {
+            display: flex;
+            align-items: baseline;
+            gap: 0.75rem;
+            margin-bottom: 0.375rem;
+        }
+
+        .observer-layer-num {
+            font-family: var(--font-mono);
+            font-size: 0.8125rem;
+            font-weight: 500;
+            color: var(--accent);
+        }
+
+        .observer-layer-title {
+            font-weight: 700;
+            font-size: 1.0625rem;
+            color: var(--text);
+        }
+
+        .observer-layer-desc {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            margin-bottom: 0.75rem;
+        }
+
+        .observer-layer-input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            font-family: inherit;
+            font-size: 0.9375rem;
+            color: var(--text);
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            transition: border-color 0.15s ease, box-shadow 0.15s ease;
+            resize: vertical;
+        }
+        .observer-layer-input:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.1);
+        }
+        textarea.observer-layer-input {
+            min-height: 60px;
+        }
+
+        .observer-arrow {
+            text-align: center;
+            font-size: 1.25rem;
+            color: var(--text-light);
+            padding: 0.5rem 0;
+            line-height: 1;
+        }
+
+        /* Действия результата */
+        .observer-result-actions {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        /* Список наблюдений */
+        .observer-list {
+            display: grid;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .observer-item {
+            padding: 1.25rem 1.5rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-lg);
+            transition: border-color 0.15s ease;
+        }
+        .observer-item:hover {
+            border-color: var(--border);
+        }
+
+        .observer-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .observer-item-situation {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text);
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .observer-item-date {
+            font-size: 0.8125rem;
+            color: var(--text-muted);
+            white-space: nowrap;
+        }
+
+        .observer-item-chain {
+            display: grid;
+            gap: 0.5rem;
+            margin-top: 0.75rem;
+            padding-top: 0.75rem;
+            border-top: 1px solid var(--border-light);
+        }
+
+        .observer-item-layer {
+            display: flex;
+            gap: 0.75rem;
+            font-size: 0.875rem;
+            align-items: baseline;
+        }
+
+        .observer-item-label {
+            font-weight: 600;
+            color: var(--accent-dark);
+            flex-shrink: 0;
+            min-width: 120px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .observer-item-value {
+            color: var(--text);
+            flex: 1;
+        }
+
+        .observer-item-actions {
+            display: flex;
+            gap: 0.375rem;
+            justify-content: flex-end;
+            margin-top: 0.75rem;
+        }
+
+        .observer-empty.hidden {
+            display: none;
+        }
+
+        .observer-actions-footer {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-light);
+        }
+
+        /* Мобильная версия */
+        @media (max-width: 640px) {
+            .observer-form {
+                padding: 1.25rem;
+            }
+            .observer-layer {
+                padding: 1rem 1.125rem;
+            }
+            .observer-item {
+                padding: 1rem 1.125rem;
+            }
+            .observer-item-layer {
+                flex-direction: column;
+                gap: 0.25rem;
+            }
+            .observer-item-label {
+                min-width: auto;
+            }
+            .observer-actions-footer {
+                flex-direction: column;
+            }
+            .observer-actions-footer .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            .observer-result-actions {
+                flex-direction: column;
+            }
+            .observer-result-actions .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+        /* ═══════════════════════════════════════════ */
         /* FOOTER */
         /* ═══════════════════════════════════════════ */
         .site-footer {
@@ -4537,6 +4800,9 @@
             </div>
         </div>
 
+               <!-- ═══════════════════════════════════════ -->
+        <!-- НАБЛЮДАТЕЛЬ -->
+        <!-- ═══════════════════════════════════════ -->
         <div class="page" id="page-tool-observer">
             <div class="container-narrow">
                 <div class="breadcrumbs">
@@ -4546,39 +4812,256 @@
                     <span>/</span>
                     Наблюдатель
                 </div>
+
                 <h1>Наблюдатель</h1>
                 <p style="font-size: 1.125rem; color: var(--text-muted); margin-bottom: 2rem;">
                     Главный инструмент исследования.
                 </p>
 
-                <p>Наблюдатель не вмешивается сразу. Сначала он фиксирует:</p>
-                <ul class="rules-list">
-                    <li>Что происходит?</li>
-                    <li>Кто что делает?</li>
-                    <li>Что повторяется?</li>
-                    <li>После какого события возникает реакция?</li>
-                    <li>Как меняется система после вмешательства?</li>
-                </ul>
+                <!-- ВСТУПЛЕНИЕ -->
+                <div class="notice" style="margin-bottom: 2rem;">
+                    <div class="notice-title">Наблюдатель — это не позиция. Это состояние.</div>
+                    <p>
+                        Когда ты становишься наблюдателем — ты <strong>перестаёшь реагировать механистически</strong>.
+                    </p>
+                    <p>
+                        Ты видишь: ситуация → твоя реакция → результат. Ты замечаешь, где действуешь «на автопилоте». Ты учишься выбирать — а не реагировать.
+                    </p>
+                    <p style="font-weight: 600; color: var(--accent-dark); margin-top: 1rem;">
+                        Ты учишься быть Человеком.
+                    </p>
+                </div>
 
-                <h3 style="margin-top: 2rem;">Попробуйте описать ситуацию без оценочных слов</h3>
-                <div style="display: grid; gap: 1rem; margin-top: 1rem;">
+                <p>
+                    Это — не «холодный расчёт». Это — <strong>возвращение себе способности видеть</strong>, а не только чувствовать.
+                </p>
+                <p style="margin-bottom: 2rem;">
+                    Наблюдатель <strong>не вмешивается сразу</strong>. Сначала он <strong>фиксирует</strong>.
+                </p>
+
+                <!-- 5 ВОПРОСОВ -->
+                <h2 style="margin-top: 2rem;">Пять вопросов наблюдателя</h2>
+                <ol class="numbered-list">
+                    <li><strong>Что происходит?</strong><span>Факты, а не оценки.</span></li>
+                    <li><strong>Кто что делает?</strong><span>Действия — без интерпретаций.</span></li>
+                    <li><strong>Что повторяется?</strong><span>Закономерности — а не разовые случаи.</span></li>
+                    <li><strong>После какого события возникает реакция?</strong><span>Триггеры — а не «характер».</span></li>
+                    <li><strong>Как меняется система после вмешательства?</strong><span>Что сдвинулось — а что осталось.</span></li>
+                </ol>
+
+                <!-- ПРИМЕР -->
+                <h2 style="margin-top: 2.5rem;">Оценка vs Наблюдение</h2>
+                <p style="margin-bottom: 1rem;">
+                    Одно и то же событие — <strong>два разных языка</strong>.
+                </p>
+
+                <div style="display: grid; gap: 1rem; margin: 1.5rem 0;">
+
                     <div class="card" style="border-left: 3px solid var(--danger);">
-                        <div style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; color: var(--danger); margin-bottom: 0.5rem;">Оценка</div>
-                        «Он безответственный»
+                        <div style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; color: var(--danger); margin-bottom: 0.5rem;">
+                            Оценка (интерпретация)
+                        </div>
+                        <p style="font-size: 1rem; font-style: italic; margin: 0;">«Он безответственный»</p>
                     </div>
+
                     <div class="card" style="border-left: 3px solid var(--success);">
-                        <div style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; color: var(--success); margin-bottom: 0.5rem;">Наблюдение</div>
-                        «Трижды обещал сделать Х и не сделал»
+                        <div style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; color: var(--success); margin-bottom: 0.5rem;">
+                            Наблюдение (факт)
+                        </div>
+                        <p style="font-size: 1rem; margin: 0;">«Трижды обещал сделать X — не сделал»</p>
                     </div>
+
                 </div>
 
-                <div class="placeholder" style="margin-top: 2rem;">
-                    <div class="placeholder-icon">👁</div>
-                    <h3>Инструмент в разработке</h3>
-                    <p>Здесь появится интерактивная форма для тренировки наблюдения.</p>
+                <p style="font-size: 0.9375rem; color: var(--text-muted); margin-bottom: 2rem;">
+                    Первое — <strong>закрывает</strong> разговор. Второе — <strong>открывает</strong> возможность разобраться.
+                </p>
+
+                <!-- ИНТЕРАКТИВ -->
+                <h2 style="margin-top: 3rem;">Факт или интерпретация?</h2>
+                <p style="margin-bottom: 1rem;">
+                    Разложите свою ситуацию на четыре слоя. Так вы увидите, где именно возникает напряжение.
+                </p>
+
+                <div class="observer-form">
+
+                    <!-- ПРИМЕРЫ -->
+                    <div style="margin-bottom: 1.5rem;">
+                        <label class="form-label" style="margin-bottom: 0.75rem; display: block;">
+                            Или выберите готовый пример:
+                        </label>
+                        <div class="observer-examples" id="observerExamples">
+                            <button type="button" class="observer-example-btn" data-example="0">
+                                «Он меня игнорирует»
+                            </button>
+                            <button type="button" class="observer-example-btn" data-example="1">
+                                «Меня не ценят»
+                            </button>
+                            <button type="button" class="observer-example-btn" data-example="2">
+                                «Он безответственный»
+                            </button>
+                            <button type="button" class="observer-example-btn" data-example="3">
+                                «Меня не понимают»
+                            </button>
+                            <button type="button" class="observer-example-btn" data-example="4">
+                                «Он мне врёт»
+                            </button>
+                            <button type="button" class="observer-example-btn" data-example="5">
+                                «Я устал»
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- СВОЁ ПОЛЕ -->
+                    <div class="form-group">
+                        <label class="form-label" for="observerSituation">Ваша ситуация</label>
+                        <input
+                            class="form-input"
+                            type="text"
+                            id="observerSituation"
+                            placeholder="Например: Он меня игнорирует"
+                        >
+                    </div>
+
+                    <button class="btn btn-primary" type="button" id="observerBtn">
+                        Разложить на слои
+                    </button>
+
+                    <p class="observer-error hidden" id="observerError"></p>
+
                 </div>
 
-                <div style="margin-top: 2.5rem;">
+                <!-- РЕЗУЛЬТАТ -->
+                <div class="hidden" id="observerResult">
+
+                    <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Разбор ситуации</h3>
+
+                    <div class="observer-chain">
+
+                        <!-- ФАКТ -->
+                        <div class="observer-layer observer-layer-fact">
+                            <div class="observer-layer-header">
+                                <span class="observer-layer-num">01</span>
+                                <span class="observer-layer-title">Факт</span>
+                            </div>
+                            <p class="observer-layer-desc">Что произошло фактически?</p>
+                            <textarea
+                                class="observer-layer-input"
+                                id="observerFact"
+                                placeholder="Я написал в 14:00. Ответа нет до 20:00."
+                                rows="2"
+                            ></textarea>
+                        </div>
+
+                        <div class="observer-arrow">↓</div>
+
+                        <!-- ИНТЕРПРЕТАЦИЯ -->
+                        <div class="observer-layer observer-layer-interp">
+                            <div class="observer-layer-header">
+                                <span class="observer-layer-num">02</span>
+                                <span class="observer-layer-title">Интерпретация</span>
+                            </div>
+                            <p class="observer-layer-desc">Что я добавил от себя?</p>
+                            <textarea
+                                class="observer-layer-input"
+                                id="observerInterpretation"
+                                placeholder="Ему на меня наплевать."
+                                rows="2"
+                            ></textarea>
+                        </div>
+
+                        <div class="observer-arrow">↓</div>
+
+                        <!-- ЭМОЦИЯ -->
+                        <div class="observer-layer observer-layer-emotion">
+                            <div class="observer-layer-header">
+                                <span class="observer-layer-num">03</span>
+                                <span class="observer-layer-title">Эмоция</span>
+                            </div>
+                            <p class="observer-layer-desc">Что я почувствовал?</p>
+                            <input
+                                class="observer-layer-input"
+                                type="text"
+                                id="observerEmotion"
+                                placeholder="Тревога, обида, злость..."
+                            >
+                        </div>
+
+                        <div class="observer-arrow">↓</div>
+
+                        <!-- РЕАКЦИЯ -->
+                        <div class="observer-layer observer-layer-reaction">
+                            <div class="observer-layer-header">
+                                <span class="observer-layer-num">04</span>
+                                <span class="observer-layer-title">Реакция</span>
+                            </div>
+                            <p class="observer-layer-desc">Что я сделал?</p>
+                            <textarea
+                                class="observer-layer-input"
+                                id="observerReaction"
+                                placeholder="Написал ещё три сообщения."
+                                rows="2"
+                            ></textarea>
+                        </div>
+
+                    </div>
+
+                    <!-- ВОПРОС -->
+                    <div class="notice" style="margin-top: 2rem;">
+                        <div class="notice-title">Главный вопрос</div>
+                        <p style="font-size: 1.0625rem; font-weight: 500;">
+                            Что изменится, если убрать интерпретацию?
+                        </p>
+                    </div>
+
+                    <!-- ДЕЙСТВИЯ -->
+                    <div class="observer-result-actions">
+                        <button class="btn btn-primary" type="button" id="observerSaveBtn">
+                            Сохранить разбор
+                        </button>
+                        <button class="btn btn-secondary" type="button" id="observerResetBtn">
+                            Сбросить
+                        </button>
+                    </div>
+
+                </div>
+
+                <!-- СПИСОК НАБЛЮДЕНИЙ -->
+                <h2 style="margin-top: 3rem;">Мои наблюдения</h2>
+                <p style="color: var(--text-muted); font-size: 0.9375rem; margin-bottom: 1.5rem;">
+                    Все разборы сохраняются <strong>только в вашем браузере</strong>. Ничего не отправляется на сервер.
+                </p>
+
+                <div class="observer-list" id="observerList">
+                    <!-- Заполняется JS -->
+                </div>
+
+                <div class="observer-empty hidden" id="observerEmpty">
+                    <p style="color: var(--text-muted); text-align: center; padding: 2rem 0;">
+                        Пока нет сохранённых разборов.<br>
+                        Начните с первого — разложите ситуацию выше.
+                    </p>
+                </div>
+
+                <div class="observer-actions-footer" id="observerActionsFooter">
+                    <button class="btn btn-secondary" id="observerExportJsonBtn">📥 Скачать JSON</button>
+                    <button class="btn btn-secondary" id="observerExportWaBtn">💬 Отправить автору</button>
+                    <button class="btn btn-secondary" id="observerClearAllBtn" style="color: var(--danger); border-color: var(--border);">🗑 Удалить все</button>
+                </div>
+
+                <!-- ФИНАЛЬНЫЙ NOTICE -->
+                <div class="notice" style="margin-top: 3rem;">
+                    <div class="notice-title">Это авторская модель</div>
+                    <p>
+                        «Наблюдатель» — инструмент самонаблюдения. Он не является диагностикой, медицинским заключением или окончательной характеристикой.
+                    </p>
+                    <p style="font-weight: 600; color: var(--accent-dark);">
+                        Не верить. Наблюдать. Сравнивать. Проверять.
+                    </p>
+                </div>
+
+                <div style="margin-top: 2.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <a href="#" class="btn btn-primary" data-page="three-checks">Проверить через правило трёх</a>
                     <a href="#" class="btn btn-secondary" data-page="tools">← К инструментам</a>
                 </div>
             </div>
