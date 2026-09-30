@@ -1879,6 +1879,592 @@
                 justify-content: center;
             }
         }
+                    /* ═══════════════════════════════════════════ */
+        /* БЮДЖЕТ РЕСУРСА */
+        /* ═══════════════════════════════════════════ */
+
+        .budget-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-lg);
+            padding: 1.75rem;
+            margin: 1.5rem 0 2rem;
+        }
+
+        .budget-card h2 {
+            font-size: 1.25rem;
+            color: var(--accent-dark);
+        }
+
+        .budget-sliders {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .budget-slider-box {
+            padding: 1rem 1.25rem;
+            background: var(--bg-alt);
+            border-radius: var(--radius);
+            border-left: 4px solid var(--border);
+        }
+
+        .budget-b1 { border-left-color: #3b82f6; }
+        .budget-b2 { border-left-color: var(--success); }
+        .budget-b3 { border-left-color: var(--warning); }
+
+        .budget-slider-box label {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            font-size: 0.9375rem;
+            margin-bottom: 0.625rem;
+        }
+
+        .budget-slider-value {
+            font-family: var(--font-mono);
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .budget-slider-box input[type=range] {
+            width: 100%;
+            height: 6px;
+            -webkit-appearance: none;
+            appearance: none;
+            background: var(--border);
+            border-radius: 3px;
+            outline: none;
+            cursor: pointer;
+            margin-bottom: 0.5rem;
+        }
+
+        .budget-slider-box input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background: var(--accent);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: transform 0.15s ease;
+        }
+
+        .budget-slider-box input[type=range]::-webkit-slider-thumb:hover {
+            transform: scale(1.15);
+        }
+
+        .budget-slider-box input[type=range]::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            background: var(--accent);
+            border-radius: 50%;
+            cursor: pointer;
+            border: none;
+        }
+
+        .budget-slider-hint {
+            font-size: 0.8125rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .budget-actions {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 2px dashed var(--border-light);
+            text-align: center;
+        }
+
+        .budget-actions-title {
+            font-size: 0.9375rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 1rem;
+        }
+
+        .budget-actions-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.75rem;
+        }
+
+        .budget-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 30px;
+            font-size: 0.9375rem;
+            font-weight: 600;
+            text-decoration: none;
+            color: #fff;
+            transition: all 0.2s ease;
+            min-width: 240px;
+        }
+
+        .budget-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 14px rgba(43, 40, 37, 0.15);
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .budget-btn-wa { background: var(--whatsapp, #25D366); }
+        .budget-btn-wa:hover { background: #20ba56; }
+
+        .budget-btn-tg { background: #0088cc; }
+        .budget-btn-tg:hover { background: #0077b3; }
+
+        .budget-columns {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.25rem;
+        }
+
+        .budget-col {
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            padding: 1.5rem;
+            border: 1px solid var(--border-light);
+            border-top: 6px solid var(--border);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .budget-col-1 { border-top-color: #3b82f6; }
+        .budget-col-2 { border-top-color: var(--success); }
+        .budget-col-3 { border-top-color: var(--warning); }
+
+        .budget-col-title {
+            font-size: 1.0625rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        .budget-col-1 .budget-col-title { color: #1e40af; }
+        .budget-col-2 .budget-col-title { color: var(--success); }
+        .budget-col-3 .budget-col-title { color: var(--warning); }
+
+        .budget-col-sub {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .budget-checklist {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .budget-check-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.75rem 0.875rem;
+            margin-bottom: 0.5rem;
+            background: var(--bg-alt);
+            border-radius: var(--radius);
+            cursor: pointer;
+            transition: all 0.15s ease;
+            position: relative;
+        }
+
+        .budget-check-item:hover {
+            background: var(--bg);
+            transform: translateX(3px);
+        }
+
+        .budget-check-item input[type="checkbox"] {
+            margin-top: 0.125rem;
+            transform: scale(1.15);
+            cursor: pointer;
+            accent-color: var(--accent);
+            flex-shrink: 0;
+        }
+
+        .budget-check-item span {
+            font-size: 0.875rem;
+            line-height: 1.4;
+            color: var(--text);
+            flex: 1;
+        }
+
+        .budget-check-item.done span {
+            text-decoration: line-through;
+            color: var(--text-muted);
+        }
+
+        .budget-tooltip {
+            visibility: hidden;
+            width: 260px;
+            background-color: var(--text);
+            color: #fff;
+            text-align: left;
+            border-radius: var(--radius);
+            padding: 0.75rem 0.875rem;
+            position: absolute;
+            z-index: 100;
+            bottom: 110%;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 8px 20px rgba(43, 40, 37, 0.2);
+            opacity: 0;
+            transition: opacity 0.2s;
+            font-size: 0.8125rem;
+            line-height: 1.4;
+            font-weight: 400;
+            pointer-events: none;
+        }
+
+        .budget-tooltip::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -6px;
+            border-width: 6px;
+            border-style: solid;
+            border-color: var(--text) transparent transparent transparent;
+        }
+
+        .budget-check-item:hover .budget-tooltip {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .budget-progress {
+            margin-top: auto;
+            padding-top: 1.25rem;
+        }
+
+        .budget-progress-bg {
+            background: var(--border);
+            border-radius: 10px;
+            height: 8px;
+            overflow: hidden;
+        }
+
+        .budget-progress-fill {
+            height: 100%;
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .budget-col-1 .budget-progress-fill { background: #3b82f6; }
+        .budget-col-2 .budget-progress-fill { background: var(--success); }
+        .budget-col-3 .budget-progress-fill { background: var(--warning); }
+
+        .budget-progress-text {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-top: 0.375rem;
+        }
+
+        /* РЕЗЮМЕ */
+        .budget-summary {
+            margin-top: 1.75rem;
+            padding: 1.75rem;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+        }
+
+        .budget-summary-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--accent-dark);
+            margin-bottom: 1.25rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .budget-summary-rows {
+            display: grid;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .budget-summary-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.875rem 1rem;
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            flex-wrap: wrap;
+        }
+
+        .budget-summary-row-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            font-size: 0.9375rem;
+            color: var(--text);
+            flex: 1;
+            min-width: 140px;
+        }
+
+        .budget-summary-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .budget-summary-dot.b1 { background: #3b82f6; }
+        .budget-summary-dot.b2 { background: var(--success); }
+        .budget-summary-dot.b3 { background: var(--warning); }
+
+        .budget-summary-row-value {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-family: var(--font-mono);
+            font-size: 0.9375rem;
+        }
+
+        .budget-summary-percent {
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .budget-summary-status {
+            font-family: var(--font);
+            font-size: 0.8125rem;
+            font-weight: 600;
+            padding: 0.25rem 0.625rem;
+            border-radius: 6px;
+            white-space: nowrap;
+        }
+
+        .budget-summary-status.critical {
+            background: rgba(220, 38, 38, 0.1);
+            color: var(--danger);
+        }
+
+        .budget-summary-status.unstable {
+            background: rgba(202, 138, 4, 0.1);
+            color: var(--warning);
+        }
+
+        .budget-summary-status.stable {
+            background: rgba(22, 163, 74, 0.1);
+            color: var(--success);
+        }
+
+        .budget-summary-overall {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            padding: 1rem 1.25rem;
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            margin-bottom: 1.25rem;
+        }
+
+        .budget-summary-overall-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+
+        .budget-summary-overall-item strong {
+            font-family: var(--font-mono);
+            font-size: 1rem;
+            color: var(--text);
+        }
+
+        .budget-summary-overall-item.divider {
+            color: var(--text-light);
+        }
+
+        .budget-summary-conclusion {
+            padding: 1.25rem 1.5rem;
+            background: var(--accent-bg);
+            border-left: 3px solid var(--accent);
+            border-radius: var(--radius);
+            font-size: 0.9375rem;
+            line-height: 1.5;
+            color: var(--text);
+        }
+
+        .budget-summary-conclusion strong {
+            color: var(--accent-dark);
+        }
+
+        /* МОДАЛКА */
+        .budget-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(43, 40, 37, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            padding: 1rem;
+            transition: opacity 0.2s ease;
+        }
+
+        .budget-modal-overlay.hidden {
+            display: none;
+            opacity: 0;
+        }
+
+        .budget-modal-window {
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            width: 100%;
+            max-width: 700px;
+            max-height: 85vh;
+            overflow-y: auto;
+            padding: 1.75rem 2rem;
+            box-shadow: 0 20px 40px rgba(43, 40, 37, 0.3);
+        }
+
+        .budget-modal-title {
+            color: var(--accent-dark);
+            font-size: 1.25rem;
+            font-weight: 700;
+            border-bottom: 2px solid var(--border-light);
+            padding-bottom: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .budget-modal-content p {
+            font-size: 0.9375rem;
+            color: var(--text);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .budget-modal-section-title {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-top: 1.25rem;
+            margin-bottom: 0.375rem;
+        }
+
+        .budget-modal-section-title.m1 { color: #1e40af; }
+        .budget-modal-section-title.m2 { color: var(--success); }
+        .budget-modal-section-title.m3 { color: var(--warning); }
+
+        .budget-modal-content ul {
+            padding-left: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .budget-modal-content li {
+            font-size: 0.875rem;
+            color: var(--text);
+            margin-bottom: 0.375rem;
+            line-height: 1.5;
+        }
+
+        /* МОБИЛЬНАЯ ВЕРСИЯ */
+        @media (max-width: 640px) {
+            .budget-card {
+                padding: 1.25rem;
+            }
+            .budget-modal-window {
+                padding: 1.25rem 1.25rem;
+            }
+            .budget-btn {
+                min-width: auto;
+                width: 100%;
+                font-size: 0.875rem;
+                padding: 0.625rem 1rem;
+            }
+            .budget-check-item span {
+                font-size: 0.8125rem;
+            }
+            .budget-tooltip {
+                width: 220px;
+                font-size: 0.75rem;
+            }
+            .budget-summary {
+                padding: 1.25rem;
+            }
+            .budget-summary-row {
+                padding: 0.75rem 0.875rem;
+            }
+            .budget-summary-row-value {
+                width: 100%;
+                justify-content: space-between;
+            }
+        }
+                   /* Анимация привлечения внимания к резюме */
+        @keyframes budgetHighlight {
+            0% { box-shadow: 0 0 0 0 rgba(234, 88, 12, 0); }
+            40% { box-shadow: 0 0 0 6px rgba(234, 88, 12, 0.25); }
+            100% { box-shadow: 0 0 0 0 rgba(234, 88, 12, 0); }
+        }
+
+        .budget-summary.flash {
+            animation: budgetHighlight 0.8s ease-out;
+        }
+
+        @keyframes budgetRowFlash {
+            0% { background: var(--bg-card); }
+            50% { background: rgba(234, 88, 12, 0.08); }
+            100% { background: var(--bg-card); }
+        }
+
+        .budget-summary-row.flash {
+            animation: budgetRowFlash 0.5s ease-out;
+        }
+
+        /* Стрелка подсказки от слайдеров к резюме */
+        .budget-arrow-hint {
+            text-align: center;
+            margin: 1.5rem 0 0.5rem;
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .budget-arrow-hint svg {
+            width: 16px;
+            height: 16px;
+            animation: budgetBounce 2s ease-in-out infinite;
+        }
+
+        @keyframes budgetBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(4px); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .budget-summary.flash,
+            .budget-summary-row.flash,
+            .budget-arrow-hint svg {
+                animation: none;
+            }
+        }
         /* ═══════════════════════════════════════════ */
         /* FOOTER */
         /* ═══════════════════════════════════════════ */
@@ -3271,6 +3857,9 @@
         <!-- ═══════════════════════════════════════ -->
         <!-- ЗАГЛУШКИ ИНСТРУМЕНТОВ -->
         <!-- ═══════════════════════════════════════ -->
+                <!-- ═══════════════════════════════════════ -->
+        <!-- БЮДЖЕТ РЕСУРСА -->
+        <!-- ═══════════════════════════════════════ -->
         <div class="page" id="page-tool-budget">
             <div class="container-narrow">
                 <div class="breadcrumbs">
@@ -3280,22 +3869,260 @@
                     <span>/</span>
                     Бюджет ресурса
                 </div>
+
                 <h1>Бюджет ресурса</h1>
                 <p style="font-size: 1.125rem; color: var(--text-muted); margin-bottom: 2rem;">
-                    Модель, которую мы условно называем Бюджетом счастья.
+                    Распределите 100% внимания между тремя векторами.
                 </p>
-                <p>Это не измерение счастья. Это интерактивная модель распределения внимания и ресурсов.</p>
-                <div class="placeholder">
-                    <div class="placeholder-icon">⚖️</div>
-                    <h3>Инструмент в разработке</h3>
-                    <p>Три направления: Энергия | Отношения | Материя. Без анимации — только наблюдение.</p>
+
+                <p>
+                    Смещая фокус на один из них — вы увидите, как <strong>заимствуется ресурс</strong> из других сфер.
+                </p>
+                <p style="margin-bottom: 2rem;">
+                    Это <strong>интерактивная модель распределения внимания и ресурсов</strong>.
+                </p>
+
+                <button class="btn btn-secondary" type="button" id="budgetInfoBtn" style="margin-bottom: 1.5rem;">
+                    ❓ Инструкция и критерии оценки
+                </button>
+
+                <!-- КАЛЬКУЛЯТОР -->
+                <div class="budget-card">
+
+                    <h2 style="margin-top: 0;">Калькулятор баланса внимания</h2>
+                    <p style="color: var(--text-muted); font-size: 0.9375rem; margin-bottom: 1.5rem;">
+                        Всего — 100%. Смещая фокус на один вектор, вы заимствуете ресурс из других.
+                    </p>
+
+                    <div class="budget-sliders">
+
+                        <div class="budget-slider-box budget-b1">
+                            <label>
+                                <span>Энергия и Внимание</span>
+                                <span class="budget-slider-value"><span id="budgetVal1">33</span>%</span>
+                            </label>
+                            <input type="range" id="budgetSlide1" min="0" max="100" value="33">
+                            <div class="budget-slider-hint" id="budgetHint1">Базовый ресурс</div>
+                        </div>
+
+                        <div class="budget-slider-box budget-b2">
+                            <label>
+                                <span>Пространство Отношений</span>
+                                <span class="budget-slider-value"><span id="budgetVal2">33</span>%</span>
+                            </label>
+                            <input type="range" id="budgetSlide2" min="0" max="100" value="33">
+                            <div class="budget-slider-hint" id="budgetHint2">Синхронизация</div>
+                        </div>
+
+                        <div class="budget-slider-box budget-b3">
+                            <label>
+                                <span>Материальное Воплощение</span>
+                                <span class="budget-slider-value"><span id="budgetVal3">34</span>%</span>
+                            </label>
+                            <input type="range" id="budgetSlide3" min="0" max="100" value="34">
+                            <div class="budget-slider-hint" id="budgetHint3">Физический план</div>
+                        </div>
+
+                                       </div>
+
                 </div>
-                <div style="margin-top: 2.5rem;">
+
+                <!-- ПОДСКАЗКА К РЕЗЮМЕ -->
+                <div class="budget-arrow-hint">
+                    <span>↓</span>
+                    <span>Меняйте ползунки — смотрите, как обновляется <strong>Результат</strong> внизу</span>
+                </div>
+                 <!-- РЕЗЮМЕ -->
+                <div class="budget-summary" id="budgetSummary" style="margin-top: 2.5rem;">
+                    <h3 class="budget-summary-title">Результат</h3>
+
+                    <div class="budget-summary-rows" id="budgetSummaryRows"></div>
+
+                    <div class="budget-summary-overall" id="budgetSummaryOverall"></div>
+
+                    <div class="budget-summary-conclusion" id="budgetSummaryConclusion"></div>
+                </div>
+
+                <!-- ВЕКТОРЫ -->
+                <h2 style="margin-top: 3rem;">Векторы проработки и аудит состояний</h2>
+                <p style="color: var(--text-muted); font-size: 0.9375rem; margin-bottom: 1.5rem;">
+                    Наведите на пункт — увидите пояснение.
+                </p>
+
+                <div class="budget-columns">
+
+                    <!-- ЭНЕРГИЯ -->
+                    <div class="budget-col budget-col-1">
+                        <div class="budget-col-title">1. Энергетический Баланс</div>
+                        <div class="budget-col-sub">Внутренний Ресурс</div>
+
+                        <ul class="budget-checklist">
+                            <li class="budget-check-item">
+                                <input type="checkbox">
+                                <span>Гигиена внимания (отсечение инфо-шума)</span>
+                                <div class="budget-tooltip">Осознанный цифровой детокс. Ограничение потребления деструктивных новостей и соцсетей, разрушающих ментальное поле.</div>
+                            </li>
+                            <li class="budget-check-item">
+                                <input type="checkbox">
+                                <span>Практики обнуления и центрирования</span>
+                                <div class="budget-tooltip">Регулярный вход в состояние «внутреннего наблюдателя» (точку тишины), позволяющий сбросить накопленные ментальные перегрузки.</div>
+                            </li>
+                            <li class="budget-check-item">
+                                <input type="checkbox">
+                                <span>Регулярное восполнение чистой энергии</span>
+                                <div class="budget-tooltip">Удержание личных источников наполнения (природа, творчество, тишина), дающих силу действовать без выгорания.</div>
+                            </li>
+                        </ul>
+
+                        <div class="budget-progress">
+                            <div class="budget-progress-bg"><div class="budget-progress-fill" id="budgetFill1"></div></div>
+                            <div class="budget-progress-text"><span>Освоено ресурса:</span><span id="budgetText1">0%</span></div>
+                        </div>
+                    </div>
+
+                    <!-- ОТНОШЕНИЯ -->
+                    <div class="budget-col budget-col-2">
+                        <div class="budget-col-title">2. Пространство Отношений</div>
+                        <div class="budget-col-sub">Синхронизация Систем</div>
+
+                        <ul class="budget-checklist">
+                            <li class="budget-check-item">
+                                <input type="checkbox">
+                                <span>Баланс элементов в окружении (У-Син)</span>
+                                <div class="budget-tooltip">Гармоничная сонастройка стихий (Дерево, Огонь, Земля, Металл, Вода) в семейной или командной системе, исключающая конфликты.</div>
+                            </li>
+                            <li class="budget-check-item">
+                                <input type="checkbox">
+                                <span>Качественное время с близкими</span>
+                                <div class="budget-tooltip">Глубокое взаимодействие «здесь и сейчас» без гаджетов и социальных ролей, обеспечивающее подлинный душевный энергообмен.</div>
+                            </li>
+                            <li class="budget-check-item">
+                                <input type="checkbox">
+                                <span>Экология круга общения и сотворчество</span>
+                                <div class="budget-tooltip">Формирование поддерживающей среды единомышленников на равных вибрациях. Минимизация контактов с токсичными системами.</div>
+                            </li>
+                        </ul>
+
+                        <div class="budget-progress">
+                            <div class="budget-progress-bg"><div class="budget-progress-fill" id="budgetFill2"></div></div>
+                            <div class="budget-progress-text"><span>Освоено ресурса:</span><span id="budgetText2">0%</span></div>
+                        </div>
+                    </div>
+
+                    <!-- МАТЕРИЯ -->
+                    <div class="budget-col budget-col-3">
+                        <div class="budget-col-title">3. Материальное Воплощение</div>
+                        <div class="budget-col-sub">Физический План</div>
+
+                        <ul class="budget-checklist">
+                            <li class="budget-check-item">
+                                <input type="checkbox">
+                                <span>Ресурсы под ключевые проекты</span>
+                                <div class="budget-tooltip">Материальное, временное и техническое обеспечение для бесперебойного развертывания ваших главных медиа-активов (книги, каналы).</div>
+                            </li>
+                            <li class="budget-check-item">
+                                <input type="checkbox">
+                                <span>Обустройство и автономность дома</span>
+                                <div class="budget-tooltip">Создание гармоничного, независимого и безопасного физического пространства (комфорт, уют, инженерная стабильность).</div>
+                            </li>
+                            <li class="budget-check-item">
+                                <input type="checkbox">
+                                <span>Финансовая антихрупкость</span>
+                                <div class="budget-tooltip">Термин Н. Талеба. Свойство активов и систем не просто защищаться от кризисов, а извлекать из хаоса выгоду, становясь крепче.</div>
+                            </li>
+                        </ul>
+
+                        <div class="budget-progress">
+                            <div class="budget-progress-bg"><div class="budget-progress-fill" id="budgetFill3"></div></div>
+                            <div class="budget-progress-text"><span>Освоено ресурса:</span><span id="budgetText3">0%</span></div>
+                        </div>
+                    </div>
+
+                </div>
+
+                                <!-- КНОПКИ -->
+                <div class="budget-actions" style="margin-top: 2rem; padding-top: 2rem; border-top: 2px dashed var(--border-light);">
+                    <div class="budget-actions-title">🔒 Обсудить результат:</div>
+                    <div class="budget-actions-buttons">
+                        <a href="#" id="budgetWhatsappBtn" target="_blank" rel="noopener" class="budget-btn budget-btn-wa">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                            </svg>
+                            Обсудить в WhatsApp
+                        </a>
+                        <a href="https://t.me/AlchemyTransition" target="_blank" rel="noopener" class="budget-btn budget-btn-tg">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+                                <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                            </svg>
+                            Войти в канал (Telegram)
+                        </a>
+                    </div>
+                </div>
+
+                <!-- ФИНАЛЬНЫЙ NOTICE -->
+                <div class="notice" style="margin-top: 3rem;">
+                    <div class="notice-title">Это авторская модель</div>
+                    <p>
+                        «Бюджет ресурса» — интерактивная модель, а не диагностика. Она не «измеряет» счастье и не даёт «правильного» ответа.
+                    </p>
+                    <p style="font-weight: 600; color: var(--accent-dark);">
+                        Не верить. Наблюдать. Сравнивать. Проверять.
+                    </p>
+                </div>
+
+                <div style="margin-top: 2.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <a href="#" class="btn btn-primary" data-page="three-checks">Проверить через правило трёх</a>
                     <a href="#" class="btn btn-secondary" data-page="tools">← К инструментам</a>
                 </div>
             </div>
-        </div>
 
+            <!-- МОДАЛКА -->
+            <div class="budget-modal-overlay hidden" id="budgetModal">
+                <div class="budget-modal-window">
+                    <div class="budget-modal-title">📐 Как объективно рассчитать свой Бюджет Ресурса?</div>
+                    <div class="budget-modal-content">
+                        <p>
+                            Емкость вашего внимания жёстко ограничена и равна <strong>100%</strong>. Ползунки калькулятора моделируют закон сохранения энергии: усиливая один вектор, вы неизбежно забираете ресурс у других. Проанализируйте свои действия за последнюю неделю и выставите значения честно, опираясь на маркеры:
+                        </p>
+
+                        <div class="budget-modal-section-title m1">🔵 1. Вектор Энергии (Внутренний баланс)</div>
+                        <p style="font-size: 0.875rem; color: var(--text-muted); margin-top: -0.5rem;">
+                            Сколько времени ваш мозг предоставлен созиданию, тишине и практике, а не пережёвыванию инфо-шума?
+                        </p>
+                        <ul>
+                            <li><strong>0% – 20%:</strong> Просыпаетесь уставшим, утро начинается со смартфона и чужих новостей. Фокус размыт, к вечеру чувствуете себя «выжатым».</li>
+                            <li><strong>25% – 50%:</strong> Понимаете важность энергогигиены, но внешние обстоятельства и гаджеты регулярно выбивают вас из колеи. Ресурс нестабилен.</li>
+                            <li><strong>55% и выше:</strong> Вы хозяин своего внимания. Умеете уходить в точку тишины, утро принадлежит вашему созиданию, деструктивный контент отсечён.</li>
+                        </ul>
+
+                        <div class="budget-modal-section-title m2">🟢 2. Вектор Отношений (Синхронизация систем)</div>
+                        <p style="font-size: 0.875rem; color: var(--text-muted); margin-top: -0.5rem;">
+                            Сколько чистого времени (без фоновых гаджетов) вы инвестируете в глубокий, качественный контакт?
+                        </p>
+                        <ul>
+                            <li><strong>0% – 20%:</strong> Общение поверхностное, на автомате. В близком кругу чувствуется глухое напряжение.</li>
+                            <li><strong>25% – 50%:</strong> Отношения ровные, но бесконечно откладываются на потом. На душевную сонастройку и сотворчество вечно не хватает времени.</li>
+                            <li><strong>55% и выше:</strong> Выстроена синергия (по У-Син). Окружение подпитывает и усиливает вас, конфликты переводят систему на новый уровень.</li>
+                        </ul>
+
+                        <div class="budget-modal-section-title m3">🟡 3. Вектор Материи (Физический план)</div>
+                        <p style="font-size: 0.875rem; color: var(--text-muted); margin-top: -0.5rem;">
+                            Какой объём ваших мыслей и действий направлен на создание твёрдых результатов и укрепление инфраструктуры?
+                        </p>
+                        <ul>
+                            <li><strong>0% – 20%:</strong> Застой в делах, ключевые творческие проекты стоят на месте. Быт и дом заброшены.</li>
+                            <li><strong>25% – 50%:</strong> Базовый порядок наведён, процессы движутся. Но система хрупкая: любой кризис вынудит спасать материальный фундамент.</li>
+                            <li><strong>55% и выше:</strong> Физический план автономен и безопасен (Антихрупкость). Ключевые активы масштабируются, дом обустроен.</li>
+                        </ul>
+
+                        <button class="btn btn-primary" type="button" id="budgetModalClose" style="width: 100%; margin-top: 1rem; justify-content: center;">
+                            Я понял критерии — войти в симулятор
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
                 <!-- ═══════════════════════════════════════ -->
         <!-- ДЛЯ ЖЕНЩИН -->
         <!-- ═══════════════════════════════════════ -->
@@ -5595,6 +6422,9 @@
                 if (pageId === 'tool-state-lab' && typeof stateLab !== 'undefined') {
                     stateLab.init();
                 }
+                if (pageId === 'tool-budget' && typeof window.initBudget === 'function') {
+                    window.initBudget();
+                }
 
                 if (history.replaceState) {
                     history.replaceState(null, '', '#' + pageId);
@@ -6722,7 +7552,292 @@
                 });
 
             })();
-            })();         initFromHash();
+            })();    
+            // ═══════════════════════════════════════════
+            // БЮДЖЕТ РЕСУРСА
+            // ═══════════════════════════════════════════
+            const budgetModule = (function() {
+                const WHATSAPP_NUMBER = '77078161239';
+
+                const sliders = [
+                    document.getElementById('budgetSlide1'),
+                    document.getElementById('budgetSlide2'),
+                    document.getElementById('budgetSlide3')
+                ];
+                const vals = [
+                    document.getElementById('budgetVal1'),
+                    document.getElementById('budgetVal2'),
+                    document.getElementById('budgetVal3')
+                ];
+                const hints = [
+                    document.getElementById('budgetHint1'),
+                    document.getElementById('budgetHint2'),
+                    document.getElementById('budgetHint3')
+                ];
+
+                const modal = document.getElementById('budgetModal');
+                const modalClose = document.getElementById('budgetModalClose');
+                const modalOpen = document.getElementById('budgetInfoBtn');
+
+                const waBtn = document.getElementById('budgetWhatsappBtn');
+
+                if (!sliders[0] || !waBtn) return { init: function() {} };
+
+                // ─── СТАТУС (текст) ───
+                function getStatus(val) {
+                    if (val <= 20) return 'Критический дефицит';
+                    if (val <= 50) return 'Нестабильный баланс';
+                    return 'Устойчивое управление';
+                }
+
+                // ─── КЛАСС СТАТУСА ───
+                function getStatusClass(val) {
+                    if (val <= 20) return 'critical';
+                    if (val <= 50) return 'unstable';
+                    return 'stable';
+                }
+
+                // ─── ВЫВОД ───
+                function getConclusion(p1, p2, p3, counts) {
+                    if (counts.stable === 3) {
+                        return '<strong>Редкий случай</strong> — баланс сохранён по всем трём векторам. Ваша задача — не растерять его. Продолжайте наблюдать и держать меру.';
+                    }
+                    if (counts.critical === 3) {
+                        return '<strong>Ресурс истощён по всем направлениям.</strong> Первый шаг — энергия. Без неё ни отношения, ни материя не сдвинутся. Начните с малого — и не требуйте от себя сразу многого.';
+                    }
+                    if (counts.stable >= 2 && counts.critical >= 1) {
+                        return 'Энергия есть — но она уходит в одну сферу, оставляя другие в дефиците. <strong>Стоит проверить, куда именно</strong> уходит ресурс — и вернуть часть в слабое звено.';
+                    }
+                    if (counts.stable === 1 && (counts.critical + counts.unstable) === 2) {
+                        return 'Один вектор держится устойчиво — но два других тянут ресурс. <strong>Проверьте: не слишком ли много вы вкладываете в сильную сферу</strong> в ущерб остальным?';
+                    }
+                    if (Math.abs(p1 - 33) <= 3 && Math.abs(p2 - 33) <= 3 && Math.abs(p3 - 34) <= 3) {
+                        return 'Ресурс распределён ровно — но <strong>нигде не хватает плотности</strong> для устойчивого развития. Возможно, стоит выбрать один вектор и усилить его — остальные подтянутся.';
+                    }
+                    return 'Ресурс распределён, но <strong>ни один вектор не в устойчивой зоне</strong>. Это сигнал — стоит пересмотреть, куда уходит внимание. Начните с одного шага.';
+                }
+
+                // ─── ОБНОВЛЕНИЕ ПОДПИСЕЙ ───
+                function updateHints() {
+                    sliders.forEach(function(s, i) {
+                        if (hints[i]) {
+                            hints[i].innerText = getStatus(parseInt(s.value));
+                        }
+                    });
+                }
+
+                // ─── ОБНОВЛЕНИЕ WHATSAPP-ССЫЛКИ ───
+                function updateWhatsApp() {
+                    const p1 = sliders[0].value;
+                    const p2 = sliders[1].value;
+                    const p3 = sliders[2].value;
+
+                    const message =
+                        'Здравствуйте! Я прошёл интерактивный аудит "Бюджет Ресурса".\n\n' +
+                        'Мой текущий баланс распределения внимания:\n' +
+                        '• Энергия: ' + p1 + '% (' + getStatus(parseInt(p1)) + ')\n' +
+                        '• Отношения: ' + p2 + '% (' + getStatus(parseInt(p2)) + ')\n' +
+                        '• Материальное: ' + p3 + '% (' + getStatus(parseInt(p3)) + ')\n\n' +
+                        'Хочу подробнее обсудить результаты аудита.';
+
+                    waBtn.href = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(message);
+                }
+
+                // ─── ОБНОВЛЕНИЕ РЕЗЮМЕ ───
+                function updateSummary() {
+                    const p1 = parseInt(sliders[0].value);
+                    const p2 = parseInt(sliders[1].value);
+                    const p3 = parseInt(sliders[2].value);
+
+                    const rowsEl = document.getElementById('budgetSummaryRows');
+                    if (rowsEl) {
+                        rowsEl.innerHTML =
+                            '<div class="budget-summary-row">' +
+                                '<div class="budget-summary-row-label">' +
+                                    '<span class="budget-summary-dot b1"></span>Энергия' +
+                                '</div>' +
+                                '<div class="budget-summary-row-value">' +
+                                    '<span class="budget-summary-percent">' + p1 + '%</span>' +
+                                    '<span class="budget-summary-status ' + getStatusClass(p1) + '">' + getStatus(p1) + '</span>' +
+                                '</div>' +
+                            '</div>' +
+                            '<div class="budget-summary-row">' +
+                                '<div class="budget-summary-row-label">' +
+                                    '<span class="budget-summary-dot b2"></span>Отношения' +
+                                '</div>' +
+                                '<div class="budget-summary-row-value">' +
+                                    '<span class="budget-summary-percent">' + p2 + '%</span>' +
+                                    '<span class="budget-summary-status ' + getStatusClass(p2) + '">' + getStatus(p2) + '</span>' +
+                                '</div>' +
+                            '</div>' +
+                            '<div class="budget-summary-row">' +
+                                '<div class="budget-summary-row-label">' +
+                                    '<span class="budget-summary-dot b3"></span>Материя' +
+                                '</div>' +
+                                '<div class="budget-summary-row-value">' +
+                                    '<span class="budget-summary-percent">' + p3 + '%</span>' +
+                                    '<span class="budget-summary-status ' + getStatusClass(p3) + '">' + getStatus(p3) + '</span>' +
+                                '</div>' +
+                            '</div>';
+                    }
+
+                    const counts = { critical: 0, unstable: 0, stable: 0 };
+                    [p1, p2, p3].forEach(function(v) {
+                        const cls = getStatusClass(v);
+                        if (cls === 'critical') counts.critical++;
+                        else if (cls === 'unstable') counts.unstable++;
+                        else counts.stable++;
+                    });
+
+                    const overallEl = document.getElementById('budgetSummaryOverall');
+                    if (overallEl) {
+                        overallEl.innerHTML =
+                            '<span class="budget-summary-overall-item">🟢 Устойчиво: <strong>' + counts.stable + '</strong></span>' +
+                            '<span class="budget-summary-overall-item divider">·</span>' +
+                            '<span class="budget-summary-overall-item">🟡 Нестабильно: <strong>' + counts.unstable + '</strong></span>' +
+                            '<span class="budget-summary-overall-item divider">·</span>' +
+                            '<span class="budget-summary-overall-item">🔴 Критично: <strong>' + counts.critical + '</strong></span>';
+                    }
+
+                    const conclusionEl = document.getElementById('budgetSummaryConclusion');
+                    if (conclusionEl) {
+                        conclusionEl.innerHTML = getConclusion(p1, p2, p3, counts);
+                    }
+                }
+
+                // ─── ВЗАИМОСВЯЗАННЫЕ СЛАЙДЕРЫ ───
+                               function updateSliders(index) {
+                    const val = parseInt(sliders[index].value);
+                    const others = [0, 1, 2].filter(function(i) { return i !== index; });
+                    const remaining = 100 - val;
+
+                    const sumOthers = parseInt(sliders[others[0]].value) + parseInt(sliders[others[1]].value);
+
+                    if (sumOthers === 0) {
+                        sliders[others[0]].value = Math.floor(remaining / 2);
+                        sliders[others[1]].value = Math.ceil(remaining / 2);
+                    } else {
+                        const r0 = parseInt(sliders[others[0]].value) / sumOthers;
+                        const r1 = parseInt(sliders[others[1]].value) / sumOthers;
+                        sliders[others[0]].value = Math.round(remaining * r0);
+                        sliders[others[1]].value = Math.round(remaining * r1);
+                    }
+
+                    const total = parseInt(sliders[0].value) + parseInt(sliders[1].value) + parseInt(sliders[2].value);
+                    if (total !== 100) {
+                        sliders[others[0]].value = parseInt(sliders[others[0]].value) + (100 - total);
+                    }
+
+                    sliders.forEach(function(s, i) { vals[i].innerText = s.value; });
+
+                    updateHints();
+                    updateWhatsApp();
+                    updateSummary();
+
+                    // Подсветка резюме
+                    flashSummary();
+                }
+
+                // Мигание резюме при изменении слайдера
+                function flashSummary() {
+                    const summary = document.getElementById('budgetSummary');
+                    if (!summary) return;
+
+                    summary.classList.remove('flash');
+                    // Принудительный reflow, чтобы анимация сработала повторно
+                    void summary.offsetWidth;
+                    summary.classList.add('flash');
+
+                    // Подсветка строк
+                    const rows = summary.querySelectorAll('.budget-summary-row');
+                    rows.forEach(function(row) {
+                        row.classList.remove('flash');
+                        void row.offsetWidth;
+                        row.classList.add('flash');
+                    });
+                }
+                // ─── ЧЕК-ЛИСТЫ ───
+                function bindChecklists() {
+                    document.querySelectorAll('#page-tool-budget .budget-col').forEach(function(col, idx) {
+                        const checkboxes = col.querySelectorAll('input[type="checkbox"]');
+                        const fill = document.getElementById('budgetFill' + (idx + 1));
+                        const text = document.getElementById('budgetText' + (idx + 1));
+
+                        checkboxes.forEach(function(box) {
+                            box.parentElement.addEventListener('click', function(e) {
+                                if (e.target !== box && !e.target.classList.contains('budget-tooltip')) {
+                                    box.checked = !box.checked;
+                                }
+
+                                if (box.checked) {
+                                    this.classList.add('done');
+                                } else {
+                                    this.classList.remove('done');
+                                }
+
+                                const checked = col.querySelectorAll('input[type="checkbox"]:checked').length;
+                                const percent = Math.round((checked / checkboxes.length) * 100);
+                                if (fill) fill.style.width = percent + '%';
+                                if (text) text.innerText = percent + '%';
+                            });
+                        });
+                    });
+                }
+
+                // ─── МОДАЛКА ───
+                function bindModal() {
+                    if (modalOpen && modal) {
+                        modalOpen.addEventListener('click', function() {
+                            modal.classList.remove('hidden');
+                        });
+                    }
+                    if (modalClose && modal) {
+                        modalClose.addEventListener('click', function() {
+                            modal.classList.add('hidden');
+                        });
+                    }
+                    if (modal) {
+                        modal.addEventListener('click', function(e) {
+                            if (e.target === modal) {
+                                modal.classList.add('hidden');
+                            }
+                        });
+                    }
+                }
+
+                // ─── СОБЫТИЯ ───
+                sliders.forEach(function(slider, index) {
+                    slider.addEventListener('input', function() {
+                        updateSliders(index);
+                    });
+                });
+
+                // ─── ИНИЦИАЛИЗАЦИЯ ───
+                function init() {
+                    const page = document.getElementById('page-tool-budget');
+                    if (!page) return;
+                    if (page.dataset.inited === '1') return;
+                    page.dataset.inited = '1';
+
+                    updateHints();
+                    updateWhatsApp();
+                    updateSummary();
+                    bindChecklists();
+                    bindModal();
+                }
+
+                // Экспорт для роутинга
+                window.initBudget = function() {
+                    const page = document.getElementById('page-tool-budget');
+                    if (page) page.dataset.inited = '';
+                    init();
+                };
+
+                init();
+
+                return { init: init };
+            })();
+            initFromHash();
                 window.addEventListener('hashchange', initFromHash);
         })();
     </script>
